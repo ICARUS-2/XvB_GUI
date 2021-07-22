@@ -31,6 +31,10 @@ namespace XVB_GUI
         {
             StatsApiCall poolApiResponse = new StatsApiCall("447ywns3EeHas2tp5SNdecY79kCcnpKP628XavFhwhgmRYWPBreiiGNH4FTbtog7VyMsJqfjATP21GqDjAbNScYP1D451qk");
             PoolApiResponse pr = poolApiResponse.Query();
+
+            HttpClient http = new HttpClient();
+            HttpResponseMessage res = http.GetAsync("https://xmrvsbeast.com/boost_hash.html").GetAwaiter().GetResult();
+            string str = res.Content.ReadAsStringAsync().GetAwaiter().GetResult();
             return;
         }
     }
