@@ -29,6 +29,7 @@ namespace XVB_GUI
 
             HttpRequestMessage msg = new HttpRequestMessage(HttpMethod.Get, baseUri);
             msg.Headers.Add("Cookie", String.Format("wa={0}", _wAddr));
+            //handle this exception
             HttpResponseMessage res = apiClient.SendAsync(msg).GetAwaiter().GetResult();
 
             string body = res.Content.ReadAsStringAsync().GetAwaiter().GetResult();
