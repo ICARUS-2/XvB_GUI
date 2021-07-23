@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Transaction.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,14 +71,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Block.cs" />
-    <Compile Include="BonusStatsFetcher.cs" />
+    <Compile Include="PoolStatsFetcher.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StatsApiCall.cs" />
+    <Compile Include="StatsApiCaller.cs" />
     <Compile Include="PoolApiResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

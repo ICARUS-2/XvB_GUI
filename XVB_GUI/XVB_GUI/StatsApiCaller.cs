@@ -9,15 +9,14 @@ using System.Net;
 
 namespace XVB_GUI
 {
-    class StatsApiCall
+    class StatsApiCaller
     {
         private const string BASE_URL = "https://xmrvsbeast.com/stats";
         private string _wAddr;
-        public StatsApiCall(string wAddr_)
+        public StatsApiCaller(string wAddr_)
         {
             _wAddr = wAddr_;    
         }
-
 
         public PoolApiResponse Query()
         {
@@ -29,7 +28,7 @@ namespace XVB_GUI
 
             HttpRequestMessage msg = new HttpRequestMessage(HttpMethod.Get, baseUri);
             msg.Headers.Add("Cookie", String.Format("wa={0}", _wAddr));
-            //handle this exception
+            //TODO: handle this exception
             HttpResponseMessage res = apiClient.SendAsync(msg).GetAwaiter().GetResult();
 
             string body = res.Content.ReadAsStringAsync().GetAwaiter().GetResult();

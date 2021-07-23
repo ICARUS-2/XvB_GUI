@@ -13,18 +13,27 @@ namespace XVB_GUI
         private BlockStatus _status;
         private double _blockReward;
         private DateTime _timeStamp;
-        private double _blockTime;
-        private Int64 _avgHashrate;
 
-        public Block(Int64 indexNum, string hash, BlockStatus status, double blockReward, DateTime timeStamp, double blockTime, Int64 avgHashrate)
+        public Block(Int64 indexNum, string hash, BlockStatus status, double blockReward, DateTime timeStamp)
         {
             BlockNumber = indexNum;
             Hash = hash;
             Status = status;
             BlockReward = blockReward;
             TimeStamp = timeStamp;
-            BlockTime = _blockTime;
-            AverageHashrate = _avgHashrate;
+        }
+
+        public static Block Parse(string strToParse)
+        {
+            string[] splitArr = strToParse.Split('\t');
+
+            Int64 blockNumber = Int64.Parse(splitArr[0]);
+            string hash = splitArr[1];
+            BlockStatus status = (BlockStatus)Enum.Parse(typeof(BlockStatus), splitArr[2]);
+            double blockReward = double.Parse(splitArr[3]);
+            DateTime timeStamp = DateTime.Parse(splitArr[4]);
+
+            return new Block(blockNumber, hash, status, blockReward, timeStamp);
         }
 
         public Int64 BlockNumber
@@ -92,42 +101,12 @@ namespace XVB_GUI
                 _timeStamp = value;
             }
         }
-
-        public double BlockTime
-        {
-            get
-            {
-                return _blockTime;
-            }
-            private set
-            {
-                if (value < 0)
-                    throw new ArgumentOutOfRangeException("BlockTime","ERROR: CANNOT HAVE NEGATIVE BLOCK TIME");
-
-                _blockTime = value;
-            }
-        }
-
-        public Int64 AverageHashrate
-        {
-            get
-            {
-                return _avgHashrate;
-            }
-            private set
-            {
-                if (value < 0)
-                    throw new ArgumentOutOfRangeException("AverageHashrate","ERROR: BLOCK HASHRATE CANNOT BE NEGATIVE");
-
-                _avgHashrate = value;
-            }
-        }
     }
 
     public enum BlockStatus
     {
-        Locked,
-        Unlocked,
-        Orphaned
+        LOCKED,
+        UNLOCKED,
+        ORPHANED
     }
 }
