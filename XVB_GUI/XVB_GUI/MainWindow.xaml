@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XVB_GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Background="Black">
     <Grid>
-        <TextBlock x:Name="tb_TestLog"></TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid VerticalAlignment="Top" Height="50">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Grid.Row="0" BorderBrush="DarkBlue" BorderThickness="2" Margin="5">
+                <StackPanel>
+                    <TextBox VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" FontSize="15" BorderBrush="Transparent">Total Network Hashrate</TextBox>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="1" Grid.Row="0" BorderBrush="DarkBlue" BorderThickness="2" Margin="5">
+                <StackPanel>
+                    <TextBox VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" FontSize="15" BorderBrush="Transparent">Pool Hashrate</TextBox>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="2" Grid.Row="0" BorderBrush="DarkBlue" BorderThickness="2" Margin="5">
+                <StackPanel>
+                    <TextBox VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" FontSize="15" BorderBrush="Transparent">Hashrate Boost</TextBox>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="3" Grid.Row="0" BorderBrush="DarkBlue" BorderThickness="2" Margin="5">
+                <StackPanel>
+                    <TextBox VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" FontSize="15" BorderBrush="Transparent">Hashrate Raffle</TextBox>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="4" Grid.Row="0" BorderBrush="DarkBlue" BorderThickness="2" Margin="5">
+                <StackPanel Background="Black">
+                    <TextBox VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" FontSize="15" BorderBrush="Transparent">Hashrate T/Raffle</TextBox>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </Window>

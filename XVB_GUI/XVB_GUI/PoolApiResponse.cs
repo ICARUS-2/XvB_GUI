@@ -12,7 +12,9 @@ namespace XVB_GUI
         public const int RESPONSE_SIZE = 23;
 
         private string _rawData;
+        private ResponseStatus _status;
 
+        private string _address;
         private Int64 _poolHashrate;
         private Int64 _roundHashes;
         private Int64 _networkHashrate;
@@ -37,10 +39,17 @@ namespace XVB_GUI
         private double _minerBalance;
         private Int64 _workerCount;
 
-        public PoolApiResponse(string objStr_)
+        public PoolApiResponse()
+        {
+            Status = ResponseStatus.FAILED;
+        }
+
+        public PoolApiResponse(string objStr_, string address_)
         {
             RawData = objStr_;
+            Address = address_;
             Parse();
+            Status = ResponseStatus.OK;
         }
 
         private void Parse()
@@ -83,6 +92,35 @@ namespace XVB_GUI
             WorkerCount = Int64.Parse(propArr[22]);
         }
 
+        public enum ResponseStatus
+        {
+            OK,
+            FAILED,
+        }
+
+        public ResponseStatus Status
+        {
+            get
+            {
+                return _status;
+            }
+            private set
+            {
+                _status = value;
+            }
+        }
+
+        public string Address
+        {
+            get
+            {
+                return _address;
+            }
+            private set
+            {
+                _address = value;
+            }
+        }
         public string RawData
         {
             get

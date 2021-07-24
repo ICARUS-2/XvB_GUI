@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Http;
+using System.Timers;
+using System.Threading;
 
 namespace XVB_GUI
 {
@@ -21,32 +23,28 @@ namespace XVB_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        public const int REFRESH_RATE = 5000;
         public MainWindow()
         {
             InitializeComponent();
-            //TestApiCall();
-            TestPoolStats();
+            UpdateStats();
+            CancellationToken cancellation = new CancellationToken();
+            PoolStatsFetcher.GetBoostHashrateAddress();
+            StartTimer(cancellation);
+        }
+        public async Task StartTimer(CancellationToken cancellationToken)
+        {
+            while (true)
+            {
+                UpdateStats();
+                await Task.Delay(REFRESH_RATE, cancellationToken);
+            }
         }
 
-        public void TestApiCall()
+        public void UpdateStats()
         {
-            StatsApiCaller apiCall = new StatsApiCaller("447ywns3EeHas2tp5SNdecY79kCcnpKP628XavFhwhgmRYWPBreiiGNH4FTbtog7VyMsJqfjATP21GqDjAbNScYP1D451qk");
-            PoolApiResponse pr = apiCall.Query();
-
-            HttpClient http = new HttpClient();
-            HttpResponseMessage res = http.GetAsync("https://xmrvsbeast.com/boost_hash.html").GetAwaiter().GetResult();
-            string str = res.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-            return;
-        }
-
-        public void TestPoolStats()
-        {
-            //string raffleHr = PoolStatsFetcher.GetRaffleHashrate();
-            //string boostHr = PoolStatsFetcher.GetBoostHashrate();
-            //Block[] blocks = PoolStatsFetcher.GetBlocksMined();
-            //Transaction[] payouts = PoolStatsFetcher.GetPayouts("447ywns3EeHas2tp5SNdecY79kCcnpKP628XavFhwhgmRYWPBreiiGNH4FTbtog7VyMsJqfjATP21GqDjAbNScYP1D451qk");
-            int hoursToBoost = PoolStatsFetcher.GetEstimatedBoostTime("447ywns3EeHas2tp5SNdecY79kCcnpKP628XavFhwhgmRYWPBreiiGNH4FTbtog7VyMsJqfjATP21GqDjAbNScYP1D451qk");
-            return;
+            StatsApiCaller stats = new StatsApiCaller("447ywns3EeHas2tp5SNdecY79kCcnpKP628XavFhwhgmRYWPBreiiGNH4FTbtog7VyMsJqfjATP21GqDjAbNScYP1D451qk");
+            PoolApiResponse res = stats.Query();
         }
     }
 }

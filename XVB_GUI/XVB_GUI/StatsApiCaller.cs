@@ -29,12 +29,33 @@ namespace XVB_GUI
             HttpRequestMessage msg = new HttpRequestMessage(HttpMethod.Get, baseUri);
             msg.Headers.Add("Cookie", String.Format("wa={0}", _wAddr));
             //TODO: handle this exception
-            HttpResponseMessage res = apiClient.SendAsync(msg).GetAwaiter().GetResult();
+
+            HttpResponseMessage res = null;
+
+            try
+            {
+                res = apiClient.SendAsync(msg).GetAwaiter().GetResult();
+            }
+            catch(Exception ex)
+            {
+                return new PoolApiResponse();
+            }    
 
             string body = res.Content.ReadAsStringAsync().GetAwaiter().GetResult();
 
-            return new PoolApiResponse(body);
+            return new PoolApiResponse(body, _wAddr);
         }
 
+        public string Address
+        {
+            get
+            {
+                return _wAddr;
+            }
+            private set
+            {
+                _wAddr = value;
+            }
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace XVB_GUI
     public static class PoolStatsFetcher
     {
         public const string RAFFLE_HASHRATE_URL = "https://xmrvsbeast.com/bonus_hash.html";
+        public const string T_RAFFLE_HASHRATE_URL = "https://xmrvsbeast.com/tbonus_hash.html";
         public const string BOOST_HASHRATE_URL = "https://xmrvsbeast.com/boost_hash.html";
         public const string BLOCKS_MINED_URL = "https://xmrvsbeast.com/stats_frame/mined_blocks_full.html";
         public const string MINER_PAYOUTS_URL = "https://xmrvsbeast.com/cgi-bin/miner_payouts.cgi";
@@ -20,6 +21,28 @@ namespace XVB_GUI
         private const int START_ARR = 2;
         private const int ARR_SIZE = 12;
         private const int SHORTENED_ADDRESS_LENGTH = 8;
+
+        public static string ParseHashrate(int hashRate)
+        {
+            int kh = 1000;
+            int mh = 1000000;
+            int gh = 1000000000;
+
+            if (hashRate >= gh)
+            {
+
+            }
+            else if (hashRate >= mh)
+            {
+
+            }
+            else if (hashRate >= kh)
+            {
+
+            }
+            return hashRate + " H/S";
+        }
+
         public static string GetRaffleHashrate()
         {
             Uri uri = new Uri(RAFFLE_HASHRATE_URL);
@@ -42,6 +65,72 @@ namespace XVB_GUI
             return hashrateStr;
         }
 
+        public static string GetTimeRaffleHashrate()
+        {
+            Uri uri = new Uri(T_RAFFLE_HASHRATE_URL);
+            HttpClient client = new HttpClient();
+            HttpResponseMessage res = client.GetAsync(uri).GetAwaiter().GetResult();
+            string body = res.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+            string[] htmlArr = body.Split('\n');
+
+            string hashrateStr = "";
+            foreach (string str in htmlArr)
+            {
+                if (str.Contains("<h2>"))
+                    hashrateStr = str;
+            }
+
+            hashrateStr = hashrateStr.Replace("<h2>", "");
+            hashrateStr = hashrateStr.Replace("</h2>", "");
+            hashrateStr = hashrateStr.Replace("\t", "");
+
+            return hashrateStr;
+        }
+
+        public static string GetTimeRaffleDuration()
+        {
+            Uri uri = new Uri(T_RAFFLE_HASHRATE_URL);
+            HttpClient client = new HttpClient();
+            HttpResponseMessage res = client.GetAsync(uri).GetAwaiter().GetResult();
+            string body = res.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+            string[] htmlArr = body.Split('\n');
+
+            string hashrateStr = "";
+            foreach (string str in htmlArr)
+            {
+                if (str.Contains("T-Raffle HR:"))
+                    hashrateStr = str;
+            }
+
+            hashrateStr = hashrateStr.Replace("<h1>", "");
+            hashrateStr = hashrateStr.Replace("</h1>", "");
+            hashrateStr = hashrateStr.Replace("\t", "");
+            hashrateStr = Regex.Replace(hashrateStr, @"[^\d]", "");
+            return hashrateStr;
+        }
+
+        public static string GetTimeRaffleAddress()
+        {
+            Uri uri = new Uri(T_RAFFLE_HASHRATE_URL);
+            HttpClient client = new HttpClient();
+            HttpResponseMessage res = client.GetAsync(uri).GetAwaiter().GetResult();
+            string body = res.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+            string[] htmlArr = body.Split('\n');
+
+            string addressStr = "";
+            foreach (string str in htmlArr)
+            {
+                if (str.Contains("\t<p></code>"))
+                    addressStr = str;
+            }
+
+            addressStr = addressStr.Replace("<p>", "");
+            addressStr = addressStr.Replace("</code>", "");
+            addressStr = addressStr.Replace("\t", "");
+            addressStr = addressStr.Replace("</p>", "");
+            return addressStr;
+        }
+
         public static string GetBoostHashrate()
         {
             Uri uri = new Uri(BOOST_HASHRATE_URL);
@@ -61,6 +150,50 @@ namespace XVB_GUI
             hashrateStr = hashrateStr.Replace("</h2>", "");
             hashrateStr = hashrateStr.Replace("\t", "");
 
+            return hashrateStr;
+        }
+
+        public static string GetBoostHashrateAddress()
+        {
+            Uri uri = new Uri(BOOST_HASHRATE_URL);
+            HttpClient client = new HttpClient();
+            HttpResponseMessage res = client.GetAsync(uri).GetAwaiter().GetResult();
+            string body = res.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+            string[] htmlArr = body.Split('\n');
+
+            string addressStr = "";
+            foreach (string str in htmlArr)
+            {
+                if (str.Contains("\t<p></code>"))
+                    addressStr = str;
+            }
+
+            addressStr = addressStr.Replace("<p>", "");
+            addressStr = addressStr.Replace("</code>", "");
+            addressStr = addressStr.Replace("\t", "");
+            addressStr = addressStr.Replace("</p>", "");
+            return addressStr;
+        }
+
+        public static string GetBoostHashrateTime()
+        {
+            Uri uri = new Uri(BOOST_HASHRATE_URL);
+            HttpClient client = new HttpClient();
+            HttpResponseMessage res = client.GetAsync(uri).GetAwaiter().GetResult();
+            string body = res.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+            string[] htmlArr = body.Split('\n');
+
+            string hashrateStr = "";
+            foreach (string str in htmlArr)
+            {
+                if (str.Contains("Boost HR:"))
+                    hashrateStr = str;
+            }
+
+            hashrateStr = hashrateStr.Replace("<h1>", "");
+            hashrateStr = hashrateStr.Replace("</h1>", "");
+            hashrateStr = hashrateStr.Replace("\t", "");
+            hashrateStr = Regex.Replace(hashrateStr, @"[^\d]", "");
             return hashrateStr;
         }
 
@@ -138,7 +271,7 @@ namespace XVB_GUI
         //    throw new NotImplementedException();
         //}
 
-        public static int GetEstimatedBoostTime(string address)
+        public static int GetEstimatedMinerBoostTime(string address)
         {
             Uri payoutUri = new Uri(WINNERS_URL);
             HttpClientHandler handler = new HttpClientHandler();
