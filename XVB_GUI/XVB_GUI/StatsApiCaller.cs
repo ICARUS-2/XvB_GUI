@@ -39,5 +39,26 @@ namespace XVB_GUI
 
             return new PoolApiResponse(body, _wAddr);
         }
+
+        public static PoolApiResponse Query()
+        {
+            HttpClient client = new HttpClient();
+            Uri uri = new Uri("https://xmrvsbeast.com/stats");
+
+            HttpResponseMessage res = null;
+
+            try
+            {
+                res = client.GetAsync(uri).GetAwaiter().GetResult();
+            }
+            catch (Exception ex)
+            {
+                return new PoolApiResponse();
+            }
+
+            string body = res.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+
+            return new PoolApiResponse(body, "0");
+        }
     }
 }

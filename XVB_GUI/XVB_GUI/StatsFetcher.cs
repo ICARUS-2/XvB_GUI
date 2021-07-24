@@ -23,7 +23,7 @@ namespace XVB_GUI
         private const int ARR_SIZE = 12;
         private const int SHORTENED_ADDRESS_LENGTH = 8;
 
-        public static string ParseHashrate(int hashRate)
+        public static string ParseHashrate(Int64 hashRate)
         {
             int kh = 1000;
             int mh = 1000000;
@@ -32,19 +32,19 @@ namespace XVB_GUI
             if (hashRate >= gh)
             {
                 double temp = (double)hashRate / gh;
-                return temp + " GH/S";
+                return temp + " GH/s";
             }
             else if (hashRate >= mh)
             {
                 double temp = (double)hashRate / mh;
-                return temp + " MH/S";
+                return temp + " MH/s";
             }
             else if (hashRate >= kh)
             {
                 double temp = (double)hashRate / kh;
-                return temp + " KH/S";
+                return temp + " KH/s";
             }
-            return hashRate + " H/S";
+            return hashRate + " H/s";
         }
 
         public static bool IsConnected()
@@ -195,7 +195,7 @@ namespace XVB_GUI
             return addressStr;
         }
 
-        public static string GetBoostHashrateTime()
+        public static string GetBoostHashrateDuration()
         {
             Uri uri = new Uri(BOOST_HASHRATE_URL);
             HttpClient client = new HttpClient();
