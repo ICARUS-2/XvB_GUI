@@ -29,7 +29,7 @@ namespace XVB_GUI
             InitializeComponent();
             UpdateStats();
             CancellationToken cancellation = new CancellationToken();
-            PoolStatsFetcher.GetBoostHashrateAddress();
+            StatsFetcher.IsConnected();
             StartTimer(cancellation);
         }
         public async Task StartTimer(CancellationToken cancellationToken)
@@ -43,8 +43,8 @@ namespace XVB_GUI
 
         public void UpdateStats()
         {
-            StatsApiCaller stats = new StatsApiCaller("447ywns3EeHas2tp5SNdecY79kCcnpKP628XavFhwhgmRYWPBreiiGNH4FTbtog7VyMsJqfjATP21GqDjAbNScYP1D451qk");
-            PoolApiResponse res = stats.Query();
+            PoolApiResponse res = StatsApiCaller.Query("447ywns3EeHas2tp5SNdecY79kCcnpKP628XavFhwhgmRYWPBreiiGNH4FTbtog7VyMsJqfjATP21GqDjAbNScYP1D451qk");
+            return;
         }
     }
 }

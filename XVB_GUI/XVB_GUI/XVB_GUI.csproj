@@ -71,7 +71,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Block.cs" />
-    <Compile Include="PoolStatsFetcher.cs" />
+    <Compile Include="StatsFetcher.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

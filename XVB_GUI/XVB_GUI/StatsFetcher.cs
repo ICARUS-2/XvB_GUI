@@ -10,8 +10,9 @@ using System.Text.RegularExpressions;
 
 namespace XVB_GUI
 {
-    public static class PoolStatsFetcher
+    public static class StatsFetcher
     {
+        public const string BASE_URL = "https://xmrvsbeast.com/stats";
         public const string RAFFLE_HASHRATE_URL = "https://xmrvsbeast.com/bonus_hash.html";
         public const string T_RAFFLE_HASHRATE_URL = "https://xmrvsbeast.com/tbonus_hash.html";
         public const string BOOST_HASHRATE_URL = "https://xmrvsbeast.com/boost_hash.html";
@@ -30,17 +31,36 @@ namespace XVB_GUI
 
             if (hashRate >= gh)
             {
-
+                double temp = (double)hashRate / gh;
+                return temp + " GH/S";
             }
             else if (hashRate >= mh)
             {
-
+                double temp = (double)hashRate / mh;
+                return temp + " MH/S";
             }
             else if (hashRate >= kh)
             {
-
+                double temp = (double)hashRate / kh;
+                return temp + " KH/S";
             }
             return hashRate + " H/S";
+        }
+
+        public static bool IsConnected()
+        {
+            Uri uri = new Uri(BASE_URL);
+            HttpClient client = new HttpClient();
+
+            try
+            {
+                client.GetAsync(uri).GetAwaiter().GetResult();
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
         }
 
         public static string GetRaffleHashrate()
