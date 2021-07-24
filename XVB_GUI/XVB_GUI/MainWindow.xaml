@@ -14,17 +14,19 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
-
+        <!--#region STATUS BAR-->
         <StackPanel VerticalAlignment="Top" Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2">
             <TextBlock Foreground="White">CONNECTION STATUS:</TextBlock>
             <TextBlock Foreground="White" Margin="20,0,0,0" x:Name="tb_ConnectionStatus">PENDING</TextBlock>
         </StackPanel>
-
-        <Grid VerticalAlignment="Top" Height="120" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+        <!--#endregion-->
+        
+        <!--#region TOP STATS BAR-->
+        <Grid VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
@@ -75,6 +77,18 @@
                     <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" x:Name="tb_TimeBonusTime" FontSize="15">PENDING</TextBlock>
                 </StackPanel>
             </Border>
+        </Grid>
+        <!--#endregion-->
+
+        <Grid Grid.Row="2" Width="1920">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

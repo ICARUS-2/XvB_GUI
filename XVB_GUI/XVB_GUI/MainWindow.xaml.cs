@@ -23,14 +23,14 @@ namespace XVB_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public int DEFAULT_REFRESH_RATE = 5000;
-        public int _refreshRate = 5000;
+        public int DEFAULT_REFRESH_RATE = 4000;
+        public int _refreshRate = 4000;
         public MainWindow()
         {
             InitializeComponent();
             UpdateStats();
             CancellationToken cancellation = new CancellationToken();
-
+            StatsFetcher.GetMoneroPrice(StatsFetcher.Currency.BTC);
             StartTimer(cancellation);
         }
         public async Task StartTimer(CancellationToken cancellationToken)

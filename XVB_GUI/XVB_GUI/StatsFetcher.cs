@@ -19,6 +19,7 @@ namespace XVB_GUI
         public const string BLOCKS_MINED_URL = "https://xmrvsbeast.com/stats_frame/mined_blocks_full.html";
         public const string MINER_PAYOUTS_URL = "https://xmrvsbeast.com/cgi-bin/miner_payouts.cgi";
         public const string WINNERS_URL = "https://xmrvsbeast.com/cgi-bin/winner_stats.cgi";
+        public const string MONERO_PRICE_BASE_URL = "https://min-api.cryptocompare.com/data/price?fsym=XMR&tsyms=";
         private const int START_ARR = 2;
         private const int ARR_SIZE = 12;
         private const int SHORTENED_ADDRESS_LENGTH = 8;
@@ -45,6 +46,19 @@ namespace XVB_GUI
                 return temp + " KH/s";
             }
             return hashRate + " H/s";
+        }
+
+        public static string GetMoneroPrice(Currency currency)
+        {
+            Uri uri = new Uri(MONERO_PRICE_BASE_URL + currency.ToString());
+            HttpClient client = new HttpClient();
+            HttpResponseMessage responseMessage = client.GetAsync(uri).GetAwaiter().GetResult();
+
+            string body = responseMessage.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+            body = body.Replace("\"", "").Replace("{", "").Replace("}","");
+
+            string amount = body.Split(':')[1];
+            return amount + " " + currency.ToString();
         }
 
         public static bool IsConnected()
@@ -316,6 +330,15 @@ namespace XVB_GUI
             stringWithData = Regex.Replace(stringWithData, @"[^\d]", "");
 
             return int.Parse(stringWithData);
+        }
+
+        public enum Currency
+        {
+            USD,
+            CAD, 
+            EUR,
+            BTC, 
+            ETH
         }
     }
 }
