@@ -24,13 +24,15 @@ namespace XVB_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public int _refreshRate = 5000;
+        public const int ACTIVE_WINDOW_REFRESH_RATE = 60000;
+        public const int INACTIVE_WINDOW_REFRESH_RATE = 5000;
+        public int mainRefreshRate = ACTIVE_WINDOW_REFRESH_RATE;
         public const string ADDRESS_CONFIG_FILE = "../../addresses.txt";
         public const int BAR_SIZE = 10;
         public MainWindow()
         {
             InitializeComponent();
-            UpdateStats();
+            TLUpdateMainStats();
             CancellationToken cancellation = new CancellationToken();
 
             if (!File.Exists(ADDRESS_CONFIG_FILE))
@@ -45,34 +47,34 @@ namespace XVB_GUI
             tb_Address2.Text = addresses[1];
             tb_Address3.Text = addresses[2];
 
-
-            StartTimer(cancellation);
+            RefreshStats(cancellation);
         }
-        public async Task StartTimer(CancellationToken cancellationToken)
+        public async Task RefreshStats(CancellationToken cancellationToken)
         {
             while (true)
             {
-                UpdateStats();
-                await Task.Delay(_refreshRate, cancellationToken);
+                TLUpdateMainStats();
+                if (IsActive)
+                {
+                    mainRefreshRate = ACTIVE_WINDOW_REFRESH_RATE;
+                }
+                else
+                {
+                    mainRefreshRate = INACTIVE_WINDOW_REFRESH_RATE;
+                }
+                await Task.Delay(mainRefreshRate, cancellationToken);
             }
         }
 
-        public void UpdateStats()
+        public void TLUpdateMainStats()
         {
             //PoolApiResponse res = StatsApiCaller.Query("447ywns3EeHas2tp5SNdecY79kCcnpKP628XavFhwhgmRYWPBreiiGNH4FTbtog7VyMsJqfjATP21GqDjAbNScYP1D451qk");
             UpdateStatusBar();
 
             try
             {
-                if (!StatsFetcher.IsConnected())
-                {
-                    DisplayErrors();
-                }
-                else
-                {
-                    UpdateTopBar();
-                    UpdateAddresses();
-                }
+                UpdateTopBar();
+                UpdateAddresses();
             }
             catch(Exception ex)
             {
