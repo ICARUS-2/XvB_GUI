@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Net.Http;
 using System.Timers;
 using System.Threading;
+using System.IO;
 
 namespace XVB_GUI
 {
@@ -23,14 +24,28 @@ namespace XVB_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public int DEFAULT_REFRESH_RATE = 4000;
-        public int _refreshRate = 4000;
+        public int _refreshRate = 5000;
+        public const string ADDRESS_CONFIG_FILE = "../../addresses.txt";
+        public const int BAR_SIZE = 10;
         public MainWindow()
         {
             InitializeComponent();
             UpdateStats();
             CancellationToken cancellation = new CancellationToken();
-            StatsFetcher.GetMoneroPrice(StatsFetcher.Currency.BTC);
+
+            if (!File.Exists(ADDRESS_CONFIG_FILE))
+            {
+                File.Create(ADDRESS_CONFIG_FILE);
+                string defaultConfig = "-\n-\n-";
+                File.WriteAllText(ADDRESS_CONFIG_FILE, defaultConfig);
+            }
+
+            string[] addresses = File.ReadAllLines(ADDRESS_CONFIG_FILE);
+            tb_Address1.Text = addresses[0];
+            tb_Address2.Text = addresses[1];
+            tb_Address3.Text = addresses[2];
+
+
             StartTimer(cancellation);
         }
         public async Task StartTimer(CancellationToken cancellationToken)
@@ -47,13 +62,24 @@ namespace XVB_GUI
             //PoolApiResponse res = StatsApiCaller.Query("447ywns3EeHas2tp5SNdecY79kCcnpKP628XavFhwhgmRYWPBreiiGNH4FTbtog7VyMsJqfjATP21GqDjAbNScYP1D451qk");
             UpdateStatusBar();
 
-            if (!StatsFetcher.IsConnected())
+            try
+            {
+                if (!StatsFetcher.IsConnected())
+                {
+                    DisplayErrors();
+                }
+                else
+                {
+                    UpdateTopBar();
+                    UpdateAddresses();
+                }
+            }
+            catch(Exception ex)
             {
                 DisplayErrors();
-                return;
+                tb_ConnectionStatus.Text = "FAILED";
+                tb_ConnectionStatus.Foreground = new SolidColorBrush(Colors.Red);
             }
-
-            UpdateTopBar();
         }
 
         private void DisplayErrors()
@@ -79,6 +105,40 @@ namespace XVB_GUI
             tb_TimeBonusHashrate.Foreground = red;
             tb_TimeBonusAddress.Text = msg;
             tb_TimeBonusTime.Text = msg;
+
+
+            if (tb_Address1.Text != "-")
+            {
+                tb_Address1Hashrate.Text = msg;
+                tb_Address1BalanceNumber.Text = msg;
+                tb_Address1ActiveMiners.Text = msg;
+                tb_Address1PayoutCount.Text = msg;
+                tb_Address1BoostETA.Text = msg;
+                tb_Address1BalanceBarCurrent.Text = "";
+                tb_Address1BalanceBarRemaining.Text = "";
+            }
+
+            if (tb_Address2.Text != "-")
+            {
+                tb_Address2Hashrate.Text = msg;
+                tb_Address2BalanceNumber.Text = msg;
+                tb_Address2ActiveMiners.Text = msg;
+                tb_Address2PayoutCount.Text = msg;
+                tb_Address2BoostETA.Text = msg;
+                tb_Address2BalanceBarCurrent.Text = "";
+                tb_Address2BalanceBarRemaining.Text = "";
+            }
+
+            if (tb_Address3.Text != "-")
+            {
+                tb_Address3Hashrate.Text = msg;
+                tb_Address3BalanceNumber.Text = msg;
+                tb_Address3ActiveMiners.Text = msg;
+                tb_Address3PayoutCount.Text = msg;
+                tb_Address3BoostETA.Text = msg;
+                tb_Address3BalanceBarCurrent.Text = "";
+                tb_Address3BalanceBarRemaining.Text = "";
+            }
         }
 
         private void UpdateStatusBar()
@@ -107,7 +167,7 @@ namespace XVB_GUI
             tb_PoolHashrate.Foreground = green;
 
 
-            tb_BoostHashrate.Text = StatsFetcher.GetBoostHashrate() + "->";
+            tb_BoostHashrate.Text = StatsFetcher.GetBoostHashrate() + " ->";
             tb_BoostHashrate.Foreground = green;
             tb_BoostAddress.Text = StatsFetcher.GetBoostHashrateAddress();
             tb_BoostAddressTime.Text = StatsFetcher.GetBoostHashrateDuration() + "m Remaining";
@@ -115,10 +175,180 @@ namespace XVB_GUI
             tb_BonusHashrate.Text = StatsFetcher.GetRaffleHashrate();
             tb_BonusHashrate.Foreground = green;
 
-            tb_TimeBonusHashrate.Text = StatsFetcher.GetTimeRaffleHashrate() + "->";
+            tb_TimeBonusHashrate.Text = StatsFetcher.GetTimeRaffleHashrate() + " ->";
             tb_TimeBonusHashrate.Foreground = green;
             tb_TimeBonusAddress.Text = StatsFetcher.GetTimeRaffleAddress();
             tb_TimeBonusTime.Text = StatsFetcher.GetTimeRaffleDuration() + "m Remaining";
+        }
+
+        private void UpdateAddresses()
+        {
+            string address1 = tb_Address1.Text;
+            string address2 = tb_Address2.Text;
+            string address3 = tb_Address3.Text;
+
+            if (address1 != "-")
+            {
+                PoolApiResponse response = StatsApiCaller.Query(address1);
+                tb_Address1Hashrate.Text = StatsFetcher.ParseHashrate(response.MinerHashrate);
+                tb_Address1BalanceNumber.Text = response.MinerBalance + "/" + response.PaymentThreshold;
+                tb_Address1ActiveMiners.Text = response.WorkerCount.ToString();
+                tb_Address1PayoutCount.Text = StatsFetcher.GetPayouts(address1).Length.ToString();
+                tb_Address1BoostETA.Text = "~"+StatsFetcher.GetEstimatedMinerBoostTime(address1).ToString() + " hours";
+
+                int progress = (int)((response.MinerBalance / response.PaymentThreshold)*BAR_SIZE);
+                StringBuilder progressSb = new StringBuilder();
+                StringBuilder remainingSb = new StringBuilder();
+
+                for (int i = 0; i < progress; i++)
+                    progressSb.Append("■");
+
+                int remaining = BAR_SIZE - progress;
+
+                for (int i = 0; i < remaining; i++)
+                    remainingSb.Append("■");
+
+                tb_Address1BalanceBarCurrent.Foreground = new SolidColorBrush(Colors.LightGreen);
+                tb_Address1BalanceBarRemaining.Foreground = new SolidColorBrush(Colors.Red);
+
+                tb_Address1BalanceBarCurrent.Text = progressSb.ToString();
+                tb_Address1BalanceBarRemaining.Text = remainingSb.ToString();
+            }
+
+            if (address2 != "-")
+            {
+                PoolApiResponse response = StatsApiCaller.Query(address2);
+                tb_Address2Hashrate.Text = StatsFetcher.ParseHashrate(response.MinerHashrate);
+                tb_Address2BalanceNumber.Text = response.MinerBalance + "/" + response.PaymentThreshold;
+                tb_Address2ActiveMiners.Text = response.WorkerCount.ToString();
+                tb_Address2PayoutCount.Text = StatsFetcher.GetPayouts(address2).Length.ToString();
+                tb_Address2BoostETA.Text = "~" + StatsFetcher.GetEstimatedMinerBoostTime(address2).ToString() + " hours";
+
+                int progress = (int)((response.MinerBalance / response.PaymentThreshold) * BAR_SIZE);
+                StringBuilder progressSb = new StringBuilder();
+                StringBuilder remainingSb = new StringBuilder();
+
+                for (int i = 0; i < progress; i++)
+                    progressSb.Append("■");
+
+                int remaining = BAR_SIZE - progress;
+
+                for (int i = 0; i < remaining; i++)
+                    remainingSb.Append("■");
+
+                tb_Address2BalanceBarCurrent.Foreground = new SolidColorBrush(Colors.LightGreen);
+                tb_Address2BalanceBarRemaining.Foreground = new SolidColorBrush(Colors.Red);
+
+                tb_Address2BalanceBarCurrent.Text = progressSb.ToString();
+                tb_Address2BalanceBarRemaining.Text = remainingSb.ToString();
+            }
+
+            if (address3 != "-")
+            {
+                PoolApiResponse response = StatsApiCaller.Query(address3);
+                tb_Address3Hashrate.Text = StatsFetcher.ParseHashrate(response.MinerHashrate);
+                tb_Address3BalanceNumber.Text = response.MinerBalance + "/" + response.PaymentThreshold;
+                tb_Address3ActiveMiners.Text = response.WorkerCount.ToString();
+                tb_Address3PayoutCount.Text = StatsFetcher.GetPayouts(address3).Length.ToString();
+                tb_Address3BoostETA.Text = "~" + StatsFetcher.GetEstimatedMinerBoostTime(address3).ToString() + " hours";
+
+                int progress = (int)((response.MinerBalance / response.PaymentThreshold) * BAR_SIZE);
+                StringBuilder progressSb = new StringBuilder();
+                StringBuilder remainingSb = new StringBuilder();
+
+                for (int i = 0; i < progress; i++)
+                    progressSb.Append("■");
+
+                int remaining = BAR_SIZE - progress;
+
+                for (int i = 0; i < remaining; i++)
+                    remainingSb.Append("■");
+
+                tb_Address3BalanceBarCurrent.Foreground = new SolidColorBrush(Colors.LightGreen);
+                tb_Address3BalanceBarRemaining.Foreground = new SolidColorBrush(Colors.Red);
+
+                tb_Address3BalanceBarCurrent.Text = progressSb.ToString();
+                tb_Address3BalanceBarRemaining.Text = remainingSb.ToString();
+            }
+        }
+
+        private void btn_Address1Edit_Click(object sender, RoutedEventArgs e)
+        {
+            EditAddress(1, tb_Address1.Text);
+        }
+
+        private void btn_Address2Edit_Click(object sender, RoutedEventArgs e)
+        {
+            EditAddress(2, tb_Address2.Text);
+        }
+
+        private void btn_Address3Edit_Click(object sender, RoutedEventArgs e)
+        {
+            EditAddress(3, tb_Address3.Text);
+        }
+
+        private void EditAddress(int addressNumber, string address)
+        {
+            AddressWindow addressWindow = new AddressWindow(this, addressNumber, address);
+            addressWindow.ShowDialog();
+        }
+
+        private void btn_Address1Remove_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveAddress(1);
+        }
+
+        private void btn_Address2Remove_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveAddress(2);
+        }
+
+        private void btn_Address3Remove_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveAddress(3);
+        }
+
+        private void RemoveAddress(int addressNumber)
+        {
+            if (addressNumber == 1)
+            {
+                tb_Address1.Text = "-";
+                tb_Address1Hashrate.Text = "-";
+                tb_Address1BalanceNumber.Text = "-";
+                tb_Address1BalanceBarCurrent.Text = "";
+                tb_Address1BalanceBarRemaining.Text = "";
+                tb_Address1ActiveMiners.Text = "-";
+                tb_Address1PayoutCount.Text = "-";
+                tb_Address1BoostETA.Text = "-";
+            }
+
+            if (addressNumber == 2)
+            {
+                tb_Address2.Text = "-";
+                tb_Address2Hashrate.Text = "-";
+                tb_Address2BalanceNumber.Text = "-";
+                tb_Address2BalanceBarCurrent.Text = "";
+                tb_Address2BalanceBarRemaining.Text = "";
+                tb_Address2ActiveMiners.Text = "-";
+                tb_Address2PayoutCount.Text = "-";
+                tb_Address2BoostETA.Text = "-";
+            }
+
+            if (addressNumber == 3)
+            {
+                tb_Address3.Text = "-";
+                tb_Address3Hashrate.Text = "-";
+                tb_Address3BalanceNumber.Text = "-";
+                tb_Address3BalanceBarCurrent.Text = "";
+                tb_Address3BalanceBarRemaining.Text = "";
+                tb_Address3ActiveMiners.Text = "-";
+                tb_Address3PayoutCount.Text = "-";
+                tb_Address3BoostETA.Text = "-";
+            }
+
+            string[] addresses = File.ReadAllLines(ADDRESS_CONFIG_FILE);
+            addresses[addressNumber - 1] = "-";
+            File.WriteAllLines(ADDRESS_CONFIG_FILE, addresses);
         }
     }
 }

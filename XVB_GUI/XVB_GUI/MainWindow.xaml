@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XVB_GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920"
-        Background="Black">
+        Title="XvB_GUI" Height="768" Width="1366"
+        Background="Black"
+        FontSize="15">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="413*"/>
-            <ColumnDefinition Width="1499*"/>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
-            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="105"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
@@ -24,7 +25,7 @@
             <TextBlock Foreground="White" Margin="20,0,0,0" x:Name="tb_ConnectionStatus">PENDING</TextBlock>
         </StackPanel>
         <!--#endregion-->
-        
+
         <!--#region TOP STATS BAR-->
         <Grid VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
@@ -41,40 +42,40 @@
 
             <Border Grid.Column="0" Grid.Row="0" BorderBrush="DarkBlue" BorderThickness="2" Margin="5">
                 <StackPanel>
-                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" FontSize="15" Margin="0,0,0,10">Network Hashrate</TextBlock>
-                    <TextBlock VerticalAlignment="Center" Foreground="White" FontSize="15" HorizontalAlignment="Center" x:Name="tb_NetworkHashrate">PENDING</TextBlock>
+                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" Margin="0,0,0,10">Network Hashrate</TextBlock>
+                    <TextBlock VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" x:Name="tb_NetworkHashrate">PENDING</TextBlock>
                 </StackPanel>
             </Border>
 
             <Border Grid.Column="1" Grid.Row="0" BorderBrush="DarkBlue" BorderThickness="2" Margin="5">
                 <StackPanel>
-                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" FontSize="15" Margin="0,0,0,10">Pool Hashrate</TextBlock>
-                    <TextBlock VerticalAlignment="Center" Foreground="White" FontSize="15" HorizontalAlignment="Center" x:Name="tb_PoolHashrate">PENDING</TextBlock>
+                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" Margin="0,0,0,10">Pool Hashrate</TextBlock>
+                    <TextBlock VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" x:Name="tb_PoolHashrate">PENDING</TextBlock>
                 </StackPanel>
             </Border>
 
             <Border Grid.Column="2" Grid.Row="0" BorderBrush="DarkBlue" BorderThickness="2" Margin="5">
                 <StackPanel>
-                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" FontSize="15" Margin="0,0,0,10">Boost Hashrate</TextBlock>
-                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" x:Name="tb_BoostHashrate" FontSize="15">PENDING</TextBlock>
-                    <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" x:Name="tb_BoostAddress" FontSize="15">PENDING</TextBlock>
-                    <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" x:Name="tb_BoostAddressTime" FontSize="15">PENDING</TextBlock>
+                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" Margin="0,0,0,10">Boost Hashrate</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" x:Name="tb_BoostHashrate">PENDING</TextBlock>
+                    <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" x:Name="tb_BoostAddress">PENDING</TextBlock>
+                    <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" x:Name="tb_BoostAddressTime">PENDING</TextBlock>
                 </StackPanel>
             </Border>
 
             <Border Grid.Column="3" Grid.Row="0" BorderBrush="DarkBlue" BorderThickness="2" Margin="5">
                 <StackPanel>
-                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" FontSize="15" Margin="0,0,0,10">Raffle Hashrate</TextBlock>
-                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" x:Name="tb_BonusHashrate" FontSize="15">PENDING</TextBlock>
+                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" Margin="0,0,0,10">Raffle Hashrate</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" x:Name="tb_BonusHashrate">PENDING</TextBlock>
                 </StackPanel>
             </Border>
 
             <Border Grid.Column="4" Grid.Row="0" BorderBrush="DarkBlue" BorderThickness="2" Margin="5">
                 <StackPanel Background="Black">
-                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" FontSize="15" Margin="0,0,0,10">T/Raffle Hashrate</TextBlock>
-                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" x:Name="tb_TimeBonusHashrate" FontSize="15">PENDING</TextBlock>
-                    <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" x:Name="tb_TimeBonusAddress" FontSize="15">PENDING</TextBlock>
-                    <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" x:Name="tb_TimeBonusTime" FontSize="15">PENDING</TextBlock>
+                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Background="Black" Foreground="White" Margin="0,0,0,10">T/Raffle Hashrate</TextBlock>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" x:Name="tb_TimeBonusHashrate">PENDING</TextBlock>
+                    <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" x:Name="tb_TimeBonusAddress">PENDING</TextBlock>
+                    <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" x:Name="tb_TimeBonusTime">PENDING</TextBlock>
                 </StackPanel>
             </Border>
         </Grid>
@@ -82,12 +83,126 @@
 
         <Grid Grid.Row="2" Width="1920">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="40*"></ColumnDefinition>
+                <ColumnDefinition Width="19*"></ColumnDefinition>
+                <ColumnDefinition Width="61*"/>
             </Grid.ColumnDefinitions>
 
+
             <StackPanel Grid.Column="0">
-                
+                <!--Start of A1-->
+                <StackPanel x:Name="sp_A1Data">
+                    <Border BorderBrush="DarkBlue" BorderThickness="2" Margin="5,3,3,3">
+                        <StackPanel Orientation="Horizontal">
+                            <!--Fields-->
+                            <StackPanel>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Address 1</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Miner Hashrate</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Balance Due</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Active Miners</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Payout Count</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Boost ETA</TextBlock>
+                                <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="2,2,2,2" x:Name="btn_Address1Edit" Click="btn_Address1Edit_Click">Edit Address</Button>
+                            </StackPanel>
+
+                            <!--Values-->
+                            <StackPanel Margin="30,0,0,0">
+                                <TextBlock Foreground="White" x:Name="tb_Address1" Margin="0,0,0,5">-</TextBlock>
+                                <TextBlock Foreground="White" x:Name="tb_Address1Hashrate" Margin="0,0,0,5">-</TextBlock>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                    <TextBlock Foreground="White" x:Name="tb_Address1BalanceNumber">-</TextBlock>
+                                    <TextBlock Foreground="White" Margin="15,0,0,0" x:Name="tb_Address1BalanceBarCurrent"></TextBlock>
+                                    <TextBlock Foreground="White" x:Name="tb_Address1BalanceBarRemaining"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                    <TextBlock Foreground="White" x:Name="tb_Address1ActiveMiners">-</TextBlock>
+                                </StackPanel>
+                                <TextBlock Foreground="White" x:Name="tb_Address1PayoutCount" Margin="0,0,0,5">-</TextBlock>
+                                <TextBlock Foreground="White" x:Name="tb_Address1BoostETA" Margin="0,0,0,5">-</TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="2,2,2,2" x:Name="btn_Address1TXReport">Transaction Report</Button>
+                                    <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="10,2,2,2" x:Name="btn_Address1Remove" Click="btn_Address1Remove_Click">Remove Address</Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <!--END OF ADDR DATA-->
+                <StackPanel Grid.Column="0" x:Name="sp_A2Data">
+                    <Border BorderBrush="DarkBlue" BorderThickness="2" Margin="5,3,3,3">
+                        <StackPanel Orientation="Horizontal">
+                            <!--Fields-->
+                            <StackPanel>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Address 2</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Miner Hashrate</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Balance Due</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Active Miners</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Payout Count</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Boost ETA</TextBlock>
+                                <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="2,2,2,2" x:Name="btn_Address2Edit" Click="btn_Address2Edit_Click">Edit Address</Button>
+                            </StackPanel>
+
+                            <!--Values-->
+                            <StackPanel Margin="30,0,0,0">
+                                <TextBlock Foreground="White" x:Name="tb_Address2" Margin="0,0,0,5">-</TextBlock>
+                                <TextBlock Foreground="White" x:Name="tb_Address2Hashrate" Margin="0,0,0,5">-</TextBlock>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                    <TextBlock Foreground="White" x:Name="tb_Address2BalanceNumber">-</TextBlock>
+                                    <TextBlock Foreground="White" Margin="15,0,0,0" x:Name="tb_Address2BalanceBarCurrent"></TextBlock>
+                                    <TextBlock Foreground="White" x:Name="tb_Address2BalanceBarRemaining"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                    <TextBlock Foreground="White" x:Name="tb_Address2ActiveMiners">-</TextBlock>
+                                </StackPanel>
+                                <TextBlock Foreground="White" x:Name="tb_Address2PayoutCount" Margin="0,0,0,5">-</TextBlock>
+                                <TextBlock Foreground="White" x:Name="tb_Address2BoostETA" Margin="0,0,0,5">-</TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="2,2,2,2" x:Name="btn_Address2TXReport">Transaction Report</Button>
+                                    <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="10,2,2,2" x:Name="btn_Address2Remove" Click="btn_Address2Remove_Click">Remove Address</Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <!--END OF ADDR DATA-->
+
+                <StackPanel Grid.Column="0" x:Name="sp_A3Data">
+                    <Border BorderBrush="DarkBlue" BorderThickness="2" Margin="5,3,3,3">
+                        <StackPanel Orientation="Horizontal">
+                            <!--Fields-->
+                            <StackPanel>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Address 3</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Miner Hashrate</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Balance Due</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Active Miners</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Payout Count</TextBlock>
+                                <TextBlock Foreground="White" Margin="0,0,0,5">Boost ETA</TextBlock>
+                                <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="2,2,2,2" x:Name="btn_Address3Edit" Click="btn_Address3Edit_Click">Edit Address</Button>
+                            </StackPanel>
+
+                            <!--Values-->
+                            <StackPanel Margin="30,0,0,0">
+                                <TextBlock Foreground="White" x:Name="tb_Address3" Margin="0,0,0,5">-</TextBlock>
+                                <TextBlock Foreground="White" x:Name="tb_Address3Hashrate" Margin="0,0,0,5">-</TextBlock>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                    <TextBlock Foreground="White" x:Name="tb_Address3BalanceNumber">-</TextBlock>
+                                    <TextBlock Foreground="White" Margin="15,0,0,0" x:Name="tb_Address3BalanceBarCurrent"></TextBlock>
+                                    <TextBlock Foreground="White" x:Name="tb_Address3BalanceBarRemaining"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                    <TextBlock Foreground="White" x:Name="tb_Address3ActiveMiners">-</TextBlock>
+                                </StackPanel>
+                                <TextBlock Foreground="White" x:Name="tb_Address3PayoutCount" Margin="0,0,0,5">-</TextBlock>
+                                <TextBlock Foreground="White" x:Name="tb_Address3BoostETA" Margin="0,0,0,5">-</TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="2,2,2,2" x:Name="btn_Address3TXReport">Transaction Report</Button>
+                                    <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="10,2,2,2" x:Name="btn_Address3Remove" Click="btn_Address3Remove_Click">Remove Address</Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <!--END OF ADDR DATA-->
             </StackPanel>
         </Grid>
     </Grid>
