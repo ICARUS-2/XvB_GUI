@@ -226,6 +226,24 @@
                     <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15,0,0" x:Name="tb_BTCCurrency">PENDING</TextBlock>
                     <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15,0,0" x:Name="tb_ETHCurrency">PENDING</TextBlock>
                 </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <TextBlock Foreground="White" HorizontalAlignment="Center">Active Miners</TextBlock>
+                    <TextBlock Foreground="White" HorizontalAlignment="Center" Margin="0,15,0,0" x:Name="tb_ActiveMiners">PENDING</TextBlock>
+                    <TextBlock Foreground="White" HorizontalAlignment="Center" Margin="0,15,0,0">Avg HR/Miner</TextBlock>
+                    <TextBlock Foreground="White" HorizontalAlignment="Center" Margin="0,15,0,0" x:Name="tb_AvgHRPerMiner">PENDING</TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="2">
+                    <TextBlock Foreground="White" HorizontalAlignment="Center">Blocks Mined</TextBlock>
+                    <TextBlock Foreground="White" HorizontalAlignment="Center" Margin="0,15,0,0" x:Name="tb_BlocksFoundByPool">PENDING</TextBlock>
+                    <TextBlock Foreground="White" HorizontalAlignment="Center" Margin="0,15,0,0">Blockchain Height</TextBlock>
+                    <TextBlock Foreground="White" HorizontalAlignment="Center" Margin="0,15,0,0" x:Name="tb_BlockchainHeight">PENDING</TextBlock>
+                </StackPanel>
+
+                <DataGrid x:Name="BlockData" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3">
+                    
+                </DataGrid>
             </Grid>
         </Border>
         <!--#endregion-->

@@ -33,17 +33,17 @@ namespace XVB_GUI
             if (hashRate >= gh)
             {
                 double temp = (double)hashRate / gh;
-                return temp + " GH/s";
+                return temp + " gH/s";
             }
             else if (hashRate >= mh)
             {
                 double temp = (double)hashRate / mh;
-                return temp + " MH/s";
+                return temp + " mH/s";
             }
             else if (hashRate >= kh)
             {
                 double temp = (double)hashRate / kh;
-                return temp + " KH/s";
+                return temp + " kH/s";
             }
             return hashRate + " H/s";
         }

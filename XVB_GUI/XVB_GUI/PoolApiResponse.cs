@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace XVB_GUI
 {
-    class PoolApiResponse
+    public class PoolApiResponse
     {
         public const int RESPONSE_SIZE = 23;
 

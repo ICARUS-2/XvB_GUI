@@ -32,6 +32,8 @@ namespace XVB_GUI
 
         public int mainRefreshRate = ACTIVE_WINDOW_REFRESH_RATE;
         public StatsFetcher.Currency currency;
+
+        public PoolApiResponse currentTemplate;
         public MainWindow()
         {
             InitializeComponent();
@@ -83,7 +85,7 @@ namespace XVB_GUI
 
         public void TLUpdateMainStats()
         {
-            //PoolApiResponse res = StatsApiCaller.Query("447ywns3EeHas2tp5SNdecY79kCcnpKP628XavFhwhgmRYWPBreiiGNH4FTbtog7VyMsJqfjATP21GqDjAbNScYP1D451qk");
+            currentTemplate = StatsApiCaller.Query();
             UpdateStatusBar();
 
             try
@@ -91,6 +93,8 @@ namespace XVB_GUI
                 UpdateTopBar();
                 UpdateAddresses();
                 UpdateExchangeRates();
+                UpdateMinerCountInfo();
+                UpdateTotalBlocksFound();
             }
             catch(Exception ex)
             {
@@ -157,6 +161,23 @@ namespace XVB_GUI
                 tb_Address3BalanceBarCurrent.Text = "";
                 tb_Address3BalanceBarRemaining.Text = "";
             }
+
+            tb_ActiveMiners.Text = msg;
+            tb_ActiveMiners.Foreground = red;
+            tb_AvgHRPerMiner.Text = msg;
+            tb_AvgHRPerMiner.Foreground = red;
+
+            tb_FiatCurrency.Text = msg;
+            tb_FiatCurrency.Foreground = red;
+            tb_BTCCurrency.Text = msg;
+            tb_BTCCurrency.Foreground = red;
+            tb_ETHCurrency.Text = msg;
+            tb_ETHCurrency.Foreground = red;
+
+            tb_BlocksFoundByPool.Text = msg;
+            tb_BlocksFoundByPool.Foreground = red;
+            tb_BlockchainHeight.Text = msg;
+            tb_BlockchainHeight.Foreground = red;
         }
 
         private void UpdateStatusBar()
@@ -175,13 +196,12 @@ namespace XVB_GUI
 
         private void UpdateTopBar()
         {
-            PoolApiResponse apiResponse = StatsApiCaller.Query();
             SolidColorBrush green = new SolidColorBrush(Colors.LightGreen);
 
-            tb_NetworkHashrate.Text = StatsFetcher.ParseHashrate(apiResponse.NetworkHashrate);
+            tb_NetworkHashrate.Text = StatsFetcher.ParseHashrate(currentTemplate.NetworkHashrate);
             tb_NetworkHashrate.Foreground = green;
 
-            tb_PoolHashrate.Text = StatsFetcher.ParseHashrate(apiResponse.PoolHashrate);
+            tb_PoolHashrate.Text = StatsFetcher.ParseHashrate(currentTemplate.PoolHashrate);
             tb_PoolHashrate.Foreground = green;
 
 
@@ -297,12 +317,40 @@ namespace XVB_GUI
             string btcPrice = StatsFetcher.GetMoneroPrice(StatsFetcher.Currency.BTC);
             string ethPrice = StatsFetcher.GetMoneroPrice(StatsFetcher.Currency.ETH);
 
-            tb_FiatCurrency.Text = fiatPrice;
+            tb_FiatCurrency.Text = "1XMR = "+fiatPrice;
             tb_FiatCurrency.Foreground = green;
             tb_BTCCurrency.Text = btcPrice;
             tb_BTCCurrency.Foreground = green;
             tb_ETHCurrency.Text = ethPrice;
             tb_ETHCurrency.Foreground = green;
+        }
+
+        private void UpdateMinerCountInfo()
+        {
+            SolidColorBrush green = new SolidColorBrush(Colors.LightGreen);
+            tb_ActiveMiners.Text = currentTemplate.ConnectedMiners.ToString();
+            tb_ActiveMiners.Foreground = green;
+
+
+            if (currentTemplate.ConnectedMiners != 0)
+            {
+                int avgHr = (int)(currentTemplate.PoolHashrate / currentTemplate.ConnectedMiners);
+
+                tb_AvgHRPerMiner.Text = StatsFetcher.ParseHashrate(avgHr);
+                tb_AvgHRPerMiner.Foreground = green;
+            }
+            else
+                tb_AvgHRPerMiner.Text = "0 H/S";
+        }
+
+        private void UpdateTotalBlocksFound()
+        {
+            SolidColorBrush green = new SolidColorBrush(Colors.LightGreen);
+            //tb_BlocksFoundByPool.Text = currentTemplate.PoolBlocksFound.ToString() + " (Last found: " + DateTimeOffset.FromUnixTimeSeconds(currentTemplate.LastBlockFound);
+            tb_BlocksFoundByPool.Text = currentTemplate.PoolBlocksFound.ToString();
+            tb_BlocksFoundByPool.Foreground = green;
+            tb_BlockchainHeight.Text = currentTemplate.NetworkHeight.ToString();
+            tb_BlockchainHeight.Foreground = green;
         }
 
         private void btn_Address1Edit_Click(object sender, RoutedEventArgs e)
