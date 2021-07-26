@@ -95,6 +95,7 @@ namespace XVB_GUI
                 UpdateExchangeRates();
                 UpdateMinerCountInfo();
                 UpdateTotalBlocksFound();
+                UpdateBlockData();
             }
             catch(Exception ex)
             {
@@ -178,6 +179,9 @@ namespace XVB_GUI
             tb_BlocksFoundByPool.Foreground = red;
             tb_BlockchainHeight.Text = msg;
             tb_BlockchainHeight.Foreground = red;
+
+            tb_BlockDataHeader.Text = "API CONNECTION ERROR";
+            tb_BlockDataHeader.Foreground = red;
         }
 
         private void UpdateStatusBar()
@@ -346,11 +350,50 @@ namespace XVB_GUI
         private void UpdateTotalBlocksFound()
         {
             SolidColorBrush green = new SolidColorBrush(Colors.LightGreen);
-            //tb_BlocksFoundByPool.Text = currentTemplate.PoolBlocksFound.ToString() + " (Last found: " + DateTimeOffset.FromUnixTimeSeconds(currentTemplate.LastBlockFound);
             tb_BlocksFoundByPool.Text = currentTemplate.PoolBlocksFound.ToString();
             tb_BlocksFoundByPool.Foreground = green;
             tb_BlockchainHeight.Text = currentTemplate.NetworkHeight.ToString();
             tb_BlockchainHeight.Foreground = green;
+        }
+        
+        private void UpdateBlockData()
+        {
+            tb_BlockDataHeader.Text = "Recent Block Data ---- (Last found: " + DateTimeOffset.FromUnixTimeSeconds(currentTemplate.LastBlockFound) + ") UTC+1 Time";
+            tb_BlockDataHeader.Foreground = new SolidColorBrush(Colors.White);
+
+            dg_BlockData.Columns.Clear();
+            dg_BlockData.AutoGenerateColumns = false;
+
+            List<Block> recentBlocks = StatsFetcher.GetBlocksMined().ToList();
+
+            DataGridTextColumn column = new DataGridTextColumn();
+            column.Header = "BlockNumber";
+            column.Binding = new Binding("BlockNumber");
+            dg_BlockData.Columns.Add(column);
+
+            column = new DataGridTextColumn();
+            column.Header = "Hash";
+            column.Binding = new Binding("Hash");
+            dg_BlockData.Columns.Add(column);
+
+            column = new DataGridTextColumn();
+            column.Header = "Status";
+            column.Binding = new Binding("Status");
+            dg_BlockData.Columns.Add(column);
+
+            column = new DataGridTextColumn();
+            column.Header = "BlockReward";
+            column.Binding = new Binding("BlockReward");
+            dg_BlockData.Columns.Add(column);
+
+            column = new DataGridTextColumn();
+            column.Header = "TimeStamp";
+            column.Binding = new Binding("TimeStamp");
+            dg_BlockData.Columns.Add(column);
+
+            dg_BlockData.ItemsSource = null;
+            dg_BlockData.ItemsSource = recentBlocks;
+            dg_BlockData.Background = new SolidColorBrush(Colors.Black);
         }
 
         private void btn_Address1Edit_Click(object sender, RoutedEventArgs e)

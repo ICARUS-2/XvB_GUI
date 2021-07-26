@@ -11,10 +11,10 @@ namespace XVB_GUI
         private Int64 _indexNum;
         private string _hash;
         private BlockStatus _status;
-        private double _blockReward;
+        private string _blockReward;
         private DateTime _timeStamp;
 
-        public Block(Int64 indexNum, string hash, BlockStatus status, double blockReward, DateTime timeStamp)
+        public Block(Int64 indexNum, string hash, BlockStatus status, string blockReward, DateTime timeStamp)
         {
             BlockNumber = indexNum;
             Hash = hash;
@@ -27,12 +27,26 @@ namespace XVB_GUI
         {
             string[] splitArr = strToParse.Split('\t');
 
-            Int64 blockNumber = Int64.Parse(splitArr[0]);
-            string hash = splitArr[1];
-            BlockStatus status = (BlockStatus)Enum.Parse(typeof(BlockStatus), splitArr[2]);
-            double blockReward = double.Parse(splitArr[3]);
-            DateTime timeStamp = DateTime.Parse(splitArr[4]);
+            Int64 blockNumber = 0;
+            string hash = null;
+            BlockStatus status = BlockStatus.ORPHANED;
+            string blockReward = "";
+            DateTime timeStamp = DateTime.Now;
 
+            blockNumber = Int64.Parse(splitArr[0]);
+            hash = splitArr[1];
+            status = (BlockStatus)Enum.Parse(typeof(BlockStatus), splitArr[2]);
+
+            if (strToParse.Contains("PENDING"))
+            {
+                blockReward = splitArr[4];
+                timeStamp = DateTime.Parse(splitArr[6]);
+            }
+            else
+            {
+                blockReward = splitArr[3];
+                timeStamp = DateTime.Parse(splitArr[4]);
+            }
             return new Block(blockNumber, hash, status, blockReward, timeStamp);
         }
 
@@ -75,7 +89,7 @@ namespace XVB_GUI
             }
         }
 
-        public double BlockReward
+        public string BlockReward
         {
             get
             {
@@ -83,9 +97,6 @@ namespace XVB_GUI
             }
             private set
             {
-                if (value < 0)
-                    throw new ArgumentOutOfRangeException("BlockReward","ERROR: BLOCK REWARD CANNOT BE NEGATIVE");
-
                 _blockReward = value;
             }
         }

@@ -241,7 +241,8 @@
                     <TextBlock Foreground="White" HorizontalAlignment="Center" Margin="0,15,0,0" x:Name="tb_BlockchainHeight">PENDING</TextBlock>
                 </StackPanel>
 
-                <DataGrid x:Name="BlockData" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3">
+                <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan = "3"  Foreground="White" Margin="5,0,0,0" x:Name="tb_BlockDataHeader">PENDING</TextBlock>
+                <DataGrid Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3" Background="Black" Margin="5,20,5,20" x:Name="dg_BlockData">
                     
                 </DataGrid>
             </Grid>

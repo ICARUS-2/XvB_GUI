@@ -21,7 +21,7 @@ namespace XVB_GUI
         public const string WINNERS_URL = "https://xmrvsbeast.com/cgi-bin/winner_stats.cgi";
         public const string MONERO_PRICE_BASE_URL = "https://min-api.cryptocompare.com/data/price?fsym=XMR&tsyms=";
         private const int START_ARR = 2;
-        private const int ARR_SIZE = 12;
+        private const int ARR_SIZE = 16;
         private const int SHORTENED_ADDRESS_LENGTH = 8;
 
         public static string ParseHashrate(Int64 hashRate)
