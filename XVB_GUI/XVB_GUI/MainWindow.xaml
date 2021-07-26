@@ -214,12 +214,19 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-        </Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <TextBlock Foreground="White" HorizontalAlignment="Center">Exchange Rates</TextBlock>
+                    <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15,0,0" x:Name="tb_FiatCurrency">PENDING</TextBlock>
+                    <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15,0,0" x:Name="tb_BTCCurrency">PENDING</TextBlock>
+                    <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15,0,0" x:Name="tb_ETHCurrency">PENDING</TextBlock>
+                </StackPanel>
+            </Grid>
         </Border>
         <!--#endregion-->
     </Grid>

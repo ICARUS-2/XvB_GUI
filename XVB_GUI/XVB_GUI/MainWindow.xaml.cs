@@ -26,9 +26,12 @@ namespace XVB_GUI
     {
         public const int ACTIVE_WINDOW_REFRESH_RATE = 60000;
         public const int INACTIVE_WINDOW_REFRESH_RATE = 5000;
-        public int mainRefreshRate = ACTIVE_WINDOW_REFRESH_RATE;
         public const string ADDRESS_CONFIG_FILE = "../../addresses.txt";
+        public const string CURRENCY_CONFIG_FILE = "../../currency.txt";
         public const int BAR_SIZE = 10;
+
+        public int mainRefreshRate = ACTIVE_WINDOW_REFRESH_RATE;
+        public StatsFetcher.Currency currency;
         public MainWindow()
         {
             InitializeComponent();
@@ -37,9 +40,21 @@ namespace XVB_GUI
 
             if (!File.Exists(ADDRESS_CONFIG_FILE))
             {
-                File.Create(ADDRESS_CONFIG_FILE);
+                File.Create(ADDRESS_CONFIG_FILE).Close();
                 string defaultConfig = "-\n-\n-";
                 File.WriteAllText(ADDRESS_CONFIG_FILE, defaultConfig);
+            }
+
+            if (!File.Exists(CURRENCY_CONFIG_FILE))
+            {
+                File.Create(CURRENCY_CONFIG_FILE).Close();
+                string defaultCurrency = StatsFetcher.Currency.USD.ToString();
+                currency = StatsFetcher.Currency.USD;
+                File.WriteAllText(CURRENCY_CONFIG_FILE, defaultCurrency);
+            }
+            else
+            {
+                currency = (StatsFetcher.Currency)Enum.Parse(typeof(StatsFetcher.Currency), File.ReadAllText(CURRENCY_CONFIG_FILE));
             }
 
             string[] addresses = File.ReadAllLines(ADDRESS_CONFIG_FILE);
@@ -75,6 +90,7 @@ namespace XVB_GUI
             {
                 UpdateTopBar();
                 UpdateAddresses();
+                UpdateExchangeRates();
             }
             catch(Exception ex)
             {
@@ -272,6 +288,21 @@ namespace XVB_GUI
                 tb_Address3BalanceBarCurrent.Text = progressSb.ToString();
                 tb_Address3BalanceBarRemaining.Text = remainingSb.ToString();
             }
+        }
+
+        private void UpdateExchangeRates()
+        {
+            SolidColorBrush green = new SolidColorBrush(Colors.LightGreen);
+            string fiatPrice = StatsFetcher.GetMoneroPrice(currency);
+            string btcPrice = StatsFetcher.GetMoneroPrice(StatsFetcher.Currency.BTC);
+            string ethPrice = StatsFetcher.GetMoneroPrice(StatsFetcher.Currency.ETH);
+
+            tb_FiatCurrency.Text = fiatPrice;
+            tb_FiatCurrency.Foreground = green;
+            tb_BTCCurrency.Text = btcPrice;
+            tb_BTCCurrency.Foreground = green;
+            tb_ETHCurrency.Text = ethPrice;
+            tb_ETHCurrency.Foreground = green;
         }
 
         private void btn_Address1Edit_Click(object sender, RoutedEventArgs e)
