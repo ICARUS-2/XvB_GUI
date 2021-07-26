@@ -220,6 +220,7 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
+                
                 <StackPanel Grid.Row="0" Grid.Column="0">
                     <TextBlock Foreground="White" HorizontalAlignment="Center">Exchange Rates</TextBlock>
                     <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15,0,0" x:Name="tb_FiatCurrency">PENDING</TextBlock>
@@ -242,8 +243,18 @@
                 </StackPanel>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan = "3"  Foreground="White" Margin="5,0,0,0" x:Name="tb_BlockDataHeader">PENDING</TextBlock>
-                <DataGrid Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3" Background="Black" Margin="5,20,5,20" x:Name="dg_BlockData">
-                    
+                <DataGrid Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="5,20,5,20" x:Name="dg_BlockData" Foreground="White" Background="Black" BorderBrush="DarkBlue" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+                    <DataGrid.Resources>
+                        <Style TargetType="{x:Type DataGridRow}">
+                            <Setter Property="Background" Value="Black"/>
+                        </Style>
+                        <Style TargetType="{x:Type DataGridRowHeader}">
+                            <Setter Property="Background" Value="Black"/>
+                        </Style>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="Black"/>
+                        </Style>
+                    </DataGrid.Resources>
                 </DataGrid>
             </Grid>
         </Border>

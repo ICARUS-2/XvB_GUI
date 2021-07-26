@@ -355,7 +355,7 @@ namespace XVB_GUI
             tb_BlockchainHeight.Text = currentTemplate.NetworkHeight.ToString();
             tb_BlockchainHeight.Foreground = green;
         }
-        
+
         private void UpdateBlockData()
         {
             tb_BlockDataHeader.Text = "Recent Block Data ---- (Last found: " + DateTimeOffset.FromUnixTimeSeconds(currentTemplate.LastBlockFound) + ") UTC+1 Time";
@@ -367,33 +367,32 @@ namespace XVB_GUI
             List<Block> recentBlocks = StatsFetcher.GetBlocksMined().ToList();
 
             DataGridTextColumn column = new DataGridTextColumn();
-            column.Header = "BlockNumber";
+            column.Header = "Block Number        ";
             column.Binding = new Binding("BlockNumber");
             dg_BlockData.Columns.Add(column);
 
             column = new DataGridTextColumn();
-            column.Header = "Hash";
+            column.Header = "Hash        ";
             column.Binding = new Binding("Hash");
             dg_BlockData.Columns.Add(column);
 
             column = new DataGridTextColumn();
-            column.Header = "Status";
+            column.Header = "Status        ";
             column.Binding = new Binding("Status");
             dg_BlockData.Columns.Add(column);
 
             column = new DataGridTextColumn();
-            column.Header = "BlockReward";
+            column.Header = "Block Reward        ";
             column.Binding = new Binding("BlockReward");
             dg_BlockData.Columns.Add(column);
 
             column = new DataGridTextColumn();
-            column.Header = "TimeStamp";
+            column.Header = "Timestamp        ";
             column.Binding = new Binding("TimeStamp");
             dg_BlockData.Columns.Add(column);
 
             dg_BlockData.ItemsSource = null;
             dg_BlockData.ItemsSource = recentBlocks;
-            dg_BlockData.Background = new SolidColorBrush(Colors.Black);
         }
 
         private void btn_Address1Edit_Click(object sender, RoutedEventArgs e)
