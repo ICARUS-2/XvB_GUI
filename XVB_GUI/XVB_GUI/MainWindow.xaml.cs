@@ -32,11 +32,13 @@ namespace XVB_GUI
 
         public int mainRefreshRate = ACTIVE_WINDOW_REFRESH_RATE;
         public StatsFetcher.Currency currency;
-
         public PoolApiResponse currentTemplate;
+        public bool stopRefresh;
+
         public MainWindow()
         {
             InitializeComponent();
+            stopRefresh = false;
             TLUpdateMainStats();
             CancellationToken cancellation = new CancellationToken();
 
@@ -70,7 +72,9 @@ namespace XVB_GUI
         {
             while (true)
             {
-                TLUpdateMainStats();
+                if (!stopRefresh)
+                    TLUpdateMainStats();
+
                 if (IsActive)
                 {
                     mainRefreshRate = ACTIVE_WINDOW_REFRESH_RATE;
@@ -223,7 +227,7 @@ namespace XVB_GUI
             tb_TimeBonusTime.Text = StatsFetcher.GetTimeRaffleDuration() + "m Remaining";
         }
 
-        private void UpdateAddresses()
+        public void UpdateAddresses()
         {
             string address1 = tb_Address1.Text;
             string address2 = tb_Address2.Text;
@@ -236,8 +240,14 @@ namespace XVB_GUI
                 tb_Address1BalanceNumber.Text = response.MinerBalance + "/" + response.PaymentThreshold;
                 tb_Address1ActiveMiners.Text = response.WorkerCount.ToString();
                 tb_Address1PayoutCount.Text = StatsFetcher.GetPayouts(address1).Length.ToString();
-                tb_Address1BoostETA.Text = "~"+StatsFetcher.GetEstimatedMinerBoostTime(address1).ToString() + " hours";
-
+                try
+                {
+                    tb_Address1BoostETA.Text = "~" + StatsFetcher.GetEstimatedMinerBoostTime(address1).ToString() + " hours";
+                }
+                catch(Exception ex)
+                {
+                    tb_Address1BoostETA.Text = "Unavailable";
+                }
                 int progress = (int)((response.MinerBalance / response.PaymentThreshold)*BAR_SIZE);
                 StringBuilder progressSb = new StringBuilder();
                 StringBuilder remainingSb = new StringBuilder();
@@ -264,7 +274,15 @@ namespace XVB_GUI
                 tb_Address2BalanceNumber.Text = response.MinerBalance + "/" + response.PaymentThreshold;
                 tb_Address2ActiveMiners.Text = response.WorkerCount.ToString();
                 tb_Address2PayoutCount.Text = StatsFetcher.GetPayouts(address2).Length.ToString();
-                tb_Address2BoostETA.Text = "~" + StatsFetcher.GetEstimatedMinerBoostTime(address2).ToString() + " hours";
+
+                try
+                {
+                    tb_Address2BoostETA.Text = "~" + StatsFetcher.GetEstimatedMinerBoostTime(address2).ToString() + " hours";
+                }
+                catch(Exception ex)
+                {
+                    tb_Address2BoostETA.Text = "Unavailable";
+                }
 
                 int progress = (int)((response.MinerBalance / response.PaymentThreshold) * BAR_SIZE);
                 StringBuilder progressSb = new StringBuilder();
@@ -292,8 +310,15 @@ namespace XVB_GUI
                 tb_Address3BalanceNumber.Text = response.MinerBalance + "/" + response.PaymentThreshold;
                 tb_Address3ActiveMiners.Text = response.WorkerCount.ToString();
                 tb_Address3PayoutCount.Text = StatsFetcher.GetPayouts(address3).Length.ToString();
-                tb_Address3BoostETA.Text = "~" + StatsFetcher.GetEstimatedMinerBoostTime(address3).ToString() + " hours";
 
+                try
+                {
+                    tb_Address3BoostETA.Text = "~" + StatsFetcher.GetEstimatedMinerBoostTime(address3).ToString() + " hours";
+                }
+                catch(Exception ex)
+                {
+                    tb_Address3BoostETA.Text = "Unavailable";
+                }
                 int progress = (int)((response.MinerBalance / response.PaymentThreshold) * BAR_SIZE);
                 StringBuilder progressSb = new StringBuilder();
                 StringBuilder remainingSb = new StringBuilder();
@@ -412,8 +437,10 @@ namespace XVB_GUI
 
         private void EditAddress(int addressNumber, string address)
         {
+            stopRefresh = true;
             AddressWindow addressWindow = new AddressWindow(this, addressNumber, address);
             addressWindow.ShowDialog();
+            stopRefresh = false;
         }
 
         private void btn_Address1Remove_Click(object sender, RoutedEventArgs e)
@@ -472,6 +499,28 @@ namespace XVB_GUI
             string[] addresses = File.ReadAllLines(ADDRESS_CONFIG_FILE);
             addresses[addressNumber - 1] = "-";
             File.WriteAllLines(ADDRESS_CONFIG_FILE, addresses);
+        }
+
+        private void btn_Address1TXReport_Click(object sender, RoutedEventArgs e)
+        {
+            ShowTXData(tb_Address1.Text);
+        }
+
+        private void btn_Address2TXReport_Click(object sender, RoutedEventArgs e)
+        {
+            ShowTXData(tb_Address2.Text);
+        }
+
+        private void btn_Address3TXReport_Click(object sender, RoutedEventArgs e)
+        {
+            ShowTXData(tb_Address3.Text);
+        }
+
+        private void ShowTXData(string address)
+        {
+            stopRefresh = true;
+            new TransactionData(address).ShowDialog();
+            stopRefresh = false;
         }
     }
 }

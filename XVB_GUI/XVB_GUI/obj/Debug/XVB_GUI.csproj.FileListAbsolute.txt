@@ -60,3 +60,5 @@ C:\Users\Owner\Desktop\git-repo\XvB_GUI\XVB_GUI\XVB_GUI\obj\Debug\XVB_GUI.exe
 C:\Users\Owner\Desktop\git-repo\XvB_GUI\XVB_GUI\XVB_GUI\obj\Debug\XVB_GUI.pdb
 C:\Users\Icarus\Desktop\git-repo\XvB_GUI_Repo\XVB_GUI\XVB_GUI\obj\Debug\AddressWindow.g.cs
 C:\Users\Icarus\Desktop\git-repo\XvB_GUI_Repo\XVB_GUI\XVB_GUI\obj\Debug\AddressWindow.baml
+C:\Users\Icarus\Desktop\git-repo\XvB_GUI_Repo\XVB_GUI\XVB_GUI\obj\Debug\TransactionData.g.cs
+C:\Users\Icarus\Desktop\git-repo\XvB_GUI_Repo\XVB_GUI\XVB_GUI\obj\Debug\TransactionData.baml

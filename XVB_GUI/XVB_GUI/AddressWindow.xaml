@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XVB_GUI"
         mc:Ignorable="d"
-        Title="Add/Edit Address" Height="100" Width="400" Background="Black">
+        Title="Add/Edit Address" Height="200" Width="600" Background="Black"
+        FontSize="15">
     <StackPanel>
         <TextBlock Foreground="White" HorizontalAlignment="Center">Enter Monero Address</TextBlock>
         <TextBox Width="300" Background="DarkGray" x:Name="tbx_Address"></TextBox>

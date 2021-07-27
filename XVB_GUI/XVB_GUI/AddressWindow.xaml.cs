@@ -20,10 +20,11 @@ namespace XVB_GUI
     /// </summary>
     public partial class AddressWindow : Window
     {
-        MainWindow _mainWindow;
         Dictionary<int, TextBlock> keyValuePairs;
-        int _addressNumber;
-        public AddressWindow(MainWindow mainWindow, int addressNumber, string content)
+        int _addressIndex;
+        string _addressVal;
+        MainWindow _mainWindow;
+        public AddressWindow(MainWindow mainWindow, int addressIndex, string addressVal)
         {
             InitializeComponent();
             keyValuePairs = new Dictionary<int, TextBlock>();
@@ -31,24 +32,29 @@ namespace XVB_GUI
             keyValuePairs.Add(2, mainWindow.tb_Address2);
             keyValuePairs.Add(3, mainWindow.tb_Address3);
 
-            _addressNumber = addressNumber;
-            tbx_Address.Text = content;
+            _addressIndex = addressIndex;
+            if (addressVal != "-")
+                tbx_Address.Text = addressVal;
+            _addressVal = addressVal;
+            _mainWindow = mainWindow;
         }
 
         private void btn_Submit_Click(object sender, RoutedEventArgs e)
         {
-            if (tbx_Address.Text == "-" || tbx_Address.Text == "")
+            if (tbx_Address.Text == "-" || tbx_Address.Text == String.Empty)
             {
                 MessageBox.Show("Invalid Address");
                 return;
             }
 
-            TextBlock blockToModify = keyValuePairs[_addressNumber];
+            TextBlock blockToModify = keyValuePairs[_addressIndex];
             blockToModify.Text = tbx_Address.Text;
             string[] addrsConfigData = File.ReadAllLines(MainWindow.ADDRESS_CONFIG_FILE);
 
-            addrsConfigData[_addressNumber - 1] = blockToModify.Text;
+            addrsConfigData[_addressIndex - 1] = blockToModify.Text;
             File.WriteAllLines(MainWindow.ADDRESS_CONFIG_FILE, addrsConfigData);
+
+            _mainWindow.UpdateAddresses();
 
             Close();
         }
