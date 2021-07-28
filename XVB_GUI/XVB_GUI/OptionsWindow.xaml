@@ -1,0 +1,49 @@
+﻿<Window x:Class="XVB_GUI.OptionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XVB_GUI"
+        mc:Ignorable="d"
+        Title="OptionsWindow" Height="400" Width="800"
+        Background="Black" Foreground="White"
+        FontSize="20">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="50" HorizontalAlignment="Center">Options</TextBlock>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBlock HorizontalAlignment="Center">Log miner data to file</TextBlock>
+            <CheckBox  Margin="0,15,0,0" x:Name="chb_LogData" HorizontalAlignment="Center"></CheckBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock HorizontalAlignment="Center">Logfile path</TextBlock>
+            <TextBox Margin="0,15,0,0" IsReadOnlyCaretVisible="True" IsReadOnly="True" Foreground="White" Background="Black" BorderThickness="2" BorderBrush="DarkBlue" x:Name="tb_PathDisplay"></TextBox>
+            <Button Margin="0,15,0,0" Width="60" BorderBrush="DarkBlue" Background="Black" BorderThickness="2"  Foreground="White" x:Name="btn_SelectFilePath" Click="btn_SelectFilePath_Click">Select</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <TextBlock HorizontalAlignment="Center">Select currency</TextBlock>
+            <ComboBox Margin="0,15,0,0" Width="200" x:Name="cb_SelectCurrency" Background="Black">
+                
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom">
+            <Button Background="Black" Foreground="White" BorderBrush="DarkBlue" BorderThickness="2" Margin="0,0,0,15" x:Name="btn_SaveExit" Click="btn_SaveExit_Click">Save and exit</Button>
+            <Button Background="Black" Foreground="White" BorderBrush="DarkBlue" BorderThickness="2" x:Name="btn_QuitNoSave" Click="btn_QuitNoSave_Click">Exit without saving</Button>
+        </StackPanel>
+    </Grid>
+</Window>

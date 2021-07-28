@@ -26,20 +26,24 @@ namespace XVB_GUI
     {
         public const int ACTIVE_WINDOW_REFRESH_RATE = 60000;
         public const int INACTIVE_WINDOW_REFRESH_RATE = 5000;
-        public const string ADDRESS_CONFIG_FILE = "../../addresses.txt";
-        public const string CURRENCY_CONFIG_FILE = "../../currency.txt";
+        public const string ADDRESS_CONFIG_FILE = "../../addresses";
+        public const string CURRENCY_CONFIG_FILE = "../../currency";
         public const int BAR_SIZE = 10;
 
         public int mainRefreshRate = ACTIVE_WINDOW_REFRESH_RATE;
-        public StatsFetcher.Currency currency;
         public PoolApiResponse currentTemplate;
         public bool stopRefresh;
+        public StatsFetcher.Currency currency;
 
+        public const string OPTIONS_CONFIG_FILE = "../../genconfig";
+        public const string DEFAULT_OPTIONS = "false\n" + "_";
+        public string loggerFilePath;
+        public bool logData = false;
         public MainWindow()
         {
             InitializeComponent();
             stopRefresh = false;
-            TLUpdateMainStats();
+            TLUpdateMainStatsAndLogData();
             CancellationToken cancellation = new CancellationToken();
 
             if (!File.Exists(ADDRESS_CONFIG_FILE))
@@ -61,6 +65,29 @@ namespace XVB_GUI
                 currency = (StatsFetcher.Currency)Enum.Parse(typeof(StatsFetcher.Currency), File.ReadAllText(CURRENCY_CONFIG_FILE));
             }
 
+            if (!File.Exists(OPTIONS_CONFIG_FILE))
+            {
+                File.Create(OPTIONS_CONFIG_FILE).Close();
+                File.WriteAllText(OPTIONS_CONFIG_FILE, DEFAULT_OPTIONS);
+                loggerFilePath = "_";
+                logData = false;
+            }
+            else
+            {
+                try
+                {
+                    string[] arr = File.ReadAllLines(OPTIONS_CONFIG_FILE);
+                    logData = bool.Parse(arr[0]);
+                    loggerFilePath = arr[1];
+                }
+                catch(Exception ex)
+                {
+                    File.WriteAllText(OPTIONS_CONFIG_FILE, DEFAULT_OPTIONS);
+                    loggerFilePath = "";
+                    logData = false;
+                }
+            }
+
             string[] addresses = File.ReadAllLines(ADDRESS_CONFIG_FILE);
             tb_Address1.Text = addresses[0];
             tb_Address2.Text = addresses[1];
@@ -73,7 +100,7 @@ namespace XVB_GUI
             while (true)
             {
                 if (!stopRefresh)
-                    TLUpdateMainStats();
+                    TLUpdateMainStatsAndLogData();
 
                 if (IsActive)
                 {
@@ -87,7 +114,7 @@ namespace XVB_GUI
             }
         }
 
-        public void TLUpdateMainStats()
+        public void TLUpdateMainStatsAndLogData()
         {
             currentTemplate = StatsApiCaller.Query();
             UpdateStatusBar();
@@ -100,6 +127,9 @@ namespace XVB_GUI
                 UpdateMinerCountInfo();
                 UpdateTotalBlocksFound();
                 UpdateBlockData();
+
+                if (logData)
+                    Logger.LogData(loggerFilePath, this);
             }
             catch(Exception ex)
             {
@@ -339,12 +369,12 @@ namespace XVB_GUI
             }
         }
 
-        private void UpdateExchangeRates()
+        public void UpdateExchangeRates()
         {
             SolidColorBrush green = new SolidColorBrush(Colors.LightGreen);
             string fiatPrice = StatsFetcher.GetMoneroPrice(currency);
-            string btcPrice = StatsFetcher.GetMoneroPrice(StatsFetcher.Currency.BTC);
-            string ethPrice = StatsFetcher.GetMoneroPrice(StatsFetcher.Currency.ETH);
+            string btcPrice = StatsFetcher.GetMoneroPrice(StatsFetcher.CryptoCurrency.BTC);
+            string ethPrice = StatsFetcher.GetMoneroPrice(StatsFetcher.CryptoCurrency.ETH);
 
             tb_FiatCurrency.Text = "1XMR = "+fiatPrice;
             tb_FiatCurrency.Foreground = green;
@@ -520,6 +550,20 @@ namespace XVB_GUI
         {
             stopRefresh = true;
             new TransactionData(address).ShowDialog();
+            stopRefresh = false;
+        }
+
+        private void btn_DevInfo_Click(object sender, RoutedEventArgs e)
+        {
+            stopRefresh = true;
+            new DeveloperInfoWindow().ShowDialog();
+            stopRefresh = false;
+        }
+
+        private void btn_Settings_Click(object sender, RoutedEventArgs e)
+        {
+            stopRefresh = true;
+            new OptionsWindow(OPTIONS_CONFIG_FILE, CURRENCY_CONFIG_FILE, this).ShowDialog();
             stopRefresh = false;
         }
     }

@@ -1,0 +1,20 @@
+﻿<Window x:Class="XVB_GUI.DeveloperInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XVB_GUI"
+        mc:Ignorable="d"
+        Background="Black"
+        Title="DeveloperInfo" Height="600" Width="900">
+    <StackPanel>
+        <TextBlock Foreground="Blue" FontSize="100" HorizontalAlignment="Center">XvB_GUI</TextBlock>
+        <TextBlock Foreground="LightBlue" FontSize="40" HorizontalAlignment="Center">Developed by: Ethan Briffett aka Icarus_2</TextBlock>
+        <TextBlock Foreground="LightBlue" FontSize="20" HorizontalAlignment="Center" Margin="0,15,0,0">GitHub page: https://github.com/ICARUS-2</TextBlock>
+        <TextBlock Foreground="LightBlue" FontSize="20" HorizontalAlignment="Center" Margin="0,15,0,0">Website: https://icarus-2.github.io/index.html</TextBlock>
+        <TextBlock Foreground="LightBlue" FontSize="20" HorizontalAlignment="Center" Margin="0,15,0,0">XMR Address:</TextBlock>
+        <TextBlock Foreground="LightBlue" FontSize="15" HorizontalAlignment="Center">447ywns3EeHas2tp5SNdecY79kCcnpKP628XavFhwhgmRYWPBreiiGNH4FTbtog7VyMsJqfjATP21GqDjAbNScYP1D451qk</TextBlock>
+        <TextBlock Foreground="LightBlue" FontSize="20" HorizontalAlignment="Center" Margin="0,15,0,0">BTC Address:</TextBlock>
+        <TextBlock Foreground="LightBlue" FontSize="15" HorizontalAlignment="Center">bc1qz0f329qgcgxmn2pqfvpqsnxuqygg6dfl828en8</TextBlock>
+    </StackPanel>
+</Window>

@@ -44,7 +44,13 @@ namespace XVB_GUI
             List<Transaction> txList = StatsFetcher.GetPayouts(addr).ToList();
 
             dg_TXData.ItemsSource = txList;
-            tb_TXCount.Text = "Payout TX Count: "+txList.Count.ToString();
+
+            double amount = 0;
+
+            foreach (Transaction tx in txList)
+                amount += tx.Amount;
+
+            tb_TXCount.Text = "Payout TX Count: " + txList.Count.ToString() + " -> Total Payout: " + amount + " XMR";
         }
     }
 }

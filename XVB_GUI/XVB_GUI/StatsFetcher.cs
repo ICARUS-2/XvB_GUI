@@ -50,15 +50,25 @@ namespace XVB_GUI
 
         public static string GetMoneroPrice(Currency currency)
         {
-            Uri uri = new Uri(MONERO_PRICE_BASE_URL + currency.ToString());
+            return GetMoneroPriceHelper(currency.ToString());
+        }
+
+        public static string GetMoneroPrice(CryptoCurrency currency)
+        {
+            return GetMoneroPriceHelper(currency.ToString());
+        }
+        
+        private static string GetMoneroPriceHelper(string str)
+        {
+            Uri uri = new Uri(MONERO_PRICE_BASE_URL + str);
             HttpClient client = new HttpClient();
             HttpResponseMessage responseMessage = client.GetAsync(uri).GetAwaiter().GetResult();
 
             string body = responseMessage.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-            body = body.Replace("\"", "").Replace("{", "").Replace("}","");
+            body = body.Replace("\"", "").Replace("{", "").Replace("}", "");
 
             string amount = body.Split(':')[1];
-            return amount + " " + currency.ToString();
+            return amount + " " + str.ToString();
         }
 
         public static bool IsConnected()
@@ -337,7 +347,11 @@ namespace XVB_GUI
             USD,
             CAD, 
             EUR,
-            BTC, 
+        }
+
+        public enum CryptoCurrency
+        {
+            BTC,
             ETH
         }
     }
