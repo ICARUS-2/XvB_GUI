@@ -25,7 +25,7 @@ namespace XVB_GUI
     public partial class MainWindow : Window
     {
         public const int ACTIVE_WINDOW_REFRESH_RATE = 60000;
-        public const int INACTIVE_WINDOW_REFRESH_RATE = 5000;
+        public const int INACTIVE_WINDOW_REFRESH_RATE = 11500;
         public const string ADDRESS_CONFIG_FILE = "../../addresses";
         public const string CURRENCY_CONFIG_FILE = "../../currency";
         public const int BAR_SIZE = 10;
@@ -118,7 +118,7 @@ namespace XVB_GUI
         {
             currentTemplate = StatsApiCaller.Query();
             UpdateStatusBar();
-
+            
             try
             {
                 UpdateTopBar();
@@ -546,6 +546,21 @@ namespace XVB_GUI
             ShowTXData(tb_Address3.Text);
         }
 
+        private void btn_Address1BoostReport_Click(object sender, RoutedEventArgs e)
+        {
+            ShowBoostData(tb_Address1.Text);
+        }
+
+        private void btn_Address2BoostReport_Click(object sender, RoutedEventArgs e)
+        {
+            ShowBoostData(tb_Address2.Text);
+        }
+
+        private void btn_Address3BoostReport_Click(object sender, RoutedEventArgs e)
+        {
+            ShowBoostData(tb_Address3.Text);
+        }
+
         private void ShowTXData(string address)
         {
             stopRefresh = true;
@@ -564,6 +579,13 @@ namespace XVB_GUI
         {
             stopRefresh = true;
             new OptionsWindow(OPTIONS_CONFIG_FILE, CURRENCY_CONFIG_FILE, this).ShowDialog();
+            stopRefresh = false;
+        }
+
+        private void ShowBoostData(string address)
+        {
+            stopRefresh = true;
+            new BoostReport(address).ShowDialog();
             stopRefresh = false;
         }
     }

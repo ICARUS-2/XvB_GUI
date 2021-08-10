@@ -120,6 +120,7 @@
                                 <TextBlock Foreground="White" x:Name="tb_Address1BoostETA" Margin="0,0,0,5">-</TextBlock>
                                 <StackPanel Orientation="Horizontal">
                                     <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="2,2,2,2" x:Name="btn_Address1TXReport" Click="btn_Address1TXReport_Click">Transaction Report</Button>
+                                    <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="10,2,2,2" x:Name="btn_Address1BoostReport" Click="btn_Address1BoostReport_Click">Boost Report</Button>
                                     <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="10,2,2,2" x:Name="btn_Address1Remove" Click="btn_Address1Remove_Click">Remove Address</Button>
                                 </StackPanel>
                             </StackPanel>
@@ -157,6 +158,7 @@
                                 <TextBlock Foreground="White" x:Name="tb_Address2BoostETA" Margin="0,0,0,5">-</TextBlock>
                                 <StackPanel Orientation="Horizontal">
                                     <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="2,2,2,2" x:Name="btn_Address2TXReport" Click="btn_Address2TXReport_Click" >Transaction Report</Button>
+                                    <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="10,2,2,2" x:Name="btn_Address2BoostReport" Click="btn_Address2BoostReport_Click">Boost Report</Button>
                                     <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="10,2,2,2" x:Name="btn_Address2Remove" Click="btn_Address2Remove_Click">Remove Address</Button>
                                 </StackPanel>
                             </StackPanel>
@@ -195,6 +197,7 @@
                                 <TextBlock Foreground="White" x:Name="tb_Address3BoostETA" Margin="0,0,0,5">-</TextBlock>
                                 <StackPanel Orientation="Horizontal">
                                     <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="2,2,2,2" x:Name="btn_Address3TXReport" Click="btn_Address3TXReport_Click">Transaction Report</Button>
+                                    <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="10,2,2,2" x:Name="btn_Address3BoostReport" Click="btn_Address3BoostReport_Click">Boost Report</Button>
                                     <Button Foreground="White" BorderBrush="DarkBlue" Background="Black" Margin="10,2,2,2" x:Name="btn_Address3Remove" Click="btn_Address3Remove_Click">Remove Address</Button>
                                 </StackPanel>
                             </StackPanel>

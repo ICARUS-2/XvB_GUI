@@ -310,10 +310,55 @@ namespace XVB_GUI
             return transactions;
         }
 
-        //public static string GetWinners()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public static List<BoostRecord> GetWinners(string address)
+        {
+            Uri payoutUri = new Uri(WINNERS_URL);
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseCookies = false;
+            HttpClient apiClient = new HttpClient(handler);
+            apiClient.BaseAddress = payoutUri;
+
+            HttpRequestMessage msg = new HttpRequestMessage(HttpMethod.Get, payoutUri);
+            msg.Headers.Add("Cookie", String.Format("wa={0}", address));
+
+            HttpResponseMessage res = apiClient.SendAsync(msg).GetAwaiter().GetResult();
+
+            string body = res.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+            string[] htmlArr = body.Split('\n');
+            List<string> filteredList = htmlArr.ToList().Where(e => e.Contains("<br>")).ToList();
+
+            BoostRecord.BoostType boostType = BoostRecord.BoostType.NONE;
+
+            List<BoostRecord> records = new List<BoostRecord>();
+
+            foreach(string str in filteredList)
+            {
+                if (str.Contains("<code id=raffle>"))
+                {
+                    boostType = BoostRecord.BoostType.RAFFLE;
+                }
+                else if (str.Contains("<code id=traffle"))
+                {
+                    boostType = BoostRecord.BoostType.T_RAFFLE;
+                }
+                else if (str.Contains("<code id=boost>"))
+                {
+                    boostType = BoostRecord.BoostType.BOOST;
+                }
+                string temp = str.Replace("<p>", "");
+                temp = temp.Replace("<br>", "");
+                temp = temp.Replace("</p>", "");
+                temp = temp.Replace("<code id=boost>", "");
+                temp = temp.Replace("<code id=raffle>", "");
+                temp = temp.Replace("<code id=traffle>", "");
+                temp = temp.Replace("&emsp;&emsp;", " ");
+
+                string[] split = temp.Split(' ');
+                records.Add(new BoostRecord(split[0], boostType, split[1], split[2], split[3]));
+            }
+
+            return records;
+        }
 
         public static int GetEstimatedMinerBoostTime(string address)
         {
@@ -347,6 +392,8 @@ namespace XVB_GUI
             USD,
             CAD, 
             EUR,
+            GBP,
+            AUD
         }
 
         public enum CryptoCurrency

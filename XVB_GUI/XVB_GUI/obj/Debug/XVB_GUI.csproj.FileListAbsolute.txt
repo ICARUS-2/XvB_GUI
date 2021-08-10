@@ -66,3 +66,5 @@ C:\Users\Icarus\Desktop\git-repo\XvB_GUI_Repo\XVB_GUI\XVB_GUI\obj\Debug\Develope
 C:\Users\Icarus\Desktop\git-repo\XvB_GUI_Repo\XVB_GUI\XVB_GUI\obj\Debug\DeveloperInfo.baml
 C:\Users\Icarus\Desktop\git-repo\XvB_GUI_Repo\XVB_GUI\XVB_GUI\obj\Debug\OptionsWindow.g.cs
 C:\Users\Icarus\Desktop\git-repo\XvB_GUI_Repo\XVB_GUI\XVB_GUI\obj\Debug\OptionsWindow.baml
+C:\Users\Icarus\Desktop\git-repo\XvB_GUI_Repo\XVB_GUI\XVB_GUI\obj\Debug\BoostReport.g.cs
+C:\Users\Icarus\Desktop\git-repo\XvB_GUI_Repo\XVB_GUI\XVB_GUI\obj\Debug\BoostReport.baml

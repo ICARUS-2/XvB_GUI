@@ -65,6 +65,10 @@
     <Compile Include="AddressWindow.xaml.cs">
       <DependentUpon>AddressWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BoostRecord.cs" />
+    <Compile Include="BoostReport.xaml.cs">
+      <DependentUpon>BoostReport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DeveloperInfo.xaml.cs">
       <DependentUpon>DeveloperInfo.xaml</DependentUpon>
     </Compile>
@@ -77,6 +81,10 @@
       <DependentUpon>TransactionData.xaml</DependentUpon>
     </Compile>
     <Page Include="AddressWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BoostReport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
