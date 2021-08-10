@@ -19,6 +19,10 @@ namespace XVB_GUI
     /// </summary>
     public partial class TransactionData : Window
     {
+        /// <summary>
+        /// Takes a Monero address and builds a DataGrid of the transactions for that address
+        /// </summary>
+        /// <param name="addr">The address whose TX report will be retrieved</param>
         public TransactionData(string addr)
         {
             InitializeComponent();

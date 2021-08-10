@@ -19,7 +19,15 @@ namespace XVB_GUI
     /// </summary>
     public partial class BoostReport : Window
     {
+        /// <summary>
+        /// The wallet address whose boosts are being retrieved
+        /// </summary>
         public string address;
+
+        /// <summary>
+        /// Takes the address and sets it as the field, queries the site and builds a datagrid containing all of the boost data
+        /// </summary>
+        /// <param name="address">The wallet address</param>
         public BoostReport(string address)
         {
             this.address = address;

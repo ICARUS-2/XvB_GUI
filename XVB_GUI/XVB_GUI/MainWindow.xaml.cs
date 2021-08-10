@@ -24,21 +24,74 @@ namespace XVB_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// The refresh rate in MS when the window is active (higher to minimize lag spikes when calling API)
+        /// </summary>
         public const int ACTIVE_WINDOW_REFRESH_RATE = 60000;
+
+        /// <summary>
+        /// The refresh rate in MS when the window is off to the side (faster, but slow enough to not bust the currency API's call limit)
+        /// </summary>
         public const int INACTIVE_WINDOW_REFRESH_RATE = 11500;
+
+        /// <summary>
+        /// The relative path of the config file storing the addresses
+        /// </summary>
         public const string ADDRESS_CONFIG_FILE = "../../addresses";
+
+        /// <summary>
+        /// The relative path of the config file that stores the selected currency
+        /// </summary>
         public const string CURRENCY_CONFIG_FILE = "../../currency";
+
+        /// <summary>
+        /// The size of the balance bar
+        /// </summary>
         public const int BAR_SIZE = 10;
 
+        /// <summary>
+        /// The dynamic refresh rate of the window
+        /// </summary>
         public int mainRefreshRate = ACTIVE_WINDOW_REFRESH_RATE;
+
+        /// <summary>
+        /// The current dataset from the API for this refresh cycle
+        /// </summary>
         public PoolApiResponse currentTemplate;
+
+        /// <summary>
+        /// Toggles main window query-and-refresh
+        /// </summary>
         public bool stopRefresh;
+
+        /// <summary>
+        /// The exchange rate FIAT currency selected by the user
+        /// </summary>
         public StatsFetcher.Currency currency;
 
+        /// <summary>
+        /// The relative path of the config file for logging miner data
+        /// </summary>
         public const string OPTIONS_CONFIG_FILE = "../../genconfig";
+
+        /// <summary>
+        /// The default logging options: Do not log data, and folder path set to _ for no path
+        /// </summary>
         public const string DEFAULT_OPTIONS = "false\n" + "_";
+
+        /// <summary>
+        /// The path of the logfile
+        /// </summary>
         public string loggerFilePath;
+
+        /// <summary>
+        /// Toggles whether to log miner data to file or not
+        /// </summary>
         public bool logData = false;
+
+        /// <summary>
+        /// Constructor reads the data from all of the config files and sets addresses, currencies, logfiles accordingly. Begins the refresh cycle.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -95,6 +148,12 @@ namespace XVB_GUI
 
             RefreshStats(cancellation);
         }
+
+        /// <summary>
+        /// Refresh the window with API calls and HTML page queries based on the set refresh rate and the window active state
+        /// </summary>
+        /// <param name="cancellationToken">The cancellation token to cancel the async refresh</param>
+        /// <returns>Task</returns>
         public async Task RefreshStats(CancellationToken cancellationToken)
         {
             while (true)
@@ -114,6 +173,9 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The top level method containing all of the sub-methods to update every part of the UI. Displays error messages onscreen if a connection/parse issue is encountered
+        /// </summary>
         public void TLUpdateMainStatsAndLogData()
         {
             currentTemplate = StatsApiCaller.Query();
@@ -257,6 +319,9 @@ namespace XVB_GUI
             tb_TimeBonusTime.Text = StatsFetcher.GetTimeRaffleDuration() + "m Remaining";
         }
 
+        /// <summary>
+        /// Retrieves address data from the site and updates all of the miner stats onscreen
+        /// </summary>
         public void UpdateAddresses()
         {
             string address1 = tb_Address1.Text;
@@ -369,6 +434,9 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// Updates the exchange rates for the selected FIAT currency, as well as Bitcoin and Ethereum
+        /// </summary>
         public void UpdateExchangeRates()
         {
             SolidColorBrush green = new SolidColorBrush(Colors.LightGreen);

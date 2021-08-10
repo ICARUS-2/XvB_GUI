@@ -7,8 +7,14 @@ using System.Text.RegularExpressions;
 
 namespace XVB_GUI
 {
+    /// <summary>
+    /// Represents a response from the https://xmrvsbeast.com/stats API
+    /// </summary>
     public class PoolApiResponse
     {
+        /// <summary>
+        /// The size of the API response
+        /// </summary>
         public const int RESPONSE_SIZE = 23;
 
         private string _rawData;
@@ -39,11 +45,19 @@ namespace XVB_GUI
         private double _minerBalance;
         private Int64 _workerCount;
 
+        /// <summary>
+        /// Default constructor is called in the event of a failed API call, which sets its status as FAILED
+        /// </summary>
         public PoolApiResponse()
         {
             Status = ResponseStatus.FAILED;
         }
 
+        /// <summary>
+        /// Takes the raw data and wallet address, parses the data to construct the object and sets its status to OK if data is correctly formatted, or FAILED in the event of a parser error
+        /// </summary>
+        /// <param name="objStr_">The JSON string of the response from the stats API</param>
+        /// <param name="address_">The wallet address</param>
         public PoolApiResponse(string objStr_, string address_)
         {
             RawData = objStr_;
@@ -54,50 +68,63 @@ namespace XVB_GUI
 
         private void Parse()
         {
-            string numberProperties = RawData;
-            numberProperties = numberProperties.Trim('{', '}');
-            numberProperties = numberProperties.Replace("\"", "");
-            numberProperties = numberProperties.Replace("_", "");
-            numberProperties = numberProperties.Replace(":", "");
-            numberProperties = numberProperties.Replace("[", "");
-            numberProperties = numberProperties.Replace("]", "");
-            numberProperties = Regex.Replace(numberProperties, "[A-Za-z ]", "");
-            string[] propArr = numberProperties.Split(',');
+            try
+            {
+                string numberProperties = RawData;
+                numberProperties = numberProperties.Trim('{', '}');
+                numberProperties = numberProperties.Replace("\"", "");
+                numberProperties = numberProperties.Replace("_", "");
+                numberProperties = numberProperties.Replace(":", "");
+                numberProperties = numberProperties.Replace("[", "");
+                numberProperties = numberProperties.Replace("]", "");
+                numberProperties = Regex.Replace(numberProperties, "[A-Za-z ]", "");
+                string[] propArr = numberProperties.Split(',');
 
-            if (propArr.Length != RESPONSE_SIZE)
-                throw new DataMisalignedException(String.Format("PARSE ERROR: PARSED DATASET SIZE INVALID -> EXPECTED: {0}, ACTUAL: {1}", RESPONSE_SIZE, propArr.Length));
+                if (propArr.Length != RESPONSE_SIZE)
+                    throw new DataMisalignedException(String.Format("PARSE ERROR: PARSED DATASET SIZE INVALID -> EXPECTED: {0}, ACTUAL: {1}", RESPONSE_SIZE, propArr.Length));
 
-            PoolHashrate = Int64.Parse(propArr[0]);
-            RoundHashes = Int64.Parse(propArr[1]);
-            NetworkHashrate = Int64.Parse(propArr[2]);
-            NetworkDifficulty = Int64.Parse(propArr[3]);
-            NetworkHeight = Int64.Parse(propArr[4]);
-            LastTemplateFetched = Int64.Parse(propArr[5]);
-            LastBlockFound = Int64.Parse(propArr[6]);
-            PoolBlocksFound = Int64.Parse(propArr[7]);
-            PaymentThreshold = double.Parse(propArr[8]);
-            PoolFee = double.Parse(propArr[9]);
-            PoolPort = Int64.Parse(propArr[10]);
-            PoolSSLPort = Int64.Parse(propArr[11]);
-            AllowSelfSelect = Int64.Parse(propArr[12]);
-            ConnectedMiners = Int64.Parse(propArr[13]);
-            MinerHashrate = Int64.Parse(propArr[14]);
-            TwoMinuteHashRate = Int64.Parse(propArr[15]);
-            TenMinuteHashRate = Int64.Parse(propArr[16]);
-            ThirtyMinuteHashRate = Int64.Parse(propArr[17]);
-            OneHourHashRate = Int64.Parse(propArr[18]);
-            OneDayHashRate = Int64.Parse(propArr[19]);
-            OneWeekHashRate = Int64.Parse(propArr[20]);
-            MinerBalance = double.Parse(propArr[21]);
-            WorkerCount = Int64.Parse(propArr[22]);
+                PoolHashrate = Int64.Parse(propArr[0]);
+                RoundHashes = Int64.Parse(propArr[1]);
+                NetworkHashrate = Int64.Parse(propArr[2]);
+                NetworkDifficulty = Int64.Parse(propArr[3]);
+                NetworkHeight = Int64.Parse(propArr[4]);
+                LastTemplateFetched = Int64.Parse(propArr[5]);
+                LastBlockFound = Int64.Parse(propArr[6]);
+                PoolBlocksFound = Int64.Parse(propArr[7]);
+                PaymentThreshold = double.Parse(propArr[8]);
+                PoolFee = double.Parse(propArr[9]);
+                PoolPort = Int64.Parse(propArr[10]);
+                PoolSSLPort = Int64.Parse(propArr[11]);
+                AllowSelfSelect = Int64.Parse(propArr[12]);
+                ConnectedMiners = Int64.Parse(propArr[13]);
+                MinerHashrate = Int64.Parse(propArr[14]);
+                TwoMinuteHashRate = Int64.Parse(propArr[15]);
+                TenMinuteHashRate = Int64.Parse(propArr[16]);
+                ThirtyMinuteHashRate = Int64.Parse(propArr[17]);
+                OneHourHashRate = Int64.Parse(propArr[18]);
+                OneDayHashRate = Int64.Parse(propArr[19]);
+                OneWeekHashRate = Int64.Parse(propArr[20]);
+                MinerBalance = double.Parse(propArr[21]);
+                WorkerCount = Int64.Parse(propArr[22]);
+            }
+            catch(Exception ex)
+            {
+                Status = ResponseStatus.FAILED;
+            }
         }
 
+        /// <summary>
+        /// Represents whether the API call was successful or not
+        /// </summary>
         public enum ResponseStatus
         {
             OK,
             FAILED,
         }
 
+        /// <summary>
+        /// Represents whether the API call for this object was done with no errors or not
+        /// </summary>
         public ResponseStatus Status
         {
             get
@@ -110,6 +137,9 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The wallet address belonging to the queried stats
+        /// </summary>
         public string Address
         {
             get
@@ -121,6 +151,10 @@ namespace XVB_GUI
                 _address = value;
             }
         }
+
+        /// <summary>
+        /// The raw JSON string of the API response
+        /// </summary>
         public string RawData
         {
             get
@@ -133,6 +167,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The hashrate of the XMRvsBEAST pool
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if value is negative</exception>
         public Int64 PoolHashrate
         {
             get
@@ -148,6 +186,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The round hashes of the pool
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 RoundHashes
         {
             get
@@ -163,6 +205,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The total hashrate of the Monero network in H/S
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 NetworkHashrate
         {
             get
@@ -178,6 +224,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The current difficulty of the Monero network
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 NetworkDifficulty
         {
             get
@@ -193,6 +243,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The current height of the Monero blockchain
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 NetworkHeight
         {
             get
@@ -208,6 +262,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The UNIX time of the last template fetched
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 LastTemplateFetched
         {
             get
@@ -223,6 +281,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The UNIX time of the last block found
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 LastBlockFound
         {
             get
@@ -238,6 +300,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The number of blocks found by the XMRvsBEAST pools
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 PoolBlocksFound
         {
             get
@@ -253,6 +319,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The pool's payout threshold
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public double PaymentThreshold
         {
             get
@@ -268,6 +338,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The XvB pool's fee percentage
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public double PoolFee
         {
             get
@@ -283,6 +357,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The pool's main port
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 PoolPort
         {
             get
@@ -298,6 +376,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The pool's SSL port
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 PoolSSLPort
         {
             get
@@ -313,6 +395,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// 0 or 1 representing Allow Self Select for the pool
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 AllowSelfSelect
         {
             get
@@ -328,6 +414,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The number of active miners on the pool
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 ConnectedMiners
         {
             get
@@ -343,6 +433,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The current hashrate of the miner
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 MinerHashrate
         {
             get
@@ -358,6 +452,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The miner's hashrate for the last two minutes
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 TwoMinuteHashRate
         {
             get
@@ -373,6 +471,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The miner's hashrate for the last ten minutes
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 TenMinuteHashRate
         {
             get
@@ -388,6 +490,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The miner's hashrate for the last thirty minutes
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 ThirtyMinuteHashRate
         {
             get
@@ -403,6 +509,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The miner's hashrate for the last hour
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 OneHourHashRate
         {
             get
@@ -418,6 +528,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The miner's hashrate for the last hour
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 OneDayHashRate
         {
             get
@@ -433,6 +547,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The miner's hashrate for the last week
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 OneWeekHashRate
         {
             get
@@ -448,6 +566,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The miner's pending payout balance
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public double MinerBalance
         {
             get
@@ -463,6 +585,10 @@ namespace XVB_GUI
             }
         }
 
+        /// <summary>
+        /// The number of workers the address has
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value is negative</exception>
         public Int64 WorkerCount
         {
             get

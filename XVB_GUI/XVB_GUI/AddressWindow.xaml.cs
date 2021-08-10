@@ -20,10 +20,32 @@ namespace XVB_GUI
     /// </summary>
     public partial class AddressWindow : Window
     {
+        /// <summary>
+        /// Maps 1-based index to the address textblocks that are modified
+        /// </summary>
         Dictionary<int, TextBlock> keyValuePairs;
+
+        /// <summary>
+        /// The index of the address being modified
+        /// </summary>
         int _addressIndex;
+
+        /// <summary>
+        /// The wallet address to be modified
+        /// </summary>
         string _addressVal;
+
+        /// <summary>
+        /// Handle of the app's main window to mo
+        /// </summary>
         MainWindow _mainWindow;
+
+        /// <summary>
+        /// Constructor takes a MainWindow Handle, address index, and the address to modify and assigns them.
+        /// </summary>
+        /// <param name="mainWindow">The handle of the application's main window</param>
+        /// <param name="addressIndex">Represents address 1, 2, or 3 that will be modified</param>
+        /// <param name="addressVal">The Monero address that will be modified on the page</param>
         public AddressWindow(MainWindow mainWindow, int addressIndex, string addressVal)
         {
             InitializeComponent();

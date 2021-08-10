@@ -9,10 +9,21 @@ using System.Net;
 
 namespace XVB_GUI
 {
+    /// <summary>
+    /// A tool used to call the https://xmrvsbeast.com/stats API
+    /// </summary>
     static class StatsApiCaller
     {
+        /// <summary>
+        /// The URL of the stats API
+        /// </summary>
         public const string BASE_URL = "https://xmrvsbeast.com/stats";
 
+        /// <summary>
+        /// Takes a wallet address and retrieves the API data for it, as well as the pool's stats
+        /// </summary>
+        /// <param name="_wAddr"></param>
+        /// <returns>A PoolApiResponse object with the general stats as well as address specific stats</returns>
         public static PoolApiResponse Query(string _wAddr)
         {
             Uri baseUri = new Uri(BASE_URL);
@@ -40,10 +51,14 @@ namespace XVB_GUI
             return new PoolApiResponse(body, _wAddr);
         }
 
+        /// <summary>
+        /// Retrieves pool's general stats API data
+        /// </summary>
+        /// <returns>A PoolApiResponse object containing the pool's general stats. Miner specific stats will be set to zero</returns>
         public static PoolApiResponse Query()
         {
             HttpClient client = new HttpClient();
-            Uri uri = new Uri("https://xmrvsbeast.com/stats");
+            Uri uri = new Uri(BASE_URL);
 
             HttpResponseMessage res = null;
 

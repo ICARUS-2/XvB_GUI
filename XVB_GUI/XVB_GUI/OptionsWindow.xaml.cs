@@ -24,9 +24,18 @@ namespace XVB_GUI
         private string _configPath;
         private string _currencyConfigPath;
         private MainWindow _mainWindow;
+
+        /// <summary>
+        /// Takes the necessary paths for the config files and the MainWindow handle and displays the options window with selected options
+        /// </summary>
+        /// <param name="configPath">The path of the config file containing the logfile destination</param>
+        /// <param name="currencyConfigPath">The path of the config file containing the FIAT currency</param>
+        /// <param name="mainWindow"></param>
         public OptionsWindow(string configPath, string currencyConfigPath, MainWindow mainWindow)
         {
             InitializeComponent();
+            tb_PathDisplay.Text = mainWindow.loggerFilePath;
+
             _configPath = configPath;
             _currencyConfigPath = currencyConfigPath;
             _mainWindow = mainWindow;
