@@ -1,0 +1,603 @@
+### YamlMime:ManagedReference
+items:
+- uid: XVB_GUI.Transaction
+  commentId: T:XVB_GUI.Transaction
+  id: Transaction
+  parent: XVB_GUI
+  children:
+  - XVB_GUI.Transaction.#ctor(System.String,System.Double,System.DateTime)
+  - XVB_GUI.Transaction.Address
+  - XVB_GUI.Transaction.Amount
+  - XVB_GUI.Transaction.Parse(System.String)
+  - XVB_GUI.Transaction.TimeStamp
+  langs:
+  - csharp
+  - vb
+  name: Transaction
+  nameWithType: Transaction
+  fullName: XVB_GUI.Transaction
+  type: Class
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Transaction.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Transaction
+    path: Transaction.cs
+    startLine: 11
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nRepresents a payout transaction from the pool to an address\n"
+  example: []
+  syntax:
+    content: public class Transaction
+    content.vb: Public Class Transaction
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: XVB_GUI.Transaction.#ctor(System.String,System.Double,System.DateTime)
+  commentId: M:XVB_GUI.Transaction.#ctor(System.String,System.Double,System.DateTime)
+  id: '#ctor(System.String,System.Double,System.DateTime)'
+  parent: XVB_GUI.Transaction
+  langs:
+  - csharp
+  - vb
+  name: Transaction(String, Double, DateTime)
+  nameWithType: Transaction.Transaction(String, Double, DateTime)
+  fullName: XVB_GUI.Transaction.Transaction(System.String, System.Double, System.DateTime)
+  type: Constructor
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Transaction.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: .ctor
+    path: Transaction.cs
+    startLine: 23
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nTakes an address, the amount and timestamp and sets the properties\n"
+  example: []
+  syntax:
+    content: public Transaction(string address, double amount, DateTime timeStamp)
+    parameters:
+    - id: address
+      type: System.String
+      description: The receiving address of the transaction
+    - id: amount
+      type: System.Double
+      description: The amount sent to that address
+    - id: timeStamp
+      type: System.DateTime
+      description: The date and time the transaction took place
+    content.vb: Public Sub New(address As String, amount As Double, timeStamp As Date)
+  overload: XVB_GUI.Transaction.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XVB_GUI.Transaction.Parse(System.String)
+  commentId: M:XVB_GUI.Transaction.Parse(System.String)
+  id: Parse(System.String)
+  parent: XVB_GUI.Transaction
+  langs:
+  - csharp
+  - vb
+  name: Parse(String)
+  nameWithType: Transaction.Parse(String)
+  fullName: XVB_GUI.Transaction.Parse(System.String)
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Transaction.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Parse
+    path: Transaction.cs
+    startLine: 36
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nTakes a string of raw data and parses it to construct a Transaction object\n"
+  example:
+  - 447ywns3...P1D451qk  0.010036  2021-08-05 12:06:12 -> New block with address 447ywns3...P1D451qk, amount 0.010036 and 2021-08-05 12:06:12 timestamp
+  syntax:
+    content: public static Transaction Parse(string strToParse)
+    parameters:
+    - id: strToParse
+      type: System.String
+      description: The raw data retrieved from the site
+    return:
+      type: XVB_GUI.Transaction
+      description: The Transaction object containing the data parsed from the raw string
+    content.vb: Public Shared Function Parse(strToParse As String) As Transaction
+  overload: XVB_GUI.Transaction.Parse*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.Transaction.Address
+  commentId: P:XVB_GUI.Transaction.Address
+  id: Address
+  parent: XVB_GUI.Transaction
+  langs:
+  - csharp
+  - vb
+  name: Address
+  nameWithType: Transaction.Address
+  fullName: XVB_GUI.Transaction.Address
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Transaction.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Address
+    path: Transaction.cs
+    startLine: 49
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe receiving address of the transaction\n"
+  example: []
+  syntax:
+    content: public string Address { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Address As String
+  overload: XVB_GUI.Transaction.Address*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.Transaction.Amount
+  commentId: P:XVB_GUI.Transaction.Amount
+  id: Amount
+  parent: XVB_GUI.Transaction
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: Transaction.Amount
+  fullName: XVB_GUI.Transaction.Amount
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Transaction.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Amount
+    path: Transaction.cs
+    startLine: 65
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe amount sent through the \n"
+  example: []
+  syntax:
+    content: public double Amount { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Amount As Double
+  overload: XVB_GUI.Transaction.Amount*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the amount is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.Transaction.TimeStamp
+  commentId: P:XVB_GUI.Transaction.TimeStamp
+  id: TimeStamp
+  parent: XVB_GUI.Transaction
+  langs:
+  - csharp
+  - vb
+  name: TimeStamp
+  nameWithType: Transaction.TimeStamp
+  fullName: XVB_GUI.Transaction.TimeStamp
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Transaction.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: TimeStamp
+    path: Transaction.cs
+    startLine: 83
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe date and time the transaction took place\n"
+  example: []
+  syntax:
+    content: public DateTime TimeStamp { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public ReadOnly Property TimeStamp As Date
+  overload: XVB_GUI.Transaction.TimeStamp*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: XVB_GUI
+  commentId: N:XVB_GUI
+  name: XVB_GUI
+  nameWithType: XVB_GUI
+  fullName: XVB_GUI
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XVB_GUI.Transaction.#ctor*
+  commentId: Overload:XVB_GUI.Transaction.#ctor
+  name: Transaction
+  nameWithType: Transaction.Transaction
+  fullName: XVB_GUI.Transaction.Transaction
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: XVB_GUI.Transaction.Parse*
+  commentId: Overload:XVB_GUI.Transaction.Parse
+  name: Parse
+  nameWithType: Transaction.Parse
+  fullName: XVB_GUI.Transaction.Parse
+- uid: XVB_GUI.Transaction
+  commentId: T:XVB_GUI.Transaction
+  parent: XVB_GUI
+  name: Transaction
+  nameWithType: Transaction
+  fullName: XVB_GUI.Transaction
+- uid: XVB_GUI.Transaction.Address*
+  commentId: Overload:XVB_GUI.Transaction.Address
+  name: Address
+  nameWithType: Transaction.Address
+  fullName: XVB_GUI.Transaction.Address
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+- uid: XVB_GUI.Transaction.Amount*
+  commentId: Overload:XVB_GUI.Transaction.Amount
+  name: Amount
+  nameWithType: Transaction.Amount
+  fullName: XVB_GUI.Transaction.Amount
+- uid: XVB_GUI.Transaction.TimeStamp*
+  commentId: Overload:XVB_GUI.Transaction.TimeStamp
+  name: TimeStamp
+  nameWithType: Transaction.TimeStamp
+  fullName: XVB_GUI.Transaction.TimeStamp

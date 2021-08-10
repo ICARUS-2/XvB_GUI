@@ -37,7 +37,7 @@ namespace XVB_GUI
         /// <summary>
         /// Takes a string from the website's text file (see) and uses it to generate a block data by parsing it
         /// </summary>
-        /// <param name="strToParse"></param>
+        /// <param name="strToParse">The raw data of the block retrieved from the site</param>
         /// <example>2424062	135a...1aba	LOCKED		PENDING		2021-08-10 15:55:47 -> New block with address 135..., locked status, pending block reward, date and time</example>
         /// <see cref="https://xmrvsbeast.com/stats_frame/mined_blocks_full.html"/>
         /// <returns>The block object with the string's data</returns>

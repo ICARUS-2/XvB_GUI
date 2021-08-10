@@ -1,0 +1,147 @@
+### YamlMime:ManagedReference
+items:
+- uid: XVB_GUI.BlockStatus
+  commentId: T:XVB_GUI.BlockStatus
+  id: BlockStatus
+  parent: XVB_GUI
+  children:
+  - XVB_GUI.BlockStatus.LOCKED
+  - XVB_GUI.BlockStatus.ORPHANED
+  - XVB_GUI.BlockStatus.UNLOCKED
+  langs:
+  - csharp
+  - vb
+  name: BlockStatus
+  nameWithType: BlockStatus
+  fullName: XVB_GUI.BlockStatus
+  type: Enum
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Block.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: BlockStatus
+    path: Block.cs
+    startLine: 153
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe block&apos;s possible statuses: Locked (validation needed, block reward TBD), Unlocked (validated block, has a reward), Orphaned (invalid block, no reward)\n"
+  example: []
+  syntax:
+    content: public enum BlockStatus
+    content.vb: Public Enum BlockStatus
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: XVB_GUI.BlockStatus.LOCKED
+  commentId: F:XVB_GUI.BlockStatus.LOCKED
+  id: LOCKED
+  parent: XVB_GUI.BlockStatus
+  langs:
+  - csharp
+  - vb
+  name: LOCKED
+  nameWithType: BlockStatus.LOCKED
+  fullName: XVB_GUI.BlockStatus.LOCKED
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Block.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: LOCKED
+    path: Block.cs
+    startLine: 155
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: LOCKED = 0
+    return:
+      type: XVB_GUI.BlockStatus
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.BlockStatus.UNLOCKED
+  commentId: F:XVB_GUI.BlockStatus.UNLOCKED
+  id: UNLOCKED
+  parent: XVB_GUI.BlockStatus
+  langs:
+  - csharp
+  - vb
+  name: UNLOCKED
+  nameWithType: BlockStatus.UNLOCKED
+  fullName: XVB_GUI.BlockStatus.UNLOCKED
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Block.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: UNLOCKED
+    path: Block.cs
+    startLine: 156
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: UNLOCKED = 1
+    return:
+      type: XVB_GUI.BlockStatus
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.BlockStatus.ORPHANED
+  commentId: F:XVB_GUI.BlockStatus.ORPHANED
+  id: ORPHANED
+  parent: XVB_GUI.BlockStatus
+  langs:
+  - csharp
+  - vb
+  name: ORPHANED
+  nameWithType: BlockStatus.ORPHANED
+  fullName: XVB_GUI.BlockStatus.ORPHANED
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Block.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: ORPHANED
+    path: Block.cs
+    startLine: 157
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: ORPHANED = 2
+    return:
+      type: XVB_GUI.BlockStatus
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: XVB_GUI
+  commentId: N:XVB_GUI
+  name: XVB_GUI
+  nameWithType: XVB_GUI
+  fullName: XVB_GUI
+- uid: XVB_GUI.BlockStatus
+  commentId: T:XVB_GUI.BlockStatus
+  parent: XVB_GUI
+  name: BlockStatus
+  nameWithType: BlockStatus
+  fullName: XVB_GUI.BlockStatus

@@ -1,0 +1,701 @@
+### YamlMime:ManagedReference
+items:
+- uid: XVB_GUI.Block
+  commentId: T:XVB_GUI.Block
+  id: Block
+  parent: XVB_GUI
+  children:
+  - XVB_GUI.Block.#ctor(System.Int64,System.String,XVB_GUI.BlockStatus,System.String,System.DateTime)
+  - XVB_GUI.Block.BlockNumber
+  - XVB_GUI.Block.BlockReward
+  - XVB_GUI.Block.Hash
+  - XVB_GUI.Block.Parse(System.String)
+  - XVB_GUI.Block.Status
+  - XVB_GUI.Block.TimeStamp
+  langs:
+  - csharp
+  - vb
+  name: Block
+  nameWithType: Block
+  fullName: XVB_GUI.Block
+  type: Class
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Block.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Block
+    path: Block.cs
+    startLine: 11
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nRepresents a block mined on the pool, stores its index, hash, status, reward, and timestamp\n"
+  example: []
+  syntax:
+    content: public class Block
+    content.vb: Public Class Block
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: XVB_GUI.Block.#ctor(System.Int64,System.String,XVB_GUI.BlockStatus,System.String,System.DateTime)
+  commentId: M:XVB_GUI.Block.#ctor(System.Int64,System.String,XVB_GUI.BlockStatus,System.String,System.DateTime)
+  id: '#ctor(System.Int64,System.String,XVB_GUI.BlockStatus,System.String,System.DateTime)'
+  parent: XVB_GUI.Block
+  langs:
+  - csharp
+  - vb
+  name: Block(Int64, String, BlockStatus, String, DateTime)
+  nameWithType: Block.Block(Int64, String, BlockStatus, String, DateTime)
+  fullName: XVB_GUI.Block.Block(System.Int64, System.String, XVB_GUI.BlockStatus, System.String, System.DateTime)
+  type: Constructor
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Block.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: .ctor
+    path: Block.cs
+    startLine: 27
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nConstructor takes index, hash, status, block reward, and timestamp and assigns them\n"
+  example: []
+  syntax:
+    content: public Block(long indexNum, string hash, BlockStatus status, string blockReward, DateTime timeStamp)
+    parameters:
+    - id: indexNum
+      type: System.Int64
+      description: The block&apos;s location on the blockchain
+    - id: hash
+      type: System.String
+      description: The block&apos;s hash code (RandomX)
+    - id: status
+      type: XVB_GUI.BlockStatus
+      description: Whether the block is Locked, Unlocked, or Orphaned
+    - id: blockReward
+      type: System.String
+      description: The block&apos;s reward in XMR
+    - id: timeStamp
+      type: System.DateTime
+      description: The date and time the block was mined at
+    content.vb: Public Sub New(indexNum As Long, hash As String, status As BlockStatus, blockReward As String, timeStamp As Date)
+  overload: XVB_GUI.Block.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XVB_GUI.Block.Parse(System.String)
+  commentId: M:XVB_GUI.Block.Parse(System.String)
+  id: Parse(System.String)
+  parent: XVB_GUI.Block
+  langs:
+  - csharp
+  - vb
+  name: Parse(String)
+  nameWithType: Block.Parse(String)
+  fullName: XVB_GUI.Block.Parse(System.String)
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Block.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Parse
+    path: Block.cs
+    startLine: 43
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nTakes a string from the website&apos;s text file (see) and uses it to generate a block data by parsing it\n"
+  example:
+  - 2424062	135a...1aba	LOCKED		PENDING		2021-08-10 15:55:47 -> New block with address 135..., locked status, pending block reward, date and time
+  syntax:
+    content: public static Block Parse(string strToParse)
+    parameters:
+    - id: strToParse
+      type: System.String
+      description: The raw data of the block retrieved from the site
+    return:
+      type: XVB_GUI.Block
+      description: The block object with the string&apos;s data
+    content.vb: Public Shared Function Parse(strToParse As String) As Block
+  overload: XVB_GUI.Block.Parse*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.Block.BlockNumber
+  commentId: P:XVB_GUI.Block.BlockNumber
+  id: BlockNumber
+  parent: XVB_GUI.Block
+  langs:
+  - csharp
+  - vb
+  name: BlockNumber
+  nameWithType: Block.BlockNumber
+  fullName: XVB_GUI.Block.BlockNumber
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Block.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: BlockNumber
+    path: Block.cs
+    startLine: 74
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe blockchain height when this block was \n"
+  example: []
+  syntax:
+    content: public long BlockNumber { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property BlockNumber As Long
+  overload: XVB_GUI.Block.BlockNumber*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.Block.Hash
+  commentId: P:XVB_GUI.Block.Hash
+  id: Hash
+  parent: XVB_GUI.Block
+  langs:
+  - csharp
+  - vb
+  name: Hash
+  nameWithType: Block.Hash
+  fullName: XVB_GUI.Block.Hash
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Block.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Hash
+    path: Block.cs
+    startLine: 92
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe block&apos;s RandomX hash code\n"
+  example: []
+  syntax:
+    content: public string Hash { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Hash As String
+  overload: XVB_GUI.Block.Hash*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.Block.Status
+  commentId: P:XVB_GUI.Block.Status
+  id: Status
+  parent: XVB_GUI.Block
+  langs:
+  - csharp
+  - vb
+  name: Status
+  nameWithType: Block.Status
+  fullName: XVB_GUI.Block.Status
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Block.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Status
+    path: Block.cs
+    startLine: 107
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nRepresents whether the block is Locked, Unlocked, or Orphaned\n"
+  example: []
+  syntax:
+    content: public BlockStatus Status { get; }
+    parameters: []
+    return:
+      type: XVB_GUI.BlockStatus
+    content.vb: Public ReadOnly Property Status As BlockStatus
+  overload: XVB_GUI.Block.Status*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.Block.BlockReward
+  commentId: P:XVB_GUI.Block.BlockReward
+  id: BlockReward
+  parent: XVB_GUI.Block
+  langs:
+  - csharp
+  - vb
+  name: BlockReward
+  nameWithType: Block.BlockReward
+  fullName: XVB_GUI.Block.BlockReward
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Block.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: BlockReward
+    path: Block.cs
+    startLine: 122
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe reward of this block. Can be a numberical value represented as a string, or &quot;PENDING&quot;\n"
+  example: []
+  syntax:
+    content: public string BlockReward { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property BlockReward As String
+  overload: XVB_GUI.Block.BlockReward*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.Block.TimeStamp
+  commentId: P:XVB_GUI.Block.TimeStamp
+  id: TimeStamp
+  parent: XVB_GUI.Block
+  langs:
+  - csharp
+  - vb
+  name: TimeStamp
+  nameWithType: Block.TimeStamp
+  fullName: XVB_GUI.Block.TimeStamp
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/Block.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: TimeStamp
+    path: Block.cs
+    startLine: 137
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe date and time the block was mined\n"
+  example: []
+  syntax:
+    content: public DateTime TimeStamp { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public ReadOnly Property TimeStamp As Date
+  overload: XVB_GUI.Block.TimeStamp*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: XVB_GUI
+  commentId: N:XVB_GUI
+  name: XVB_GUI
+  nameWithType: XVB_GUI
+  fullName: XVB_GUI
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XVB_GUI.Block.#ctor*
+  commentId: Overload:XVB_GUI.Block.#ctor
+  name: Block
+  nameWithType: Block.Block
+  fullName: XVB_GUI.Block.Block
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XVB_GUI.BlockStatus
+  commentId: T:XVB_GUI.BlockStatus
+  parent: XVB_GUI
+  name: BlockStatus
+  nameWithType: BlockStatus
+  fullName: XVB_GUI.BlockStatus
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: XVB_GUI.Block.Parse*
+  commentId: Overload:XVB_GUI.Block.Parse
+  name: Parse
+  nameWithType: Block.Parse
+  fullName: XVB_GUI.Block.Parse
+- uid: XVB_GUI.Block
+  commentId: T:XVB_GUI.Block
+  parent: XVB_GUI
+  name: Block
+  nameWithType: Block
+  fullName: XVB_GUI.Block
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+- uid: XVB_GUI.Block.BlockNumber*
+  commentId: Overload:XVB_GUI.Block.BlockNumber
+  name: BlockNumber
+  nameWithType: Block.BlockNumber
+  fullName: XVB_GUI.Block.BlockNumber
+- uid: XVB_GUI.Block.Hash*
+  commentId: Overload:XVB_GUI.Block.Hash
+  name: Hash
+  nameWithType: Block.Hash
+  fullName: XVB_GUI.Block.Hash
+- uid: XVB_GUI.Block.Status*
+  commentId: Overload:XVB_GUI.Block.Status
+  name: Status
+  nameWithType: Block.Status
+  fullName: XVB_GUI.Block.Status
+- uid: XVB_GUI.Block.BlockReward*
+  commentId: Overload:XVB_GUI.Block.BlockReward
+  name: BlockReward
+  nameWithType: Block.BlockReward
+  fullName: XVB_GUI.Block.BlockReward
+- uid: XVB_GUI.Block.TimeStamp*
+  commentId: Overload:XVB_GUI.Block.TimeStamp
+  name: TimeStamp
+  nameWithType: Block.TimeStamp
+  fullName: XVB_GUI.Block.TimeStamp

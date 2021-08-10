@@ -1,0 +1,626 @@
+### YamlMime:ManagedReference
+items:
+- uid: XVB_GUI.BoostRecord
+  commentId: T:XVB_GUI.BoostRecord
+  id: BoostRecord
+  parent: XVB_GUI
+  children:
+  - XVB_GUI.BoostRecord.#ctor(System.String,XVB_GUI.BoostRecord.BoostType,System.String,System.String,System.String)
+  - XVB_GUI.BoostRecord.Address
+  - XVB_GUI.BoostRecord.Date
+  - XVB_GUI.BoostRecord.Hashrate
+  - XVB_GUI.BoostRecord.Time
+  - XVB_GUI.BoostRecord.Type
+  langs:
+  - csharp
+  - vb
+  name: BoostRecord
+  nameWithType: BoostRecord
+  fullName: XVB_GUI.BoostRecord
+  type: Class
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/BoostRecord.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: BoostRecord
+    path: BoostRecord.cs
+    startLine: 11
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nA record representing a boost, bonus, or t-bonus\n"
+  example: []
+  syntax:
+    content: public class BoostRecord
+    content.vb: Public Class BoostRecord
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: XVB_GUI.BoostRecord.#ctor(System.String,XVB_GUI.BoostRecord.BoostType,System.String,System.String,System.String)
+  commentId: M:XVB_GUI.BoostRecord.#ctor(System.String,XVB_GUI.BoostRecord.BoostType,System.String,System.String,System.String)
+  id: '#ctor(System.String,XVB_GUI.BoostRecord.BoostType,System.String,System.String,System.String)'
+  parent: XVB_GUI.BoostRecord
+  langs:
+  - csharp
+  - vb
+  name: BoostRecord(String, BoostRecord.BoostType, String, String, String)
+  nameWithType: BoostRecord.BoostRecord(String, BoostRecord.BoostType, String, String, String)
+  fullName: XVB_GUI.BoostRecord.BoostRecord(System.String, XVB_GUI.BoostRecord.BoostType, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/BoostRecord.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: .ctor
+    path: BoostRecord.cs
+    startLine: 27
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nTakes address, type, hashrate, date, and time and constructs a record with these values\n"
+  example: []
+  syntax:
+    content: public BoostRecord(string address, BoostRecord.BoostType boostType, string hashrate, string date, string time)
+    parameters:
+    - id: address
+      type: System.String
+      description: The address of the wallet that received the boost
+    - id: boostType
+      type: XVB_GUI.BoostRecord.BoostType
+      description: Represents whether this was a queue boost, a block raffle, or a time raffle
+    - id: hashrate
+      type: System.String
+      description: The average hashrate of the boost
+    - id: date
+      type: System.String
+      description: The date the boost was given
+    - id: time
+      type: System.String
+      description: The time the boost began
+    content.vb: Public Sub New(address As String, boostType As BoostRecord.BoostType, hashrate As String, date As String, time As String)
+  overload: XVB_GUI.BoostRecord.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XVB_GUI.BoostRecord.Address
+  commentId: P:XVB_GUI.BoostRecord.Address
+  id: Address
+  parent: XVB_GUI.BoostRecord
+  langs:
+  - csharp
+  - vb
+  name: Address
+  nameWithType: BoostRecord.Address
+  fullName: XVB_GUI.BoostRecord.Address
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/BoostRecord.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Address
+    path: BoostRecord.cs
+    startLine: 50
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe wallet address of the boosted miner\n"
+  example: []
+  syntax:
+    content: public string Address { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Address As String
+  overload: XVB_GUI.BoostRecord.Address*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.BoostRecord.Type
+  commentId: P:XVB_GUI.BoostRecord.Type
+  id: Type
+  parent: XVB_GUI.BoostRecord
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: BoostRecord.Type
+  fullName: XVB_GUI.BoostRecord.Type
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/BoostRecord.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Type
+    path: BoostRecord.cs
+    startLine: 65
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nWhether the boost is a raffle or queue boost\n"
+  example: []
+  syntax:
+    content: public BoostRecord.BoostType Type { get; }
+    parameters: []
+    return:
+      type: XVB_GUI.BoostRecord.BoostType
+    content.vb: Public ReadOnly Property Type As BoostRecord.BoostType
+  overload: XVB_GUI.BoostRecord.Type*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.BoostRecord.Hashrate
+  commentId: P:XVB_GUI.BoostRecord.Hashrate
+  id: Hashrate
+  parent: XVB_GUI.BoostRecord
+  langs:
+  - csharp
+  - vb
+  name: Hashrate
+  nameWithType: BoostRecord.Hashrate
+  fullName: XVB_GUI.BoostRecord.Hashrate
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/BoostRecord.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Hashrate
+    path: BoostRecord.cs
+    startLine: 80
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe average hashrate of the boost/bonus\n"
+  example: []
+  syntax:
+    content: public string Hashrate { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Hashrate As String
+  overload: XVB_GUI.BoostRecord.Hashrate*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.BoostRecord.Date
+  commentId: P:XVB_GUI.BoostRecord.Date
+  id: Date
+  parent: XVB_GUI.BoostRecord
+  langs:
+  - csharp
+  - vb
+  name: Date
+  nameWithType: BoostRecord.Date
+  fullName: XVB_GUI.BoostRecord.Date
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/BoostRecord.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Date
+    path: BoostRecord.cs
+    startLine: 95
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe date the boost began\n"
+  example: []
+  syntax:
+    content: public string Date { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Date As String
+  overload: XVB_GUI.BoostRecord.Date*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.BoostRecord.Time
+  commentId: P:XVB_GUI.BoostRecord.Time
+  id: Time
+  parent: XVB_GUI.BoostRecord
+  langs:
+  - csharp
+  - vb
+  name: Time
+  nameWithType: BoostRecord.Time
+  fullName: XVB_GUI.BoostRecord.Time
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/BoostRecord.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Time
+    path: BoostRecord.cs
+    startLine: 110
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe time the boost began\n"
+  example: []
+  syntax:
+    content: public string Time { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Time As String
+  overload: XVB_GUI.BoostRecord.Time*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: XVB_GUI
+  commentId: N:XVB_GUI
+  name: XVB_GUI
+  nameWithType: XVB_GUI
+  fullName: XVB_GUI
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XVB_GUI.BoostRecord.#ctor*
+  commentId: Overload:XVB_GUI.BoostRecord.#ctor
+  name: BoostRecord
+  nameWithType: BoostRecord.BoostRecord
+  fullName: XVB_GUI.BoostRecord.BoostRecord
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XVB_GUI.BoostRecord.BoostType
+  commentId: T:XVB_GUI.BoostRecord.BoostType
+  parent: XVB_GUI
+  name: BoostRecord.BoostType
+  nameWithType: BoostRecord.BoostType
+  fullName: XVB_GUI.BoostRecord.BoostType
+- uid: XVB_GUI.BoostRecord.Address*
+  commentId: Overload:XVB_GUI.BoostRecord.Address
+  name: Address
+  nameWithType: BoostRecord.Address
+  fullName: XVB_GUI.BoostRecord.Address
+- uid: XVB_GUI.BoostRecord.Type*
+  commentId: Overload:XVB_GUI.BoostRecord.Type
+  name: Type
+  nameWithType: BoostRecord.Type
+  fullName: XVB_GUI.BoostRecord.Type
+- uid: XVB_GUI.BoostRecord.Hashrate*
+  commentId: Overload:XVB_GUI.BoostRecord.Hashrate
+  name: Hashrate
+  nameWithType: BoostRecord.Hashrate
+  fullName: XVB_GUI.BoostRecord.Hashrate
+- uid: XVB_GUI.BoostRecord.Date*
+  commentId: Overload:XVB_GUI.BoostRecord.Date
+  name: Date
+  nameWithType: BoostRecord.Date
+  fullName: XVB_GUI.BoostRecord.Date
+- uid: XVB_GUI.BoostRecord.Time*
+  commentId: Overload:XVB_GUI.BoostRecord.Time
+  name: Time
+  nameWithType: BoostRecord.Time
+  fullName: XVB_GUI.BoostRecord.Time

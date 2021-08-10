@@ -1,0 +1,354 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/Icarus/Desktop/git-repo/XvB_GUI_Repo/XVB_GUI/XVB_GUI",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "qeeUWeONJEFV6yM9UIBOIgfp+eXl9gdC9to5GBAJsfc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "ldkSBLhjim57IVqIekQNy/wCYfEufGtntSwIovhG8d8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "ThN4+JIkbeo2adzAncps7CwbRn7yrKX3z4+FCBf3XCs="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.AddressWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.AddressWindow.html",
+          "hash": "fTcWxrSS6pzRM0k9hZPrVnJmPVqOpEL7CH+/AiUtydg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.App.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.App.html",
+          "hash": "oqmlRwKr4ALKlvBX3STVKJyhf4Fe31I3qtAUmdmBdu8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.Block.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.Block.html",
+          "hash": "LETf59IDjDBfqg+XcTj6PMdisziBpKWceMDC0s2T6zk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.BlockStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.BlockStatus.html",
+          "hash": "ijYoE6X8ItgPHUGQzqOy0FqhqGJFrdvp+pTI6kBEuDY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.BoostRecord.BoostType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.BoostRecord.BoostType.html",
+          "hash": "xREilAqw7d/1FJtUN/LvjaLt5o30CRHTdnblCRXO6z8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.BoostRecord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.BoostRecord.html",
+          "hash": "gLYO3KFoKV1i96uF/bvtPa1a2vjUJdjm6SY04R8+bKI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.BoostReport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.BoostReport.html",
+          "hash": "IqMKXeg8difg1NdIs2MYTFmXRxmdMiUEFpOjw8yuKTA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.DeveloperInfoWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.DeveloperInfoWindow.html",
+          "hash": "QZOW7h8x50UsJTctSR7XYm+Z63U7TFdQDI7vfgODLa0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.Logger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.Logger.html",
+          "hash": "LEhJWauM+c0iJQqMpZGxwPJaheSm3PaY7duLDrpibKU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.MainWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.MainWindow.html",
+          "hash": "W6vKt7hrr86vYblDgfLSuzRkIOLq+kZarQYNrGb0FJo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.OptionsWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.OptionsWindow.html",
+          "hash": "yOiNAeiXah1hsOQrN8P+bm1xNlhQ5aKXgOb6Xs/S748="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.PoolApiResponse.ResponseStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.PoolApiResponse.ResponseStatus.html",
+          "hash": "FMmLgISC3x+bckqvOXm/ilm317mLiODw9L6tn72OQJM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.PoolApiResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.PoolApiResponse.html",
+          "hash": "pTOkNTxEACwmvvpVIvY6vncoGAbX9Gwcf7v9iKYGx/4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.StatsFetcher.CryptoCurrency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.StatsFetcher.CryptoCurrency.html",
+          "hash": "VNgqDTGjVGOeaRRy/X0iimB6Z/fvNhNy2E8JyyD5FyM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.StatsFetcher.Currency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.StatsFetcher.Currency.html",
+          "hash": "3J5M2p6oZY8jD3tlKBdQq1vVfBY+0nsEh9ee1nKR5gk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.StatsFetcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.StatsFetcher.html",
+          "hash": "BHuyFDEA7ATnCE0zzZQvsnnJp9IcXeA/m6Hgeb3ABtU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.Transaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.Transaction.html",
+          "hash": "uWlq1q3PafJmmFBEBVeem89TIRLWuv35OMYBFPTeH8k="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.TransactionData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.TransactionData.html",
+          "hash": "kWzmkykWiCM3xQVPhCljHlToxcwWtNbwZZJ2v6rEBMk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/XVB_GUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/XVB_GUI.html",
+          "hash": "6LysCQYd9I2L8HmnHoRL+G3GA+A9o4aAqFUQPqGQQlI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "gA2cCLg3CGENy+EqgdqqgrUCPsEA+s4snGCYr3ou5ew="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "Oa9PuD4E1hvZnCkVjUgzNBX6S00Zo5YilamTERTZo54="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 19,
+          "skipped_file_count": 18
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

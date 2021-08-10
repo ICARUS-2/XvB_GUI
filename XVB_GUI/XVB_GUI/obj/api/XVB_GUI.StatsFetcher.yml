@@ -1,0 +1,1480 @@
+### YamlMime:ManagedReference
+items:
+- uid: XVB_GUI.StatsFetcher
+  commentId: T:XVB_GUI.StatsFetcher
+  id: StatsFetcher
+  parent: XVB_GUI
+  children:
+  - XVB_GUI.StatsFetcher.BASE_URL
+  - XVB_GUI.StatsFetcher.BLOCKS_MINED_URL
+  - XVB_GUI.StatsFetcher.BOOST_HASHRATE_URL
+  - XVB_GUI.StatsFetcher.GetBlocksMined
+  - XVB_GUI.StatsFetcher.GetBoostHashrate
+  - XVB_GUI.StatsFetcher.GetBoostHashrateAddress
+  - XVB_GUI.StatsFetcher.GetBoostHashrateDuration
+  - XVB_GUI.StatsFetcher.GetEstimatedMinerBoostTime(System.String)
+  - XVB_GUI.StatsFetcher.GetMoneroPrice(XVB_GUI.StatsFetcher.CryptoCurrency)
+  - XVB_GUI.StatsFetcher.GetMoneroPrice(XVB_GUI.StatsFetcher.Currency)
+  - XVB_GUI.StatsFetcher.GetPayouts(System.String)
+  - XVB_GUI.StatsFetcher.GetRaffleHashrate
+  - XVB_GUI.StatsFetcher.GetTimeRaffleAddress
+  - XVB_GUI.StatsFetcher.GetTimeRaffleDuration
+  - XVB_GUI.StatsFetcher.GetTimeRaffleHashrate
+  - XVB_GUI.StatsFetcher.GetWinners(System.String)
+  - XVB_GUI.StatsFetcher.IsConnected
+  - XVB_GUI.StatsFetcher.MINER_PAYOUTS_URL
+  - XVB_GUI.StatsFetcher.MONERO_PRICE_BASE_URL
+  - XVB_GUI.StatsFetcher.ParseHashrate(System.Int64)
+  - XVB_GUI.StatsFetcher.RAFFLE_HASHRATE_URL
+  - XVB_GUI.StatsFetcher.T_RAFFLE_HASHRATE_URL
+  - XVB_GUI.StatsFetcher.WINNERS_URL
+  langs:
+  - csharp
+  - vb
+  name: StatsFetcher
+  nameWithType: StatsFetcher
+  fullName: XVB_GUI.StatsFetcher
+  type: Class
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: StatsFetcher
+    path: StatsFetcher.cs
+    startLine: 17
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nRepresents the interaction for everything that is not directly linked to the Stats API.\nData retrieval/object construction is done via HTML parsers\nAll Get methods query the site in real/time\n"
+  example: []
+  syntax:
+    content: public static class StatsFetcher
+    content.vb: Public Module StatsFetcher
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: XVB_GUI.StatsFetcher.BASE_URL
+  commentId: F:XVB_GUI.StatsFetcher.BASE_URL
+  id: BASE_URL
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: BASE_URL
+  nameWithType: StatsFetcher.BASE_URL
+  fullName: XVB_GUI.StatsFetcher.BASE_URL
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: BASE_URL
+    path: StatsFetcher.cs
+    startLine: 22
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe URL for the stats API\n"
+  example: []
+  syntax:
+    content: public const string BASE_URL = "https://xmrvsbeast.com/stats"
+    return:
+      type: System.String
+    content.vb: Public Const BASE_URL As String = "https://xmrvsbeast.com/stats"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.RAFFLE_HASHRATE_URL
+  commentId: F:XVB_GUI.StatsFetcher.RAFFLE_HASHRATE_URL
+  id: RAFFLE_HASHRATE_URL
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: RAFFLE_HASHRATE_URL
+  nameWithType: StatsFetcher.RAFFLE_HASHRATE_URL
+  fullName: XVB_GUI.StatsFetcher.RAFFLE_HASHRATE_URL
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: RAFFLE_HASHRATE_URL
+    path: StatsFetcher.cs
+    startLine: 27
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe URL containing the Raffle hashrate\n"
+  example: []
+  syntax:
+    content: public const string RAFFLE_HASHRATE_URL = "https://xmrvsbeast.com/bonus_hash.html"
+    return:
+      type: System.String
+    content.vb: Public Const RAFFLE_HASHRATE_URL As String = "https://xmrvsbeast.com/bonus_hash.html"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.T_RAFFLE_HASHRATE_URL
+  commentId: F:XVB_GUI.StatsFetcher.T_RAFFLE_HASHRATE_URL
+  id: T_RAFFLE_HASHRATE_URL
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: T_RAFFLE_HASHRATE_URL
+  nameWithType: StatsFetcher.T_RAFFLE_HASHRATE_URL
+  fullName: XVB_GUI.StatsFetcher.T_RAFFLE_HASHRATE_URL
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: T_RAFFLE_HASHRATE_URL
+    path: StatsFetcher.cs
+    startLine: 32
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe URL containing the T/Raffle hashrate, duration and address\n"
+  example: []
+  syntax:
+    content: public const string T_RAFFLE_HASHRATE_URL = "https://xmrvsbeast.com/tbonus_hash.html"
+    return:
+      type: System.String
+    content.vb: Public Const T_RAFFLE_HASHRATE_URL As String = "https://xmrvsbeast.com/tbonus_hash.html"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.BOOST_HASHRATE_URL
+  commentId: F:XVB_GUI.StatsFetcher.BOOST_HASHRATE_URL
+  id: BOOST_HASHRATE_URL
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: BOOST_HASHRATE_URL
+  nameWithType: StatsFetcher.BOOST_HASHRATE_URL
+  fullName: XVB_GUI.StatsFetcher.BOOST_HASHRATE_URL
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: BOOST_HASHRATE_URL
+    path: StatsFetcher.cs
+    startLine: 37
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe URL containing the Boost hashrate, duration and address\n"
+  example: []
+  syntax:
+    content: public const string BOOST_HASHRATE_URL = "https://xmrvsbeast.com/boost_hash.html"
+    return:
+      type: System.String
+    content.vb: Public Const BOOST_HASHRATE_URL As String = "https://xmrvsbeast.com/boost_hash.html"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.BLOCKS_MINED_URL
+  commentId: F:XVB_GUI.StatsFetcher.BLOCKS_MINED_URL
+  id: BLOCKS_MINED_URL
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: BLOCKS_MINED_URL
+  nameWithType: StatsFetcher.BLOCKS_MINED_URL
+  fullName: XVB_GUI.StatsFetcher.BLOCKS_MINED_URL
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: BLOCKS_MINED_URL
+    path: StatsFetcher.cs
+    startLine: 42
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe URL containing the data of the blocks mined by the pool\n"
+  example: []
+  syntax:
+    content: public const string BLOCKS_MINED_URL = "https://xmrvsbeast.com/stats_frame/mined_blocks_full.html"
+    return:
+      type: System.String
+    content.vb: Public Const BLOCKS_MINED_URL As String = "https://xmrvsbeast.com/stats_frame/mined_blocks_full.html"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.MINER_PAYOUTS_URL
+  commentId: F:XVB_GUI.StatsFetcher.MINER_PAYOUTS_URL
+  id: MINER_PAYOUTS_URL
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: MINER_PAYOUTS_URL
+  nameWithType: StatsFetcher.MINER_PAYOUTS_URL
+  fullName: XVB_GUI.StatsFetcher.MINER_PAYOUTS_URL
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: MINER_PAYOUTS_URL
+    path: StatsFetcher.cs
+    startLine: 47
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe URL containing the payout TX data for a given address (cookie: wa -> address is necessary to get valid info)\n"
+  example: []
+  syntax:
+    content: public const string MINER_PAYOUTS_URL = "https://xmrvsbeast.com/cgi-bin/miner_payouts.cgi"
+    return:
+      type: System.String
+    content.vb: Public Const MINER_PAYOUTS_URL As String = "https://xmrvsbeast.com/cgi-bin/miner_payouts.cgi"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.WINNERS_URL
+  commentId: F:XVB_GUI.StatsFetcher.WINNERS_URL
+  id: WINNERS_URL
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: WINNERS_URL
+  nameWithType: StatsFetcher.WINNERS_URL
+  fullName: XVB_GUI.StatsFetcher.WINNERS_URL
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: WINNERS_URL
+    path: StatsFetcher.cs
+    startLine: 52
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe URL containing the boost/bonus data for a given address (cookie: wa -> address is necessry to get valid info)\n"
+  example: []
+  syntax:
+    content: public const string WINNERS_URL = "https://xmrvsbeast.com/cgi-bin/winner_stats.cgi"
+    return:
+      type: System.String
+    content.vb: Public Const WINNERS_URL As String = "https://xmrvsbeast.com/cgi-bin/winner_stats.cgi"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.MONERO_PRICE_BASE_URL
+  commentId: F:XVB_GUI.StatsFetcher.MONERO_PRICE_BASE_URL
+  id: MONERO_PRICE_BASE_URL
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: MONERO_PRICE_BASE_URL
+  nameWithType: StatsFetcher.MONERO_PRICE_BASE_URL
+  fullName: XVB_GUI.StatsFetcher.MONERO_PRICE_BASE_URL
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: MONERO_PRICE_BASE_URL
+    path: StatsFetcher.cs
+    startLine: 57
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe URL for the crypto price API\n"
+  example: []
+  syntax:
+    content: public const string MONERO_PRICE_BASE_URL = "https://min-api.cryptocompare.com/data/price?fsym=XMR&tsyms="
+    return:
+      type: System.String
+    content.vb: Public Const MONERO_PRICE_BASE_URL As String = "https://min-api.cryptocompare.com/data/price?fsym=XMR&tsyms="
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.ParseHashrate(System.Int64)
+  commentId: M:XVB_GUI.StatsFetcher.ParseHashrate(System.Int64)
+  id: ParseHashrate(System.Int64)
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: ParseHashrate(Int64)
+  nameWithType: StatsFetcher.ParseHashrate(Int64)
+  fullName: XVB_GUI.StatsFetcher.ParseHashrate(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: ParseHashrate
+    path: StatsFetcher.cs
+    startLine: 69
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nTakes an integer in H/S and formats it to its shorthand and returns it\n"
+  example:
+  - 1000 -> 1KH/S
+  syntax:
+    content: public static string ParseHashrate(long hashRate)
+    parameters:
+    - id: hashRate
+      type: System.Int64
+      description: The integer hashrate in H/S
+    return:
+      type: System.String
+      description: The formatted shorthand string representing the hashrate
+    content.vb: Public Shared Function ParseHashrate(hashRate As Long) As String
+  overload: XVB_GUI.StatsFetcher.ParseHashrate*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetMoneroPrice(XVB_GUI.StatsFetcher.Currency)
+  commentId: M:XVB_GUI.StatsFetcher.GetMoneroPrice(XVB_GUI.StatsFetcher.Currency)
+  id: GetMoneroPrice(XVB_GUI.StatsFetcher.Currency)
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetMoneroPrice(StatsFetcher.Currency)
+  nameWithType: StatsFetcher.GetMoneroPrice(StatsFetcher.Currency)
+  fullName: XVB_GUI.StatsFetcher.GetMoneroPrice(XVB_GUI.StatsFetcher.Currency)
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetMoneroPrice
+    path: StatsFetcher.cs
+    startLine: 98
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nTakes a currency type and gets the exhange rates for Monero -> Currency\n"
+  example: []
+  syntax:
+    content: public static string GetMoneroPrice(StatsFetcher.Currency currency)
+    parameters:
+    - id: currency
+      type: XVB_GUI.StatsFetcher.Currency
+      description: The currency to convert 1XMR to
+    return:
+      type: System.String
+      description: The price + the currency symbol
+    content.vb: Public Shared Function GetMoneroPrice(currency As StatsFetcher.Currency) As String
+  overload: XVB_GUI.StatsFetcher.GetMoneroPrice*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetMoneroPrice(XVB_GUI.StatsFetcher.CryptoCurrency)
+  commentId: M:XVB_GUI.StatsFetcher.GetMoneroPrice(XVB_GUI.StatsFetcher.CryptoCurrency)
+  id: GetMoneroPrice(XVB_GUI.StatsFetcher.CryptoCurrency)
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetMoneroPrice(StatsFetcher.CryptoCurrency)
+  nameWithType: StatsFetcher.GetMoneroPrice(StatsFetcher.CryptoCurrency)
+  fullName: XVB_GUI.StatsFetcher.GetMoneroPrice(XVB_GUI.StatsFetcher.CryptoCurrency)
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetMoneroPrice
+    path: StatsFetcher.cs
+    startLine: 108
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nTakes a currency type and gets the exhange rates for Monero -> Cryptocurrency\n"
+  example: []
+  syntax:
+    content: public static string GetMoneroPrice(StatsFetcher.CryptoCurrency currency)
+    parameters:
+    - id: currency
+      type: XVB_GUI.StatsFetcher.CryptoCurrency
+      description: The currency to convert 1XMR to
+    return:
+      type: System.String
+      description: The price + the cryptocurrency symbol
+    content.vb: Public Shared Function GetMoneroPrice(currency As StatsFetcher.CryptoCurrency) As String
+  overload: XVB_GUI.StatsFetcher.GetMoneroPrice*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.IsConnected
+  commentId: M:XVB_GUI.StatsFetcher.IsConnected
+  id: IsConnected
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: IsConnected()
+  nameWithType: StatsFetcher.IsConnected()
+  fullName: XVB_GUI.StatsFetcher.IsConnected()
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: IsConnected
+    path: StatsFetcher.cs
+    startLine: 130
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nDoes a base API query and checks if it can retrieve data. Returns true if query is successful, false otherwise\n"
+  example: []
+  syntax:
+    content: public static bool IsConnected()
+    return:
+      type: System.Boolean
+      description: Whether the connection to the API is successful or not
+    content.vb: Public Shared Function IsConnected As Boolean
+  overload: XVB_GUI.StatsFetcher.IsConnected*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetRaffleHashrate
+  commentId: M:XVB_GUI.StatsFetcher.GetRaffleHashrate
+  id: GetRaffleHashrate
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetRaffleHashrate()
+  nameWithType: StatsFetcher.GetRaffleHashrate()
+  fullName: XVB_GUI.StatsFetcher.GetRaffleHashrate()
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetRaffleHashrate
+    path: StatsFetcher.cs
+    startLine: 151
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nGets the raffle hashrate of the pool\n"
+  example:
+  - 145 KH/s
+  syntax:
+    content: public static string GetRaffleHashrate()
+    return:
+      type: System.String
+      description: The raffle hashrate in shorthand
+    content.vb: Public Shared Function GetRaffleHashrate As String
+  overload: XVB_GUI.StatsFetcher.GetRaffleHashrate*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetTimeRaffleHashrate
+  commentId: M:XVB_GUI.StatsFetcher.GetTimeRaffleHashrate
+  id: GetTimeRaffleHashrate
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetTimeRaffleHashrate()
+  nameWithType: StatsFetcher.GetTimeRaffleHashrate()
+  fullName: XVB_GUI.StatsFetcher.GetTimeRaffleHashrate()
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetTimeRaffleHashrate
+    path: StatsFetcher.cs
+    startLine: 178
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nGets the time-raffle hashrate of the pool\n"
+  example:
+  - 145 KH/s
+  syntax:
+    content: public static string GetTimeRaffleHashrate()
+    return:
+      type: System.String
+      description: The time-raffle hashrate in shorthand
+    content.vb: Public Shared Function GetTimeRaffleHashrate As String
+  overload: XVB_GUI.StatsFetcher.GetTimeRaffleHashrate*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetTimeRaffleDuration
+  commentId: M:XVB_GUI.StatsFetcher.GetTimeRaffleDuration
+  id: GetTimeRaffleDuration
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetTimeRaffleDuration()
+  nameWithType: StatsFetcher.GetTimeRaffleDuration()
+  fullName: XVB_GUI.StatsFetcher.GetTimeRaffleDuration()
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetTimeRaffleDuration
+    path: StatsFetcher.cs
+    startLine: 205
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nGets the time-raffle duration\n"
+  example:
+  - 196m
+  syntax:
+    content: public static string GetTimeRaffleDuration()
+    return:
+      type: System.String
+      description: time-raffle duration string
+    content.vb: Public Shared Function GetTimeRaffleDuration As String
+  overload: XVB_GUI.StatsFetcher.GetTimeRaffleDuration*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetTimeRaffleAddress
+  commentId: M:XVB_GUI.StatsFetcher.GetTimeRaffleAddress
+  id: GetTimeRaffleAddress
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetTimeRaffleAddress()
+  nameWithType: StatsFetcher.GetTimeRaffleAddress()
+  fullName: XVB_GUI.StatsFetcher.GetTimeRaffleAddress()
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetTimeRaffleAddress
+    path: StatsFetcher.cs
+    startLine: 232
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nGets the address for the time-raffle winner\n"
+  example:
+  - 446Kfwpw...RAkbu5kd
+  syntax:
+    content: public static string GetTimeRaffleAddress()
+    return:
+      type: System.String
+      description: The shortened address of the time-raffle winner
+    content.vb: Public Shared Function GetTimeRaffleAddress As String
+  overload: XVB_GUI.StatsFetcher.GetTimeRaffleAddress*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetBoostHashrate
+  commentId: M:XVB_GUI.StatsFetcher.GetBoostHashrate
+  id: GetBoostHashrate
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetBoostHashrate()
+  nameWithType: StatsFetcher.GetBoostHashrate()
+  fullName: XVB_GUI.StatsFetcher.GetBoostHashrate()
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetBoostHashrate
+    path: StatsFetcher.cs
+    startLine: 259
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nGets the queue boost hashrate\n"
+  example:
+  - 211.4kH/S
+  syntax:
+    content: public static string GetBoostHashrate()
+    return:
+      type: System.String
+      description: The shorthand hashrate string
+    content.vb: Public Shared Function GetBoostHashrate As String
+  overload: XVB_GUI.StatsFetcher.GetBoostHashrate*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetBoostHashrateAddress
+  commentId: M:XVB_GUI.StatsFetcher.GetBoostHashrateAddress
+  id: GetBoostHashrateAddress
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetBoostHashrateAddress()
+  nameWithType: StatsFetcher.GetBoostHashrateAddress()
+  fullName: XVB_GUI.StatsFetcher.GetBoostHashrateAddress()
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetBoostHashrateAddress
+    path: StatsFetcher.cs
+    startLine: 286
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nGets the address for the current boost round\n"
+  example:
+  - 446Kfwpw...RAkbu5kd
+  syntax:
+    content: public static string GetBoostHashrateAddress()
+    return:
+      type: System.String
+      description: The shortened address of the current boost round
+    content.vb: Public Shared Function GetBoostHashrateAddress As String
+  overload: XVB_GUI.StatsFetcher.GetBoostHashrateAddress*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetBoostHashrateDuration
+  commentId: M:XVB_GUI.StatsFetcher.GetBoostHashrateDuration
+  id: GetBoostHashrateDuration
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetBoostHashrateDuration()
+  nameWithType: StatsFetcher.GetBoostHashrateDuration()
+  fullName: XVB_GUI.StatsFetcher.GetBoostHashrateDuration()
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetBoostHashrateDuration
+    path: StatsFetcher.cs
+    startLine: 313
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nGets the queue boost hashrate time remaining\n"
+  example:
+  - 61.7kH/S
+  syntax:
+    content: public static string GetBoostHashrateDuration()
+    return:
+      type: System.String
+      description: String representing the time remaining in the boost
+    content.vb: Public Shared Function GetBoostHashrateDuration As String
+  overload: XVB_GUI.StatsFetcher.GetBoostHashrateDuration*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetBlocksMined
+  commentId: M:XVB_GUI.StatsFetcher.GetBlocksMined
+  id: GetBlocksMined
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetBlocksMined()
+  nameWithType: StatsFetcher.GetBlocksMined()
+  fullName: XVB_GUI.StatsFetcher.GetBlocksMined()
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetBlocksMined
+    path: StatsFetcher.cs
+    startLine: 339
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nGets an array of size ARR_SIZE representing the most recently mined blocks\n"
+  example: []
+  syntax:
+    content: public static Block[] GetBlocksMined()
+    return:
+      type: XVB_GUI.Block[]
+      description: An array containing the recent blocks
+    content.vb: Public Shared Function GetBlocksMined As Block()
+  overload: XVB_GUI.StatsFetcher.GetBlocksMined*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetPayouts(System.String)
+  commentId: M:XVB_GUI.StatsFetcher.GetPayouts(System.String)
+  id: GetPayouts(System.String)
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetPayouts(String)
+  nameWithType: StatsFetcher.GetPayouts(String)
+  fullName: XVB_GUI.StatsFetcher.GetPayouts(System.String)
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetPayouts
+    path: StatsFetcher.cs
+    startLine: 364
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nTakes a Monero address string and retrieves the payout TX data for that address\n"
+  example: []
+  syntax:
+    content: public static Transaction[] GetPayouts(string address)
+    parameters:
+    - id: address
+      type: System.String
+      description: The address whose payments will be retrieved
+    return:
+      type: XVB_GUI.Transaction[]
+      description: An array of the payout transactions for that address
+    content.vb: Public Shared Function GetPayouts(address As String) As Transaction()
+  overload: XVB_GUI.StatsFetcher.GetPayouts*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetWinners(System.String)
+  commentId: M:XVB_GUI.StatsFetcher.GetWinners(System.String)
+  id: GetWinners(System.String)
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetWinners(String)
+  nameWithType: StatsFetcher.GetWinners(String)
+  fullName: XVB_GUI.StatsFetcher.GetWinners(System.String)
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetWinners
+    path: StatsFetcher.cs
+    startLine: 418
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nTakes a Monero address and gets a list of all the boosts/bonuses for that address\n"
+  example: []
+  syntax:
+    content: public static List<BoostRecord> GetWinners(string address)
+    parameters:
+    - id: address
+      type: System.String
+      description: The address whose boosts will be retrieved
+    return:
+      type: System.Collections.Generic.List{XVB_GUI.BoostRecord}
+      description: A list of records representing all the boosts from the passed address
+    content.vb: Public Shared Function GetWinners(address As String) As List(Of BoostRecord)
+  overload: XVB_GUI.StatsFetcher.GetWinners*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XVB_GUI.StatsFetcher.GetEstimatedMinerBoostTime(System.String)
+  commentId: M:XVB_GUI.StatsFetcher.GetEstimatedMinerBoostTime(System.String)
+  id: GetEstimatedMinerBoostTime(System.String)
+  parent: XVB_GUI.StatsFetcher
+  langs:
+  - csharp
+  - vb
+  name: GetEstimatedMinerBoostTime(String)
+  nameWithType: StatsFetcher.GetEstimatedMinerBoostTime(String)
+  fullName: XVB_GUI.StatsFetcher.GetEstimatedMinerBoostTime(System.String)
+  type: Method
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GetEstimatedMinerBoostTime
+    path: StatsFetcher.cs
+    startLine: 473
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nTakes a Monero address and gets the boost ETA for it\n"
+  example: []
+  syntax:
+    content: public static int GetEstimatedMinerBoostTime(string address)
+    parameters:
+    - id: address
+      type: System.String
+      description: The address whose boost ETA will be retrieved
+    return:
+      type: System.Int32
+      description: The boost ETA in hours
+    content.vb: Public Shared Function GetEstimatedMinerBoostTime(address As String) As Integer
+  overload: XVB_GUI.StatsFetcher.GetEstimatedMinerBoostTime*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: XVB_GUI
+  commentId: N:XVB_GUI
+  name: XVB_GUI
+  nameWithType: XVB_GUI
+  fullName: XVB_GUI
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XVB_GUI.StatsFetcher.ParseHashrate*
+  commentId: Overload:XVB_GUI.StatsFetcher.ParseHashrate
+  name: ParseHashrate
+  nameWithType: StatsFetcher.ParseHashrate
+  fullName: XVB_GUI.StatsFetcher.ParseHashrate
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: XVB_GUI.StatsFetcher.GetMoneroPrice*
+  commentId: Overload:XVB_GUI.StatsFetcher.GetMoneroPrice
+  name: GetMoneroPrice
+  nameWithType: StatsFetcher.GetMoneroPrice
+  fullName: XVB_GUI.StatsFetcher.GetMoneroPrice
+- uid: XVB_GUI.StatsFetcher.Currency
+  commentId: T:XVB_GUI.StatsFetcher.Currency
+  parent: XVB_GUI
+  name: StatsFetcher.Currency
+  nameWithType: StatsFetcher.Currency
+  fullName: XVB_GUI.StatsFetcher.Currency
+- uid: XVB_GUI.StatsFetcher.CryptoCurrency
+  commentId: T:XVB_GUI.StatsFetcher.CryptoCurrency
+  parent: XVB_GUI
+  name: StatsFetcher.CryptoCurrency
+  nameWithType: StatsFetcher.CryptoCurrency
+  fullName: XVB_GUI.StatsFetcher.CryptoCurrency
+- uid: XVB_GUI.StatsFetcher.IsConnected*
+  commentId: Overload:XVB_GUI.StatsFetcher.IsConnected
+  name: IsConnected
+  nameWithType: StatsFetcher.IsConnected
+  fullName: XVB_GUI.StatsFetcher.IsConnected
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XVB_GUI.StatsFetcher.GetRaffleHashrate*
+  commentId: Overload:XVB_GUI.StatsFetcher.GetRaffleHashrate
+  name: GetRaffleHashrate
+  nameWithType: StatsFetcher.GetRaffleHashrate
+  fullName: XVB_GUI.StatsFetcher.GetRaffleHashrate
+- uid: XVB_GUI.StatsFetcher.GetTimeRaffleHashrate*
+  commentId: Overload:XVB_GUI.StatsFetcher.GetTimeRaffleHashrate
+  name: GetTimeRaffleHashrate
+  nameWithType: StatsFetcher.GetTimeRaffleHashrate
+  fullName: XVB_GUI.StatsFetcher.GetTimeRaffleHashrate
+- uid: XVB_GUI.StatsFetcher.GetTimeRaffleDuration*
+  commentId: Overload:XVB_GUI.StatsFetcher.GetTimeRaffleDuration
+  name: GetTimeRaffleDuration
+  nameWithType: StatsFetcher.GetTimeRaffleDuration
+  fullName: XVB_GUI.StatsFetcher.GetTimeRaffleDuration
+- uid: XVB_GUI.StatsFetcher.GetTimeRaffleAddress*
+  commentId: Overload:XVB_GUI.StatsFetcher.GetTimeRaffleAddress
+  name: GetTimeRaffleAddress
+  nameWithType: StatsFetcher.GetTimeRaffleAddress
+  fullName: XVB_GUI.StatsFetcher.GetTimeRaffleAddress
+- uid: XVB_GUI.StatsFetcher.GetBoostHashrate*
+  commentId: Overload:XVB_GUI.StatsFetcher.GetBoostHashrate
+  name: GetBoostHashrate
+  nameWithType: StatsFetcher.GetBoostHashrate
+  fullName: XVB_GUI.StatsFetcher.GetBoostHashrate
+- uid: XVB_GUI.StatsFetcher.GetBoostHashrateAddress*
+  commentId: Overload:XVB_GUI.StatsFetcher.GetBoostHashrateAddress
+  name: GetBoostHashrateAddress
+  nameWithType: StatsFetcher.GetBoostHashrateAddress
+  fullName: XVB_GUI.StatsFetcher.GetBoostHashrateAddress
+- uid: XVB_GUI.StatsFetcher.GetBoostHashrateDuration*
+  commentId: Overload:XVB_GUI.StatsFetcher.GetBoostHashrateDuration
+  name: GetBoostHashrateDuration
+  nameWithType: StatsFetcher.GetBoostHashrateDuration
+  fullName: XVB_GUI.StatsFetcher.GetBoostHashrateDuration
+- uid: XVB_GUI.StatsFetcher.GetBlocksMined*
+  commentId: Overload:XVB_GUI.StatsFetcher.GetBlocksMined
+  name: GetBlocksMined
+  nameWithType: StatsFetcher.GetBlocksMined
+  fullName: XVB_GUI.StatsFetcher.GetBlocksMined
+- uid: XVB_GUI.Block[]
+  isExternal: true
+  name: Block[]
+  nameWithType: Block[]
+  fullName: XVB_GUI.Block[]
+  nameWithType.vb: Block()
+  fullName.vb: XVB_GUI.Block()
+  name.vb: Block()
+  spec.csharp:
+  - uid: XVB_GUI.Block
+    name: Block
+    nameWithType: Block
+    fullName: XVB_GUI.Block
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: XVB_GUI.Block
+    name: Block
+    nameWithType: Block
+    fullName: XVB_GUI.Block
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: XVB_GUI.StatsFetcher.GetPayouts*
+  commentId: Overload:XVB_GUI.StatsFetcher.GetPayouts
+  name: GetPayouts
+  nameWithType: StatsFetcher.GetPayouts
+  fullName: XVB_GUI.StatsFetcher.GetPayouts
+- uid: XVB_GUI.Transaction[]
+  isExternal: true
+  name: Transaction[]
+  nameWithType: Transaction[]
+  fullName: XVB_GUI.Transaction[]
+  nameWithType.vb: Transaction()
+  fullName.vb: XVB_GUI.Transaction()
+  name.vb: Transaction()
+  spec.csharp:
+  - uid: XVB_GUI.Transaction
+    name: Transaction
+    nameWithType: Transaction
+    fullName: XVB_GUI.Transaction
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: XVB_GUI.Transaction
+    name: Transaction
+    nameWithType: Transaction
+    fullName: XVB_GUI.Transaction
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: XVB_GUI.StatsFetcher.GetWinners*
+  commentId: Overload:XVB_GUI.StatsFetcher.GetWinners
+  name: GetWinners
+  nameWithType: StatsFetcher.GetWinners
+  fullName: XVB_GUI.StatsFetcher.GetWinners
+- uid: System.Collections.Generic.List{XVB_GUI.BoostRecord}
+  commentId: T:System.Collections.Generic.List{XVB_GUI.BoostRecord}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<BoostRecord>
+  nameWithType: List<BoostRecord>
+  fullName: System.Collections.Generic.List<XVB_GUI.BoostRecord>
+  nameWithType.vb: List(Of BoostRecord)
+  fullName.vb: System.Collections.Generic.List(Of XVB_GUI.BoostRecord)
+  name.vb: List(Of BoostRecord)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XVB_GUI.BoostRecord
+    name: BoostRecord
+    nameWithType: BoostRecord
+    fullName: XVB_GUI.BoostRecord
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XVB_GUI.BoostRecord
+    name: BoostRecord
+    nameWithType: BoostRecord
+    fullName: XVB_GUI.BoostRecord
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: XVB_GUI.StatsFetcher.GetEstimatedMinerBoostTime*
+  commentId: Overload:XVB_GUI.StatsFetcher.GetEstimatedMinerBoostTime
+  name: GetEstimatedMinerBoostTime
+  nameWithType: StatsFetcher.GetEstimatedMinerBoostTime
+  fullName: XVB_GUI.StatsFetcher.GetEstimatedMinerBoostTime
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

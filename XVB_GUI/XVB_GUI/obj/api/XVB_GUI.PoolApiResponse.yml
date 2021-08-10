@@ -1,0 +1,1705 @@
+### YamlMime:ManagedReference
+items:
+- uid: XVB_GUI.PoolApiResponse
+  commentId: T:XVB_GUI.PoolApiResponse
+  id: PoolApiResponse
+  parent: XVB_GUI
+  children:
+  - XVB_GUI.PoolApiResponse.#ctor
+  - XVB_GUI.PoolApiResponse.#ctor(System.String,System.String)
+  - XVB_GUI.PoolApiResponse.Address
+  - XVB_GUI.PoolApiResponse.AllowSelfSelect
+  - XVB_GUI.PoolApiResponse.ConnectedMiners
+  - XVB_GUI.PoolApiResponse.LastBlockFound
+  - XVB_GUI.PoolApiResponse.LastTemplateFetched
+  - XVB_GUI.PoolApiResponse.MinerBalance
+  - XVB_GUI.PoolApiResponse.MinerHashrate
+  - XVB_GUI.PoolApiResponse.NetworkDifficulty
+  - XVB_GUI.PoolApiResponse.NetworkHashrate
+  - XVB_GUI.PoolApiResponse.NetworkHeight
+  - XVB_GUI.PoolApiResponse.OneDayHashRate
+  - XVB_GUI.PoolApiResponse.OneHourHashRate
+  - XVB_GUI.PoolApiResponse.OneWeekHashRate
+  - XVB_GUI.PoolApiResponse.PaymentThreshold
+  - XVB_GUI.PoolApiResponse.PoolBlocksFound
+  - XVB_GUI.PoolApiResponse.PoolFee
+  - XVB_GUI.PoolApiResponse.PoolHashrate
+  - XVB_GUI.PoolApiResponse.PoolPort
+  - XVB_GUI.PoolApiResponse.PoolSSLPort
+  - XVB_GUI.PoolApiResponse.RawData
+  - XVB_GUI.PoolApiResponse.RESPONSE_SIZE
+  - XVB_GUI.PoolApiResponse.RoundHashes
+  - XVB_GUI.PoolApiResponse.Status
+  - XVB_GUI.PoolApiResponse.TenMinuteHashRate
+  - XVB_GUI.PoolApiResponse.ThirtyMinuteHashRate
+  - XVB_GUI.PoolApiResponse.TwoMinuteHashRate
+  - XVB_GUI.PoolApiResponse.WorkerCount
+  langs:
+  - csharp
+  - vb
+  name: PoolApiResponse
+  nameWithType: PoolApiResponse
+  fullName: XVB_GUI.PoolApiResponse
+  type: Class
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: PoolApiResponse
+    path: PoolApiResponse.cs
+    startLine: 12
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nRepresents a response from the https://xmrvsbeast.com/stats API\n"
+  example: []
+  syntax:
+    content: public class PoolApiResponse
+    content.vb: Public Class PoolApiResponse
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: XVB_GUI.PoolApiResponse.RESPONSE_SIZE
+  commentId: F:XVB_GUI.PoolApiResponse.RESPONSE_SIZE
+  id: RESPONSE_SIZE
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: RESPONSE_SIZE
+  nameWithType: PoolApiResponse.RESPONSE_SIZE
+  fullName: XVB_GUI.PoolApiResponse.RESPONSE_SIZE
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: RESPONSE_SIZE
+    path: PoolApiResponse.cs
+    startLine: 17
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe size of the API response\n"
+  example: []
+  syntax:
+    content: public const int RESPONSE_SIZE = 23
+    return:
+      type: System.Int32
+    content.vb: Public Const RESPONSE_SIZE As Integer = 23
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.PoolApiResponse.#ctor
+  commentId: M:XVB_GUI.PoolApiResponse.#ctor
+  id: '#ctor'
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: PoolApiResponse()
+  nameWithType: PoolApiResponse.PoolApiResponse()
+  fullName: XVB_GUI.PoolApiResponse.PoolApiResponse()
+  type: Constructor
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: .ctor
+    path: PoolApiResponse.cs
+    startLine: 50
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nDefault constructor is called in the event of a failed API call, which sets its status as FAILED\n"
+  example: []
+  syntax:
+    content: public PoolApiResponse()
+    content.vb: Public Sub New
+  overload: XVB_GUI.PoolApiResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XVB_GUI.PoolApiResponse.#ctor(System.String,System.String)
+  commentId: M:XVB_GUI.PoolApiResponse.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: PoolApiResponse(String, String)
+  nameWithType: PoolApiResponse.PoolApiResponse(String, String)
+  fullName: XVB_GUI.PoolApiResponse.PoolApiResponse(System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: .ctor
+    path: PoolApiResponse.cs
+    startLine: 60
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nTakes the raw data and wallet address, parses the data to construct the object and sets its status to OK if data is correctly formatted, or FAILED in the event of a parser error\n"
+  example: []
+  syntax:
+    content: public PoolApiResponse(string objStr_, string address_)
+    parameters:
+    - id: objStr_
+      type: System.String
+      description: The JSON string of the response from the stats API
+    - id: address_
+      type: System.String
+      description: The wallet address
+    content.vb: Public Sub New(objStr_ As String, address_ As String)
+  overload: XVB_GUI.PoolApiResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XVB_GUI.PoolApiResponse.Status
+  commentId: P:XVB_GUI.PoolApiResponse.Status
+  id: Status
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: Status
+  nameWithType: PoolApiResponse.Status
+  fullName: XVB_GUI.PoolApiResponse.Status
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Status
+    path: PoolApiResponse.cs
+    startLine: 127
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nRepresents whether the API call for this object was done with no errors or not\n"
+  example: []
+  syntax:
+    content: public PoolApiResponse.ResponseStatus Status { get; }
+    parameters: []
+    return:
+      type: XVB_GUI.PoolApiResponse.ResponseStatus
+    content.vb: Public ReadOnly Property Status As PoolApiResponse.ResponseStatus
+  overload: XVB_GUI.PoolApiResponse.Status*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.Address
+  commentId: P:XVB_GUI.PoolApiResponse.Address
+  id: Address
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: Address
+  nameWithType: PoolApiResponse.Address
+  fullName: XVB_GUI.PoolApiResponse.Address
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Address
+    path: PoolApiResponse.cs
+    startLine: 142
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe wallet address belonging to the queried stats\n"
+  example: []
+  syntax:
+    content: public string Address { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Address As String
+  overload: XVB_GUI.PoolApiResponse.Address*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.RawData
+  commentId: P:XVB_GUI.PoolApiResponse.RawData
+  id: RawData
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: RawData
+  nameWithType: PoolApiResponse.RawData
+  fullName: XVB_GUI.PoolApiResponse.RawData
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: RawData
+    path: PoolApiResponse.cs
+    startLine: 157
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe raw JSON string of the API response\n"
+  example: []
+  syntax:
+    content: public string RawData { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property RawData As String
+  overload: XVB_GUI.PoolApiResponse.RawData*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.PoolHashrate
+  commentId: P:XVB_GUI.PoolApiResponse.PoolHashrate
+  id: PoolHashrate
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: PoolHashrate
+  nameWithType: PoolApiResponse.PoolHashrate
+  fullName: XVB_GUI.PoolApiResponse.PoolHashrate
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: PoolHashrate
+    path: PoolApiResponse.cs
+    startLine: 173
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe hashrate of the XMRvsBEAST pool\n"
+  example: []
+  syntax:
+    content: public long PoolHashrate { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property PoolHashrate As Long
+  overload: XVB_GUI.PoolApiResponse.PoolHashrate*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.RoundHashes
+  commentId: P:XVB_GUI.PoolApiResponse.RoundHashes
+  id: RoundHashes
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: RoundHashes
+  nameWithType: PoolApiResponse.RoundHashes
+  fullName: XVB_GUI.PoolApiResponse.RoundHashes
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: RoundHashes
+    path: PoolApiResponse.cs
+    startLine: 192
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe round hashes of the pool\n"
+  example: []
+  syntax:
+    content: public long RoundHashes { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property RoundHashes As Long
+  overload: XVB_GUI.PoolApiResponse.RoundHashes*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.NetworkHashrate
+  commentId: P:XVB_GUI.PoolApiResponse.NetworkHashrate
+  id: NetworkHashrate
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: NetworkHashrate
+  nameWithType: PoolApiResponse.NetworkHashrate
+  fullName: XVB_GUI.PoolApiResponse.NetworkHashrate
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: NetworkHashrate
+    path: PoolApiResponse.cs
+    startLine: 211
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe total hashrate of the Monero network in H/S\n"
+  example: []
+  syntax:
+    content: public long NetworkHashrate { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property NetworkHashrate As Long
+  overload: XVB_GUI.PoolApiResponse.NetworkHashrate*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.NetworkDifficulty
+  commentId: P:XVB_GUI.PoolApiResponse.NetworkDifficulty
+  id: NetworkDifficulty
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: NetworkDifficulty
+  nameWithType: PoolApiResponse.NetworkDifficulty
+  fullName: XVB_GUI.PoolApiResponse.NetworkDifficulty
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: NetworkDifficulty
+    path: PoolApiResponse.cs
+    startLine: 230
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe current difficulty of the Monero network\n"
+  example: []
+  syntax:
+    content: public long NetworkDifficulty { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property NetworkDifficulty As Long
+  overload: XVB_GUI.PoolApiResponse.NetworkDifficulty*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.NetworkHeight
+  commentId: P:XVB_GUI.PoolApiResponse.NetworkHeight
+  id: NetworkHeight
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: NetworkHeight
+  nameWithType: PoolApiResponse.NetworkHeight
+  fullName: XVB_GUI.PoolApiResponse.NetworkHeight
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: NetworkHeight
+    path: PoolApiResponse.cs
+    startLine: 249
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe current height of the Monero blockchain\n"
+  example: []
+  syntax:
+    content: public long NetworkHeight { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property NetworkHeight As Long
+  overload: XVB_GUI.PoolApiResponse.NetworkHeight*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.LastTemplateFetched
+  commentId: P:XVB_GUI.PoolApiResponse.LastTemplateFetched
+  id: LastTemplateFetched
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: LastTemplateFetched
+  nameWithType: PoolApiResponse.LastTemplateFetched
+  fullName: XVB_GUI.PoolApiResponse.LastTemplateFetched
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: LastTemplateFetched
+    path: PoolApiResponse.cs
+    startLine: 268
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe UNIX time of the last template fetched\n"
+  example: []
+  syntax:
+    content: public long LastTemplateFetched { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property LastTemplateFetched As Long
+  overload: XVB_GUI.PoolApiResponse.LastTemplateFetched*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.LastBlockFound
+  commentId: P:XVB_GUI.PoolApiResponse.LastBlockFound
+  id: LastBlockFound
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: LastBlockFound
+  nameWithType: PoolApiResponse.LastBlockFound
+  fullName: XVB_GUI.PoolApiResponse.LastBlockFound
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: LastBlockFound
+    path: PoolApiResponse.cs
+    startLine: 287
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe UNIX time of the last block found\n"
+  example: []
+  syntax:
+    content: public long LastBlockFound { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property LastBlockFound As Long
+  overload: XVB_GUI.PoolApiResponse.LastBlockFound*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.PoolBlocksFound
+  commentId: P:XVB_GUI.PoolApiResponse.PoolBlocksFound
+  id: PoolBlocksFound
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: PoolBlocksFound
+  nameWithType: PoolApiResponse.PoolBlocksFound
+  fullName: XVB_GUI.PoolApiResponse.PoolBlocksFound
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: PoolBlocksFound
+    path: PoolApiResponse.cs
+    startLine: 306
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe number of blocks found by the XMRvsBEAST pools\n"
+  example: []
+  syntax:
+    content: public long PoolBlocksFound { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property PoolBlocksFound As Long
+  overload: XVB_GUI.PoolApiResponse.PoolBlocksFound*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.PaymentThreshold
+  commentId: P:XVB_GUI.PoolApiResponse.PaymentThreshold
+  id: PaymentThreshold
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: PaymentThreshold
+  nameWithType: PoolApiResponse.PaymentThreshold
+  fullName: XVB_GUI.PoolApiResponse.PaymentThreshold
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: PaymentThreshold
+    path: PoolApiResponse.cs
+    startLine: 325
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe pool&apos;s payout threshold\n"
+  example: []
+  syntax:
+    content: public double PaymentThreshold { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property PaymentThreshold As Double
+  overload: XVB_GUI.PoolApiResponse.PaymentThreshold*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.PoolFee
+  commentId: P:XVB_GUI.PoolApiResponse.PoolFee
+  id: PoolFee
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: PoolFee
+  nameWithType: PoolApiResponse.PoolFee
+  fullName: XVB_GUI.PoolApiResponse.PoolFee
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: PoolFee
+    path: PoolApiResponse.cs
+    startLine: 344
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe XvB pool&apos;s fee percentage\n"
+  example: []
+  syntax:
+    content: public double PoolFee { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property PoolFee As Double
+  overload: XVB_GUI.PoolApiResponse.PoolFee*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.PoolPort
+  commentId: P:XVB_GUI.PoolApiResponse.PoolPort
+  id: PoolPort
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: PoolPort
+  nameWithType: PoolApiResponse.PoolPort
+  fullName: XVB_GUI.PoolApiResponse.PoolPort
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: PoolPort
+    path: PoolApiResponse.cs
+    startLine: 363
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe pool&apos;s main port\n"
+  example: []
+  syntax:
+    content: public long PoolPort { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property PoolPort As Long
+  overload: XVB_GUI.PoolApiResponse.PoolPort*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.PoolSSLPort
+  commentId: P:XVB_GUI.PoolApiResponse.PoolSSLPort
+  id: PoolSSLPort
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: PoolSSLPort
+  nameWithType: PoolApiResponse.PoolSSLPort
+  fullName: XVB_GUI.PoolApiResponse.PoolSSLPort
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: PoolSSLPort
+    path: PoolApiResponse.cs
+    startLine: 382
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe pool&apos;s SSL port\n"
+  example: []
+  syntax:
+    content: public long PoolSSLPort { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property PoolSSLPort As Long
+  overload: XVB_GUI.PoolApiResponse.PoolSSLPort*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.AllowSelfSelect
+  commentId: P:XVB_GUI.PoolApiResponse.AllowSelfSelect
+  id: AllowSelfSelect
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: AllowSelfSelect
+  nameWithType: PoolApiResponse.AllowSelfSelect
+  fullName: XVB_GUI.PoolApiResponse.AllowSelfSelect
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: AllowSelfSelect
+    path: PoolApiResponse.cs
+    startLine: 401
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\n0 or 1 representing Allow Self Select for the pool\n"
+  example: []
+  syntax:
+    content: public long AllowSelfSelect { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property AllowSelfSelect As Long
+  overload: XVB_GUI.PoolApiResponse.AllowSelfSelect*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.ConnectedMiners
+  commentId: P:XVB_GUI.PoolApiResponse.ConnectedMiners
+  id: ConnectedMiners
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: ConnectedMiners
+  nameWithType: PoolApiResponse.ConnectedMiners
+  fullName: XVB_GUI.PoolApiResponse.ConnectedMiners
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: ConnectedMiners
+    path: PoolApiResponse.cs
+    startLine: 420
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe number of active miners on the pool\n"
+  example: []
+  syntax:
+    content: public long ConnectedMiners { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property ConnectedMiners As Long
+  overload: XVB_GUI.PoolApiResponse.ConnectedMiners*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.MinerHashrate
+  commentId: P:XVB_GUI.PoolApiResponse.MinerHashrate
+  id: MinerHashrate
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: MinerHashrate
+  nameWithType: PoolApiResponse.MinerHashrate
+  fullName: XVB_GUI.PoolApiResponse.MinerHashrate
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: MinerHashrate
+    path: PoolApiResponse.cs
+    startLine: 439
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe current hashrate of the miner\n"
+  example: []
+  syntax:
+    content: public long MinerHashrate { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property MinerHashrate As Long
+  overload: XVB_GUI.PoolApiResponse.MinerHashrate*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.TwoMinuteHashRate
+  commentId: P:XVB_GUI.PoolApiResponse.TwoMinuteHashRate
+  id: TwoMinuteHashRate
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: TwoMinuteHashRate
+  nameWithType: PoolApiResponse.TwoMinuteHashRate
+  fullName: XVB_GUI.PoolApiResponse.TwoMinuteHashRate
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: TwoMinuteHashRate
+    path: PoolApiResponse.cs
+    startLine: 458
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe miner&apos;s hashrate for the last two minutes\n"
+  example: []
+  syntax:
+    content: public long TwoMinuteHashRate { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property TwoMinuteHashRate As Long
+  overload: XVB_GUI.PoolApiResponse.TwoMinuteHashRate*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.TenMinuteHashRate
+  commentId: P:XVB_GUI.PoolApiResponse.TenMinuteHashRate
+  id: TenMinuteHashRate
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: TenMinuteHashRate
+  nameWithType: PoolApiResponse.TenMinuteHashRate
+  fullName: XVB_GUI.PoolApiResponse.TenMinuteHashRate
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: TenMinuteHashRate
+    path: PoolApiResponse.cs
+    startLine: 477
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe miner&apos;s hashrate for the last ten minutes\n"
+  example: []
+  syntax:
+    content: public long TenMinuteHashRate { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property TenMinuteHashRate As Long
+  overload: XVB_GUI.PoolApiResponse.TenMinuteHashRate*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.ThirtyMinuteHashRate
+  commentId: P:XVB_GUI.PoolApiResponse.ThirtyMinuteHashRate
+  id: ThirtyMinuteHashRate
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: ThirtyMinuteHashRate
+  nameWithType: PoolApiResponse.ThirtyMinuteHashRate
+  fullName: XVB_GUI.PoolApiResponse.ThirtyMinuteHashRate
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: ThirtyMinuteHashRate
+    path: PoolApiResponse.cs
+    startLine: 496
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe miner&apos;s hashrate for the last thirty minutes\n"
+  example: []
+  syntax:
+    content: public long ThirtyMinuteHashRate { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property ThirtyMinuteHashRate As Long
+  overload: XVB_GUI.PoolApiResponse.ThirtyMinuteHashRate*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.OneHourHashRate
+  commentId: P:XVB_GUI.PoolApiResponse.OneHourHashRate
+  id: OneHourHashRate
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: OneHourHashRate
+  nameWithType: PoolApiResponse.OneHourHashRate
+  fullName: XVB_GUI.PoolApiResponse.OneHourHashRate
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: OneHourHashRate
+    path: PoolApiResponse.cs
+    startLine: 515
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe miner&apos;s hashrate for the last hour\n"
+  example: []
+  syntax:
+    content: public long OneHourHashRate { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property OneHourHashRate As Long
+  overload: XVB_GUI.PoolApiResponse.OneHourHashRate*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.OneDayHashRate
+  commentId: P:XVB_GUI.PoolApiResponse.OneDayHashRate
+  id: OneDayHashRate
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: OneDayHashRate
+  nameWithType: PoolApiResponse.OneDayHashRate
+  fullName: XVB_GUI.PoolApiResponse.OneDayHashRate
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: OneDayHashRate
+    path: PoolApiResponse.cs
+    startLine: 534
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe miner&apos;s hashrate for the last hour\n"
+  example: []
+  syntax:
+    content: public long OneDayHashRate { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property OneDayHashRate As Long
+  overload: XVB_GUI.PoolApiResponse.OneDayHashRate*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.OneWeekHashRate
+  commentId: P:XVB_GUI.PoolApiResponse.OneWeekHashRate
+  id: OneWeekHashRate
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: OneWeekHashRate
+  nameWithType: PoolApiResponse.OneWeekHashRate
+  fullName: XVB_GUI.PoolApiResponse.OneWeekHashRate
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: OneWeekHashRate
+    path: PoolApiResponse.cs
+    startLine: 553
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe miner&apos;s hashrate for the last week\n"
+  example: []
+  syntax:
+    content: public long OneWeekHashRate { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property OneWeekHashRate As Long
+  overload: XVB_GUI.PoolApiResponse.OneWeekHashRate*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.MinerBalance
+  commentId: P:XVB_GUI.PoolApiResponse.MinerBalance
+  id: MinerBalance
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: MinerBalance
+  nameWithType: PoolApiResponse.MinerBalance
+  fullName: XVB_GUI.PoolApiResponse.MinerBalance
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: MinerBalance
+    path: PoolApiResponse.cs
+    startLine: 572
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe miner&apos;s pending payout balance\n"
+  example: []
+  syntax:
+    content: public double MinerBalance { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property MinerBalance As Double
+  overload: XVB_GUI.PoolApiResponse.MinerBalance*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XVB_GUI.PoolApiResponse.WorkerCount
+  commentId: P:XVB_GUI.PoolApiResponse.WorkerCount
+  id: WorkerCount
+  parent: XVB_GUI.PoolApiResponse
+  langs:
+  - csharp
+  - vb
+  name: WorkerCount
+  nameWithType: PoolApiResponse.WorkerCount
+  fullName: XVB_GUI.PoolApiResponse.WorkerCount
+  type: Property
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: WorkerCount
+    path: PoolApiResponse.cs
+    startLine: 591
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe number of workers the address has\n"
+  example: []
+  syntax:
+    content: public long WorkerCount { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property WorkerCount As Long
+  overload: XVB_GUI.PoolApiResponse.WorkerCount*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if the value is negative
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: XVB_GUI
+  commentId: N:XVB_GUI
+  name: XVB_GUI
+  nameWithType: XVB_GUI
+  fullName: XVB_GUI
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: XVB_GUI.PoolApiResponse.#ctor*
+  commentId: Overload:XVB_GUI.PoolApiResponse.#ctor
+  name: PoolApiResponse
+  nameWithType: PoolApiResponse.PoolApiResponse
+  fullName: XVB_GUI.PoolApiResponse.PoolApiResponse
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XVB_GUI.PoolApiResponse.Status*
+  commentId: Overload:XVB_GUI.PoolApiResponse.Status
+  name: Status
+  nameWithType: PoolApiResponse.Status
+  fullName: XVB_GUI.PoolApiResponse.Status
+- uid: XVB_GUI.PoolApiResponse.ResponseStatus
+  commentId: T:XVB_GUI.PoolApiResponse.ResponseStatus
+  parent: XVB_GUI
+  name: PoolApiResponse.ResponseStatus
+  nameWithType: PoolApiResponse.ResponseStatus
+  fullName: XVB_GUI.PoolApiResponse.ResponseStatus
+- uid: XVB_GUI.PoolApiResponse.Address*
+  commentId: Overload:XVB_GUI.PoolApiResponse.Address
+  name: Address
+  nameWithType: PoolApiResponse.Address
+  fullName: XVB_GUI.PoolApiResponse.Address
+- uid: XVB_GUI.PoolApiResponse.RawData*
+  commentId: Overload:XVB_GUI.PoolApiResponse.RawData
+  name: RawData
+  nameWithType: PoolApiResponse.RawData
+  fullName: XVB_GUI.PoolApiResponse.RawData
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+- uid: XVB_GUI.PoolApiResponse.PoolHashrate*
+  commentId: Overload:XVB_GUI.PoolApiResponse.PoolHashrate
+  name: PoolHashrate
+  nameWithType: PoolApiResponse.PoolHashrate
+  fullName: XVB_GUI.PoolApiResponse.PoolHashrate
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: XVB_GUI.PoolApiResponse.RoundHashes*
+  commentId: Overload:XVB_GUI.PoolApiResponse.RoundHashes
+  name: RoundHashes
+  nameWithType: PoolApiResponse.RoundHashes
+  fullName: XVB_GUI.PoolApiResponse.RoundHashes
+- uid: XVB_GUI.PoolApiResponse.NetworkHashrate*
+  commentId: Overload:XVB_GUI.PoolApiResponse.NetworkHashrate
+  name: NetworkHashrate
+  nameWithType: PoolApiResponse.NetworkHashrate
+  fullName: XVB_GUI.PoolApiResponse.NetworkHashrate
+- uid: XVB_GUI.PoolApiResponse.NetworkDifficulty*
+  commentId: Overload:XVB_GUI.PoolApiResponse.NetworkDifficulty
+  name: NetworkDifficulty
+  nameWithType: PoolApiResponse.NetworkDifficulty
+  fullName: XVB_GUI.PoolApiResponse.NetworkDifficulty
+- uid: XVB_GUI.PoolApiResponse.NetworkHeight*
+  commentId: Overload:XVB_GUI.PoolApiResponse.NetworkHeight
+  name: NetworkHeight
+  nameWithType: PoolApiResponse.NetworkHeight
+  fullName: XVB_GUI.PoolApiResponse.NetworkHeight
+- uid: XVB_GUI.PoolApiResponse.LastTemplateFetched*
+  commentId: Overload:XVB_GUI.PoolApiResponse.LastTemplateFetched
+  name: LastTemplateFetched
+  nameWithType: PoolApiResponse.LastTemplateFetched
+  fullName: XVB_GUI.PoolApiResponse.LastTemplateFetched
+- uid: XVB_GUI.PoolApiResponse.LastBlockFound*
+  commentId: Overload:XVB_GUI.PoolApiResponse.LastBlockFound
+  name: LastBlockFound
+  nameWithType: PoolApiResponse.LastBlockFound
+  fullName: XVB_GUI.PoolApiResponse.LastBlockFound
+- uid: XVB_GUI.PoolApiResponse.PoolBlocksFound*
+  commentId: Overload:XVB_GUI.PoolApiResponse.PoolBlocksFound
+  name: PoolBlocksFound
+  nameWithType: PoolApiResponse.PoolBlocksFound
+  fullName: XVB_GUI.PoolApiResponse.PoolBlocksFound
+- uid: XVB_GUI.PoolApiResponse.PaymentThreshold*
+  commentId: Overload:XVB_GUI.PoolApiResponse.PaymentThreshold
+  name: PaymentThreshold
+  nameWithType: PoolApiResponse.PaymentThreshold
+  fullName: XVB_GUI.PoolApiResponse.PaymentThreshold
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: XVB_GUI.PoolApiResponse.PoolFee*
+  commentId: Overload:XVB_GUI.PoolApiResponse.PoolFee
+  name: PoolFee
+  nameWithType: PoolApiResponse.PoolFee
+  fullName: XVB_GUI.PoolApiResponse.PoolFee
+- uid: XVB_GUI.PoolApiResponse.PoolPort*
+  commentId: Overload:XVB_GUI.PoolApiResponse.PoolPort
+  name: PoolPort
+  nameWithType: PoolApiResponse.PoolPort
+  fullName: XVB_GUI.PoolApiResponse.PoolPort
+- uid: XVB_GUI.PoolApiResponse.PoolSSLPort*
+  commentId: Overload:XVB_GUI.PoolApiResponse.PoolSSLPort
+  name: PoolSSLPort
+  nameWithType: PoolApiResponse.PoolSSLPort
+  fullName: XVB_GUI.PoolApiResponse.PoolSSLPort
+- uid: XVB_GUI.PoolApiResponse.AllowSelfSelect*
+  commentId: Overload:XVB_GUI.PoolApiResponse.AllowSelfSelect
+  name: AllowSelfSelect
+  nameWithType: PoolApiResponse.AllowSelfSelect
+  fullName: XVB_GUI.PoolApiResponse.AllowSelfSelect
+- uid: XVB_GUI.PoolApiResponse.ConnectedMiners*
+  commentId: Overload:XVB_GUI.PoolApiResponse.ConnectedMiners
+  name: ConnectedMiners
+  nameWithType: PoolApiResponse.ConnectedMiners
+  fullName: XVB_GUI.PoolApiResponse.ConnectedMiners
+- uid: XVB_GUI.PoolApiResponse.MinerHashrate*
+  commentId: Overload:XVB_GUI.PoolApiResponse.MinerHashrate
+  name: MinerHashrate
+  nameWithType: PoolApiResponse.MinerHashrate
+  fullName: XVB_GUI.PoolApiResponse.MinerHashrate
+- uid: XVB_GUI.PoolApiResponse.TwoMinuteHashRate*
+  commentId: Overload:XVB_GUI.PoolApiResponse.TwoMinuteHashRate
+  name: TwoMinuteHashRate
+  nameWithType: PoolApiResponse.TwoMinuteHashRate
+  fullName: XVB_GUI.PoolApiResponse.TwoMinuteHashRate
+- uid: XVB_GUI.PoolApiResponse.TenMinuteHashRate*
+  commentId: Overload:XVB_GUI.PoolApiResponse.TenMinuteHashRate
+  name: TenMinuteHashRate
+  nameWithType: PoolApiResponse.TenMinuteHashRate
+  fullName: XVB_GUI.PoolApiResponse.TenMinuteHashRate
+- uid: XVB_GUI.PoolApiResponse.ThirtyMinuteHashRate*
+  commentId: Overload:XVB_GUI.PoolApiResponse.ThirtyMinuteHashRate
+  name: ThirtyMinuteHashRate
+  nameWithType: PoolApiResponse.ThirtyMinuteHashRate
+  fullName: XVB_GUI.PoolApiResponse.ThirtyMinuteHashRate
+- uid: XVB_GUI.PoolApiResponse.OneHourHashRate*
+  commentId: Overload:XVB_GUI.PoolApiResponse.OneHourHashRate
+  name: OneHourHashRate
+  nameWithType: PoolApiResponse.OneHourHashRate
+  fullName: XVB_GUI.PoolApiResponse.OneHourHashRate
+- uid: XVB_GUI.PoolApiResponse.OneDayHashRate*
+  commentId: Overload:XVB_GUI.PoolApiResponse.OneDayHashRate
+  name: OneDayHashRate
+  nameWithType: PoolApiResponse.OneDayHashRate
+  fullName: XVB_GUI.PoolApiResponse.OneDayHashRate
+- uid: XVB_GUI.PoolApiResponse.OneWeekHashRate*
+  commentId: Overload:XVB_GUI.PoolApiResponse.OneWeekHashRate
+  name: OneWeekHashRate
+  nameWithType: PoolApiResponse.OneWeekHashRate
+  fullName: XVB_GUI.PoolApiResponse.OneWeekHashRate
+- uid: XVB_GUI.PoolApiResponse.MinerBalance*
+  commentId: Overload:XVB_GUI.PoolApiResponse.MinerBalance
+  name: MinerBalance
+  nameWithType: PoolApiResponse.MinerBalance
+  fullName: XVB_GUI.PoolApiResponse.MinerBalance
+- uid: XVB_GUI.PoolApiResponse.WorkerCount*
+  commentId: Overload:XVB_GUI.PoolApiResponse.WorkerCount
+  name: WorkerCount
+  nameWithType: PoolApiResponse.WorkerCount
+  fullName: XVB_GUI.PoolApiResponse.WorkerCount

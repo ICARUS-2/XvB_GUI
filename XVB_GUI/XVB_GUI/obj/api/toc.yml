@@ -1,0 +1,40 @@
+### YamlMime:TableOfContent
+- uid: XVB_GUI
+  name: XVB_GUI
+  items:
+  - uid: XVB_GUI.AddressWindow
+    name: AddressWindow
+  - uid: XVB_GUI.App
+    name: App
+  - uid: XVB_GUI.Block
+    name: Block
+  - uid: XVB_GUI.BlockStatus
+    name: BlockStatus
+  - uid: XVB_GUI.BoostRecord
+    name: BoostRecord
+  - uid: XVB_GUI.BoostRecord.BoostType
+    name: BoostRecord.BoostType
+  - uid: XVB_GUI.BoostReport
+    name: BoostReport
+  - uid: XVB_GUI.DeveloperInfoWindow
+    name: DeveloperInfoWindow
+  - uid: XVB_GUI.Logger
+    name: Logger
+  - uid: XVB_GUI.MainWindow
+    name: MainWindow
+  - uid: XVB_GUI.OptionsWindow
+    name: OptionsWindow
+  - uid: XVB_GUI.PoolApiResponse
+    name: PoolApiResponse
+  - uid: XVB_GUI.PoolApiResponse.ResponseStatus
+    name: PoolApiResponse.ResponseStatus
+  - uid: XVB_GUI.StatsFetcher
+    name: StatsFetcher
+  - uid: XVB_GUI.StatsFetcher.CryptoCurrency
+    name: StatsFetcher.CryptoCurrency
+  - uid: XVB_GUI.StatsFetcher.Currency
+    name: StatsFetcher.Currency
+  - uid: XVB_GUI.Transaction
+    name: Transaction
+  - uid: XVB_GUI.TransactionData
+    name: TransactionData

@@ -1,0 +1,213 @@
+### YamlMime:ManagedReference
+items:
+- uid: XVB_GUI.StatsFetcher.Currency
+  commentId: T:XVB_GUI.StatsFetcher.Currency
+  id: StatsFetcher.Currency
+  parent: XVB_GUI
+  children:
+  - XVB_GUI.StatsFetcher.Currency.AUD
+  - XVB_GUI.StatsFetcher.Currency.CAD
+  - XVB_GUI.StatsFetcher.Currency.EUR
+  - XVB_GUI.StatsFetcher.Currency.GBP
+  - XVB_GUI.StatsFetcher.Currency.USD
+  langs:
+  - csharp
+  - vb
+  name: StatsFetcher.Currency
+  nameWithType: StatsFetcher.Currency
+  fullName: XVB_GUI.StatsFetcher.Currency
+  type: Enum
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: Currency
+    path: StatsFetcher.cs
+    startLine: 503
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nFIAT currencies whose exchange rates can be compared by the app\n"
+  example: []
+  syntax:
+    content: public enum Currency
+    content.vb: Public Enum Currency
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: XVB_GUI.StatsFetcher.Currency.USD
+  commentId: F:XVB_GUI.StatsFetcher.Currency.USD
+  id: USD
+  parent: XVB_GUI.StatsFetcher.Currency
+  langs:
+  - csharp
+  - vb
+  name: USD
+  nameWithType: StatsFetcher.Currency.USD
+  fullName: XVB_GUI.StatsFetcher.Currency.USD
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: USD
+    path: StatsFetcher.cs
+    startLine: 505
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: USD = 0
+    return:
+      type: XVB_GUI.StatsFetcher.Currency
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.Currency.CAD
+  commentId: F:XVB_GUI.StatsFetcher.Currency.CAD
+  id: CAD
+  parent: XVB_GUI.StatsFetcher.Currency
+  langs:
+  - csharp
+  - vb
+  name: CAD
+  nameWithType: StatsFetcher.Currency.CAD
+  fullName: XVB_GUI.StatsFetcher.Currency.CAD
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: CAD
+    path: StatsFetcher.cs
+    startLine: 506
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: CAD = 1
+    return:
+      type: XVB_GUI.StatsFetcher.Currency
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.Currency.EUR
+  commentId: F:XVB_GUI.StatsFetcher.Currency.EUR
+  id: EUR
+  parent: XVB_GUI.StatsFetcher.Currency
+  langs:
+  - csharp
+  - vb
+  name: EUR
+  nameWithType: StatsFetcher.Currency.EUR
+  fullName: XVB_GUI.StatsFetcher.Currency.EUR
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: EUR
+    path: StatsFetcher.cs
+    startLine: 507
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: EUR = 2
+    return:
+      type: XVB_GUI.StatsFetcher.Currency
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.Currency.GBP
+  commentId: F:XVB_GUI.StatsFetcher.Currency.GBP
+  id: GBP
+  parent: XVB_GUI.StatsFetcher.Currency
+  langs:
+  - csharp
+  - vb
+  name: GBP
+  nameWithType: StatsFetcher.Currency.GBP
+  fullName: XVB_GUI.StatsFetcher.Currency.GBP
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: GBP
+    path: StatsFetcher.cs
+    startLine: 508
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: GBP = 3
+    return:
+      type: XVB_GUI.StatsFetcher.Currency
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.Currency.AUD
+  commentId: F:XVB_GUI.StatsFetcher.Currency.AUD
+  id: AUD
+  parent: XVB_GUI.StatsFetcher.Currency
+  langs:
+  - csharp
+  - vb
+  name: AUD
+  nameWithType: StatsFetcher.Currency.AUD
+  fullName: XVB_GUI.StatsFetcher.Currency.AUD
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: AUD
+    path: StatsFetcher.cs
+    startLine: 509
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: AUD = 4
+    return:
+      type: XVB_GUI.StatsFetcher.Currency
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: XVB_GUI
+  commentId: N:XVB_GUI
+  name: XVB_GUI
+  nameWithType: XVB_GUI
+  fullName: XVB_GUI
+- uid: XVB_GUI.StatsFetcher.Currency
+  commentId: T:XVB_GUI.StatsFetcher.Currency
+  parent: XVB_GUI
+  name: StatsFetcher.Currency
+  nameWithType: StatsFetcher.Currency
+  fullName: XVB_GUI.StatsFetcher.Currency

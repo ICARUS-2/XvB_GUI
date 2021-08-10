@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: XVB_GUI.StatsFetcher.CryptoCurrency
+  commentId: T:XVB_GUI.StatsFetcher.CryptoCurrency
+  id: StatsFetcher.CryptoCurrency
+  parent: XVB_GUI
+  children:
+  - XVB_GUI.StatsFetcher.CryptoCurrency.BTC
+  - XVB_GUI.StatsFetcher.CryptoCurrency.ETH
+  langs:
+  - csharp
+  - vb
+  name: StatsFetcher.CryptoCurrency
+  nameWithType: StatsFetcher.CryptoCurrency
+  fullName: XVB_GUI.StatsFetcher.CryptoCurrency
+  type: Enum
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: CryptoCurrency
+    path: StatsFetcher.cs
+    startLine: 515
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nCryptoCurrencies whose exchange rates can be compared by the app\n"
+  example: []
+  syntax:
+    content: public enum CryptoCurrency
+    content.vb: Public Enum CryptoCurrency
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: XVB_GUI.StatsFetcher.CryptoCurrency.BTC
+  commentId: F:XVB_GUI.StatsFetcher.CryptoCurrency.BTC
+  id: BTC
+  parent: XVB_GUI.StatsFetcher.CryptoCurrency
+  langs:
+  - csharp
+  - vb
+  name: BTC
+  nameWithType: StatsFetcher.CryptoCurrency.BTC
+  fullName: XVB_GUI.StatsFetcher.CryptoCurrency.BTC
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: BTC
+    path: StatsFetcher.cs
+    startLine: 517
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: BTC = 0
+    return:
+      type: XVB_GUI.StatsFetcher.CryptoCurrency
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.StatsFetcher.CryptoCurrency.ETH
+  commentId: F:XVB_GUI.StatsFetcher.CryptoCurrency.ETH
+  id: ETH
+  parent: XVB_GUI.StatsFetcher.CryptoCurrency
+  langs:
+  - csharp
+  - vb
+  name: ETH
+  nameWithType: StatsFetcher.CryptoCurrency.ETH
+  fullName: XVB_GUI.StatsFetcher.CryptoCurrency.ETH
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/StatsFetcher.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: ETH
+    path: StatsFetcher.cs
+    startLine: 518
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: ETH = 1
+    return:
+      type: XVB_GUI.StatsFetcher.CryptoCurrency
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: XVB_GUI
+  commentId: N:XVB_GUI
+  name: XVB_GUI
+  nameWithType: XVB_GUI
+  fullName: XVB_GUI
+- uid: XVB_GUI.StatsFetcher.CryptoCurrency
+  commentId: T:XVB_GUI.StatsFetcher.CryptoCurrency
+  parent: XVB_GUI
+  name: StatsFetcher.CryptoCurrency
+  nameWithType: StatsFetcher.CryptoCurrency
+  fullName: XVB_GUI.StatsFetcher.CryptoCurrency

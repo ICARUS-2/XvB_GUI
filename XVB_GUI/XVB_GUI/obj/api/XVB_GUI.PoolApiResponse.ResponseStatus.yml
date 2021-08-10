@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: XVB_GUI.PoolApiResponse.ResponseStatus
+  commentId: T:XVB_GUI.PoolApiResponse.ResponseStatus
+  id: PoolApiResponse.ResponseStatus
+  parent: XVB_GUI
+  children:
+  - XVB_GUI.PoolApiResponse.ResponseStatus.FAILED
+  - XVB_GUI.PoolApiResponse.ResponseStatus.OK
+  langs:
+  - csharp
+  - vb
+  name: PoolApiResponse.ResponseStatus
+  nameWithType: PoolApiResponse.ResponseStatus
+  fullName: XVB_GUI.PoolApiResponse.ResponseStatus
+  type: Enum
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: ResponseStatus
+    path: PoolApiResponse.cs
+    startLine: 118
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nRepresents whether the API call was successful or not\n"
+  example: []
+  syntax:
+    content: public enum ResponseStatus
+    content.vb: Public Enum ResponseStatus
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: XVB_GUI.PoolApiResponse.ResponseStatus.OK
+  commentId: F:XVB_GUI.PoolApiResponse.ResponseStatus.OK
+  id: OK
+  parent: XVB_GUI.PoolApiResponse.ResponseStatus
+  langs:
+  - csharp
+  - vb
+  name: OK
+  nameWithType: PoolApiResponse.ResponseStatus.OK
+  fullName: XVB_GUI.PoolApiResponse.ResponseStatus.OK
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: OK
+    path: PoolApiResponse.cs
+    startLine: 120
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: OK = 0
+    return:
+      type: XVB_GUI.PoolApiResponse.ResponseStatus
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.PoolApiResponse.ResponseStatus.FAILED
+  commentId: F:XVB_GUI.PoolApiResponse.ResponseStatus.FAILED
+  id: FAILED
+  parent: XVB_GUI.PoolApiResponse.ResponseStatus
+  langs:
+  - csharp
+  - vb
+  name: FAILED
+  nameWithType: PoolApiResponse.ResponseStatus.FAILED
+  fullName: XVB_GUI.PoolApiResponse.ResponseStatus.FAILED
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/PoolApiResponse.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: FAILED
+    path: PoolApiResponse.cs
+    startLine: 121
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: FAILED = 1
+    return:
+      type: XVB_GUI.PoolApiResponse.ResponseStatus
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: XVB_GUI
+  commentId: N:XVB_GUI
+  name: XVB_GUI
+  nameWithType: XVB_GUI
+  fullName: XVB_GUI
+- uid: XVB_GUI.PoolApiResponse.ResponseStatus
+  commentId: T:XVB_GUI.PoolApiResponse.ResponseStatus
+  parent: XVB_GUI
+  name: PoolApiResponse.ResponseStatus
+  nameWithType: PoolApiResponse.ResponseStatus
+  fullName: XVB_GUI.PoolApiResponse.ResponseStatus

@@ -1,0 +1,180 @@
+### YamlMime:ManagedReference
+items:
+- uid: XVB_GUI.BoostRecord.BoostType
+  commentId: T:XVB_GUI.BoostRecord.BoostType
+  id: BoostRecord.BoostType
+  parent: XVB_GUI
+  children:
+  - XVB_GUI.BoostRecord.BoostType.BOOST
+  - XVB_GUI.BoostRecord.BoostType.NONE
+  - XVB_GUI.BoostRecord.BoostType.RAFFLE
+  - XVB_GUI.BoostRecord.BoostType.T_RAFFLE
+  langs:
+  - csharp
+  - vb
+  name: BoostRecord.BoostType
+  nameWithType: BoostRecord.BoostType
+  fullName: XVB_GUI.BoostRecord.BoostType
+  type: Enum
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/BoostRecord.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: BoostType
+    path: BoostRecord.cs
+    startLine: 39
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nRepresents whether this record is a queue boost, block bonus, or time bonus, or none\n"
+  example: []
+  syntax:
+    content: public enum BoostType
+    content.vb: Public Enum BoostType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: XVB_GUI.BoostRecord.BoostType.NONE
+  commentId: F:XVB_GUI.BoostRecord.BoostType.NONE
+  id: NONE
+  parent: XVB_GUI.BoostRecord.BoostType
+  langs:
+  - csharp
+  - vb
+  name: NONE
+  nameWithType: BoostRecord.BoostType.NONE
+  fullName: XVB_GUI.BoostRecord.BoostType.NONE
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/BoostRecord.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: NONE
+    path: BoostRecord.cs
+    startLine: 41
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: NONE = 0
+    return:
+      type: XVB_GUI.BoostRecord.BoostType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.BoostRecord.BoostType.BOOST
+  commentId: F:XVB_GUI.BoostRecord.BoostType.BOOST
+  id: BOOST
+  parent: XVB_GUI.BoostRecord.BoostType
+  langs:
+  - csharp
+  - vb
+  name: BOOST
+  nameWithType: BoostRecord.BoostType.BOOST
+  fullName: XVB_GUI.BoostRecord.BoostType.BOOST
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/BoostRecord.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: BOOST
+    path: BoostRecord.cs
+    startLine: 42
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: BOOST = 1
+    return:
+      type: XVB_GUI.BoostRecord.BoostType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.BoostRecord.BoostType.RAFFLE
+  commentId: F:XVB_GUI.BoostRecord.BoostType.RAFFLE
+  id: RAFFLE
+  parent: XVB_GUI.BoostRecord.BoostType
+  langs:
+  - csharp
+  - vb
+  name: RAFFLE
+  nameWithType: BoostRecord.BoostType.RAFFLE
+  fullName: XVB_GUI.BoostRecord.BoostType.RAFFLE
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/BoostRecord.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: RAFFLE
+    path: BoostRecord.cs
+    startLine: 43
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: RAFFLE = 2
+    return:
+      type: XVB_GUI.BoostRecord.BoostType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.BoostRecord.BoostType.T_RAFFLE
+  commentId: F:XVB_GUI.BoostRecord.BoostType.T_RAFFLE
+  id: T_RAFFLE
+  parent: XVB_GUI.BoostRecord.BoostType
+  langs:
+  - csharp
+  - vb
+  name: T_RAFFLE
+  nameWithType: BoostRecord.BoostType.T_RAFFLE
+  fullName: XVB_GUI.BoostRecord.BoostType.T_RAFFLE
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/BoostRecord.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: T_RAFFLE
+    path: BoostRecord.cs
+    startLine: 44
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: T_RAFFLE = 3
+    return:
+      type: XVB_GUI.BoostRecord.BoostType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: XVB_GUI
+  commentId: N:XVB_GUI
+  name: XVB_GUI
+  nameWithType: XVB_GUI
+  fullName: XVB_GUI
+- uid: XVB_GUI.BoostRecord.BoostType
+  commentId: T:XVB_GUI.BoostRecord.BoostType
+  parent: XVB_GUI
+  name: BoostRecord.BoostType
+  nameWithType: BoostRecord.BoostType
+  fullName: XVB_GUI.BoostRecord.BoostType
