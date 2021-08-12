@@ -24,6 +24,7 @@ namespace XVB_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string appDataBasePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\XvB_GUI";
         /// <summary>
         /// The refresh rate in MS when the window is active (higher to minimize lag spikes when calling API)
         /// </summary>
@@ -37,12 +38,12 @@ namespace XVB_GUI
         /// <summary>
         /// The relative path of the config file storing the addresses
         /// </summary>
-        public const string ADDRESS_CONFIG_FILE = "../../addresses";
+        public static string ADDRESS_CONFIG_FILE = appDataBasePath+"\\addresses";
 
         /// <summary>
         /// The relative path of the config file that stores the selected currency
         /// </summary>
-        public const string CURRENCY_CONFIG_FILE = "../../currency";
+        public static string CURRENCY_CONFIG_FILE = appDataBasePath+"\\currency";
 
         /// <summary>
         /// The size of the balance bar
@@ -72,7 +73,7 @@ namespace XVB_GUI
         /// <summary>
         /// The relative path of the config file for logging miner data
         /// </summary>
-        public const string OPTIONS_CONFIG_FILE = "../../genconfig";
+        public static string OPTIONS_CONFIG_FILE = appDataBasePath+"\\genconfig";
 
         /// <summary>
         /// The default logging options: Do not log data, and folder path set to _ for no path
@@ -80,7 +81,7 @@ namespace XVB_GUI
         public const string DEFAULT_OPTIONS = "false\n" + "_";
 
         /// <summary>
-        /// The path of the logfile
+        /// The path of the logfile. Currently does nothing as logfile is stored in AppData directory
         /// </summary>
         public string loggerFilePath;
 
@@ -95,58 +96,75 @@ namespace XVB_GUI
         public MainWindow()
         {
             InitializeComponent();
-            stopRefresh = false;
-            TLUpdateMainStatsAndLogData();
-            CancellationToken cancellation = new CancellationToken();
+            try
+            {
+                stopRefresh = false;
+                TLUpdateMainStatsAndLogData();
+                CancellationToken cancellation = new CancellationToken();
 
-            if (!File.Exists(ADDRESS_CONFIG_FILE))
-            {
-                File.Create(ADDRESS_CONFIG_FILE).Close();
-                string defaultConfig = "-\n-\n-";
-                File.WriteAllText(ADDRESS_CONFIG_FILE, defaultConfig);
-            }
+                if (!Directory.Exists(appDataBasePath))
+                    Directory.CreateDirectory(appDataBasePath);
 
-            if (!File.Exists(CURRENCY_CONFIG_FILE))
-            {
-                File.Create(CURRENCY_CONFIG_FILE).Close();
-                string defaultCurrency = StatsFetcher.Currency.USD.ToString();
-                currency = StatsFetcher.Currency.USD;
-                File.WriteAllText(CURRENCY_CONFIG_FILE, defaultCurrency);
-            }
-            else
-            {
-                currency = (StatsFetcher.Currency)Enum.Parse(typeof(StatsFetcher.Currency), File.ReadAllText(CURRENCY_CONFIG_FILE));
-            }
-
-            if (!File.Exists(OPTIONS_CONFIG_FILE))
-            {
-                File.Create(OPTIONS_CONFIG_FILE).Close();
-                File.WriteAllText(OPTIONS_CONFIG_FILE, DEFAULT_OPTIONS);
-                loggerFilePath = "_";
-                logData = false;
-            }
-            else
-            {
-                try
+                if (!File.Exists(ADDRESS_CONFIG_FILE))
                 {
-                    string[] arr = File.ReadAllLines(OPTIONS_CONFIG_FILE);
-                    logData = bool.Parse(arr[0]);
-                    loggerFilePath = arr[1];
+                    File.Create(ADDRESS_CONFIG_FILE).Close();
+                    string defaultConfig = "-\n-\n-";
+                    File.WriteAllText(ADDRESS_CONFIG_FILE, defaultConfig);
                 }
-                catch(Exception ex)
+
+                if (!File.Exists(CURRENCY_CONFIG_FILE))
                 {
+                    File.Create(CURRENCY_CONFIG_FILE).Close();
+                    string defaultCurrency = StatsFetcher.Currency.USD.ToString();
+                    currency = StatsFetcher.Currency.USD;
+                    File.WriteAllText(CURRENCY_CONFIG_FILE, defaultCurrency);
+                }
+                else
+                {
+                    currency = (StatsFetcher.Currency)Enum.Parse(typeof(StatsFetcher.Currency), File.ReadAllText(CURRENCY_CONFIG_FILE));
+                }
+
+                if (!File.Exists(OPTIONS_CONFIG_FILE))
+                {
+                    File.Create(OPTIONS_CONFIG_FILE).Close();
                     File.WriteAllText(OPTIONS_CONFIG_FILE, DEFAULT_OPTIONS);
-                    loggerFilePath = "";
+                    loggerFilePath = "_";
                     logData = false;
                 }
+                else
+                {
+                    try
+                    {
+                        string[] arr = File.ReadAllLines(OPTIONS_CONFIG_FILE);
+                        logData = bool.Parse(arr[0]);
+                        loggerFilePath = arr[1];
+                    }
+                    catch (Exception ex)
+                    {
+                        File.WriteAllText(OPTIONS_CONFIG_FILE, DEFAULT_OPTIONS);
+                        loggerFilePath = "";
+                        logData = false;
+                    }
+                }
+
+                try
+                {
+                    string[] addresses = File.ReadAllLines(ADDRESS_CONFIG_FILE);
+                    tb_Address1.Text = addresses[0];
+                    tb_Address2.Text = addresses[1];
+                    tb_Address3.Text = addresses[2];
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show("File access failed");
+                }
+
+                RefreshStats(cancellation);
             }
-
-            string[] addresses = File.ReadAllLines(ADDRESS_CONFIG_FILE);
-            tb_Address1.Text = addresses[0];
-            tb_Address2.Text = addresses[1];
-            tb_Address3.Text = addresses[2];
-
-            RefreshStats(cancellation);
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString() + ex.StackTrace + ex.Message);
+            }
         }
 
         /// <summary>
@@ -191,18 +209,19 @@ namespace XVB_GUI
                 UpdateBlockData();
 
                 if (logData)
-                    Logger.LogData(loggerFilePath, this);
+                    Logger.LogData(this);
             }
             catch(Exception ex)
             {
-                DisplayErrors();
+                DisplayErrors(ex);
                 tb_ConnectionStatus.Text = "FAILED";
                 tb_ConnectionStatus.Foreground = new SolidColorBrush(Colors.Red);
             }
         }
 
-        private void DisplayErrors()
+        private void DisplayErrors(Exception ex)
         {
+            //MessageBox.Show(ex.Message + ex.Source + ex.Data);
             string msg = "ERROR";
             SolidColorBrush red = new SolidColorBrush(Colors.Red);
             tb_NetworkHashrate.Text = msg;

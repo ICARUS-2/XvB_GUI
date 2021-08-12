@@ -8,6 +8,7 @@ items:
   - XVB_GUI.MainWindow.#ctor
   - XVB_GUI.MainWindow.ACTIVE_WINDOW_REFRESH_RATE
   - XVB_GUI.MainWindow.ADDRESS_CONFIG_FILE
+  - XVB_GUI.MainWindow.appDataBasePath
   - XVB_GUI.MainWindow.BAR_SIZE
   - XVB_GUI.MainWindow.currency
   - XVB_GUI.MainWindow.CURRENCY_CONFIG_FILE
@@ -754,6 +755,39 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: XVB_GUI.MainWindow.appDataBasePath
+  commentId: F:XVB_GUI.MainWindow.appDataBasePath
+  id: appDataBasePath
+  parent: XVB_GUI.MainWindow
+  langs:
+  - csharp
+  - vb
+  name: appDataBasePath
+  nameWithType: MainWindow.appDataBasePath
+  fullName: XVB_GUI.MainWindow.appDataBasePath
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/MainWindow.xaml.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: appDataBasePath
+    path: MainWindow.xaml.cs
+    startLine: 26
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  syntax:
+    content: public static string appDataBasePath
+    return:
+      type: System.String
+    content.vb: Public Shared appDataBasePath As String
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
 - uid: XVB_GUI.MainWindow.ACTIVE_WINDOW_REFRESH_RATE
   commentId: F:XVB_GUI.MainWindow.ACTIVE_WINDOW_REFRESH_RATE
   id: ACTIVE_WINDOW_REFRESH_RATE
@@ -772,7 +806,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: ACTIVE_WINDOW_REFRESH_RATE
     path: MainWindow.xaml.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -807,7 +841,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: INACTIVE_WINDOW_REFRESH_RATE
     path: MainWindow.xaml.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -842,23 +876,23 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: ADDRESS_CONFIG_FILE
     path: MainWindow.xaml.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
   summary: "\nThe relative path of the config file storing the addresses\n"
   example: []
   syntax:
-    content: public const string ADDRESS_CONFIG_FILE = "../../addresses"
+    content: public static string ADDRESS_CONFIG_FILE
     return:
       type: System.String
-    content.vb: Public Const ADDRESS_CONFIG_FILE As String = "../../addresses"
+    content.vb: Public Shared ADDRESS_CONFIG_FILE As String
   modifiers.csharp:
   - public
-  - const
+  - static
   modifiers.vb:
   - Public
-  - Const
+  - Shared
 - uid: XVB_GUI.MainWindow.CURRENCY_CONFIG_FILE
   commentId: F:XVB_GUI.MainWindow.CURRENCY_CONFIG_FILE
   id: CURRENCY_CONFIG_FILE
@@ -877,23 +911,23 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: CURRENCY_CONFIG_FILE
     path: MainWindow.xaml.cs
-    startLine: 44
+    startLine: 45
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
   summary: "\nThe relative path of the config file that stores the selected currency\n"
   example: []
   syntax:
-    content: public const string CURRENCY_CONFIG_FILE = "../../currency"
+    content: public static string CURRENCY_CONFIG_FILE
     return:
       type: System.String
-    content.vb: Public Const CURRENCY_CONFIG_FILE As String = "../../currency"
+    content.vb: Public Shared CURRENCY_CONFIG_FILE As String
   modifiers.csharp:
   - public
-  - const
+  - static
   modifiers.vb:
   - Public
-  - Const
+  - Shared
 - uid: XVB_GUI.MainWindow.BAR_SIZE
   commentId: F:XVB_GUI.MainWindow.BAR_SIZE
   id: BAR_SIZE
@@ -912,7 +946,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: BAR_SIZE
     path: MainWindow.xaml.cs
-    startLine: 49
+    startLine: 50
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -947,7 +981,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: mainRefreshRate
     path: MainWindow.xaml.cs
-    startLine: 54
+    startLine: 55
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -980,7 +1014,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: currentTemplate
     path: MainWindow.xaml.cs
-    startLine: 59
+    startLine: 60
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1013,7 +1047,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: stopRefresh
     path: MainWindow.xaml.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1046,7 +1080,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: currency
     path: MainWindow.xaml.cs
-    startLine: 69
+    startLine: 70
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1079,23 +1113,23 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: OPTIONS_CONFIG_FILE
     path: MainWindow.xaml.cs
-    startLine: 74
+    startLine: 75
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
   summary: "\nThe relative path of the config file for logging miner data\n"
   example: []
   syntax:
-    content: public const string OPTIONS_CONFIG_FILE = "../../genconfig"
+    content: public static string OPTIONS_CONFIG_FILE
     return:
       type: System.String
-    content.vb: Public Const OPTIONS_CONFIG_FILE As String = "../../genconfig"
+    content.vb: Public Shared OPTIONS_CONFIG_FILE As String
   modifiers.csharp:
   - public
-  - const
+  - static
   modifiers.vb:
   - Public
-  - Const
+  - Shared
 - uid: XVB_GUI.MainWindow.DEFAULT_OPTIONS
   commentId: F:XVB_GUI.MainWindow.DEFAULT_OPTIONS
   id: DEFAULT_OPTIONS
@@ -1114,7 +1148,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: DEFAULT_OPTIONS
     path: MainWindow.xaml.cs
-    startLine: 79
+    startLine: 80
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1149,11 +1183,11 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: loggerFilePath
     path: MainWindow.xaml.cs
-    startLine: 84
+    startLine: 85
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
-  summary: "\nThe path of the logfile\n"
+  summary: "\nThe path of the logfile. Currently does nothing as logfile is stored in AppData directory\n"
   example: []
   syntax:
     content: public string loggerFilePath
@@ -1182,7 +1216,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: logData
     path: MainWindow.xaml.cs
-    startLine: 89
+    startLine: 90
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1215,7 +1249,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: .ctor
     path: MainWindow.xaml.cs
-    startLine: 94
+    startLine: 95
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1247,7 +1281,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: RefreshStats
     path: MainWindow.xaml.cs
-    startLine: 156
+    startLine: 174
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1287,7 +1321,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: TLUpdateMainStatsAndLogData
     path: MainWindow.xaml.cs
-    startLine: 178
+    startLine: 196
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1319,7 +1353,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: UpdateAddresses
     path: MainWindow.xaml.cs
-    startLine: 324
+    startLine: 343
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1351,7 +1385,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: UpdateExchangeRates
     path: MainWindow.xaml.cs
-    startLine: 439
+    startLine: 458
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -14151,13 +14185,6 @@ references:
   name: System.Windows.Markup
   nameWithType: System.Windows.Markup
   fullName: System.Windows.Markup
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -14165,6 +14192,13 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
 - uid: XVB_GUI.PoolApiResponse
   commentId: T:XVB_GUI.PoolApiResponse
   parent: XVB_GUI

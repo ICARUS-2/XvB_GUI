@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.IO;
 
 namespace XVB_GUI
@@ -22,7 +23,7 @@ namespace XVB_GUI
         /// </summary>
         /// <param name="directory">The folder path where logfile.txt is located</param>
         /// <param name="window">The window it is retrieving the data from</param>
-        public static void LogData(string directory, MainWindow window)
+        public static void LogData(MainWindow window)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -55,17 +56,21 @@ namespace XVB_GUI
             StreamWriter writer = null;
             try
             {
-                string path = directory + "\\" + fileName;
-                writer = new StreamWriter(path, true);
+                //string pathString = directory + "\\" + fileName;
+                //writer = new StreamWriter(Path.Combine(directory, fileName), true);
+
+                
+                writer = new StreamWriter(MainWindow.appDataBasePath + "\\" + fileName, true);
                 writer.WriteLine(sb.ToString());
             }
             catch (Exception ex)
             {
-                //YOLO
+                MessageBox.Show(ex.Message + ex.StackTrace + ex.Data);
             }
             finally
             {
-                writer.Close();
+                if (writer != null)
+                    writer.Close();
             }
         }
     }

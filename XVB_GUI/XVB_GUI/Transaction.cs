@@ -60,7 +60,7 @@ namespace XVB_GUI
         }
 
         /// <summary>
-        /// The amount sent through the 
+        /// The amount sent through the transaction 
         /// </summary>
         /// <exception cref="ArgumentOutOfRangeException">Thrown if the amount is negative</exception>
         public double Amount

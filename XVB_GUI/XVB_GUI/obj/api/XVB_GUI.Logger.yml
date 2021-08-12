@@ -6,7 +6,7 @@ items:
   parent: XVB_GUI
   children:
   - XVB_GUI.Logger.fileName
-  - XVB_GUI.Logger.LogData(System.String,XVB_GUI.MainWindow)
+  - XVB_GUI.Logger.LogData(XVB_GUI.MainWindow)
   langs:
   - csharp
   - vb
@@ -21,7 +21,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: Logger
     path: Logger.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -65,7 +65,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: fileName
     path: Logger.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -82,16 +82,16 @@ items:
   modifiers.vb:
   - Public
   - Const
-- uid: XVB_GUI.Logger.LogData(System.String,XVB_GUI.MainWindow)
-  commentId: M:XVB_GUI.Logger.LogData(System.String,XVB_GUI.MainWindow)
-  id: LogData(System.String,XVB_GUI.MainWindow)
+- uid: XVB_GUI.Logger.LogData(XVB_GUI.MainWindow)
+  commentId: M:XVB_GUI.Logger.LogData(XVB_GUI.MainWindow)
+  id: LogData(XVB_GUI.MainWindow)
   parent: XVB_GUI.Logger
   langs:
   - csharp
   - vb
-  name: LogData(String, MainWindow)
-  nameWithType: Logger.LogData(String, MainWindow)
-  fullName: XVB_GUI.Logger.LogData(System.String, XVB_GUI.MainWindow)
+  name: LogData(MainWindow)
+  nameWithType: Logger.LogData(MainWindow)
+  fullName: XVB_GUI.Logger.LogData(XVB_GUI.MainWindow)
   type: Method
   source:
     remote:
@@ -100,22 +100,19 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: LogData
     path: Logger.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
   summary: "\nTakes the directory and the MainWindow handle and logs the miner data from the window to the file in the folder path specified\n"
   example: []
   syntax:
-    content: public static void LogData(string directory, MainWindow window)
+    content: public static void LogData(MainWindow window)
     parameters:
-    - id: directory
-      type: System.String
-      description: The folder path where logfile.txt is located
     - id: window
       type: XVB_GUI.MainWindow
       description: The window it is retrieving the data from
-    content.vb: Public Shared Sub LogData(directory As String, window As MainWindow)
+    content.vb: Public Shared Sub LogData(window As MainWindow)
   overload: XVB_GUI.Logger.LogData*
   modifiers.csharp:
   - public

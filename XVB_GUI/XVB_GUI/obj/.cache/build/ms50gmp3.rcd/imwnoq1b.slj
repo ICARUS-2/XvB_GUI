@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace XVB_GUI
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace XVB_GUI
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="XVB_GUI">
+  
+  <h1 id="XVB_GUI" data-uid="XVB_GUI" class="text-break">Namespace XVB_GUI
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="XVB_GUI.AddressWindow.html">AddressWindow</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.AddressWindow.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Interaction logic for AddressWindow.xaml</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.App.html">App</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.App.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Interaction logic for App.xaml</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.Block.html">Block</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.Block.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Represents a block mined on the pool, stores its index, hash, status, reward, and timestamp</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.BoostRecord.html">BoostRecord</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.BoostRecord.yml" sourcestartlinenumber="2" sourceendlinenumber="2">A record representing a boost, bonus, or t-bonus</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.BoostReport.html">BoostReport</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.BoostReport.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Interaction logic for BoostReport.xaml</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.DeveloperInfoWindow.html">DeveloperInfoWindow</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.DeveloperInfoWindow.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Interaction logic for DeveloperInfo.xaml</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.Logger.html">Logger</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.Logger.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Used for logging miner data to a file</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.MainWindow.html">MainWindow</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.MainWindow.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Interaction logic for MainWindow.xaml</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.OptionsWindow.html">OptionsWindow</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.OptionsWindow.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Interaction logic for OptionsWindow.xaml</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.PoolApiResponse.html">PoolApiResponse</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.PoolApiResponse.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Represents a response from the <a href="https://xmrvsbeast.com/stats" data-raw-source="https://xmrvsbeast.com/stats" sourcefile="obj/api/XVB_GUI.PoolApiResponse.yml" sourcestartlinenumber="2" sourceendlinenumber="2">https://xmrvsbeast.com/stats</a> API</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.StatsFetcher.html">StatsFetcher</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.StatsFetcher.yml" sourcestartlinenumber="2" sourceendlinenumber="4">Represents the interaction for everything that is not directly linked to the Stats API.
+Data retrieval/object construction is done via HTML parsers
+All Get methods query the site in real/time</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.Transaction.html">Transaction</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.Transaction.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Represents a payout transaction from the pool to an address</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.TransactionData.html">TransactionData</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.TransactionData.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Interaction logic for TransactionData.xaml</p>
+</section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="XVB_GUI.BlockStatus.html">BlockStatus</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.BlockStatus.yml" sourcestartlinenumber="2" sourceendlinenumber="2">The block&apos;s possible statuses: Locked (validation needed, block reward TBD), Unlocked (validated block, has a reward), Orphaned (invalid block, no reward)</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.BoostRecord.BoostType.html">BoostRecord.BoostType</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.BoostRecord.BoostType.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Represents whether this record is a queue boost, block bonus, or time bonus, or none</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.PoolApiResponse.ResponseStatus.html">PoolApiResponse.ResponseStatus</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.PoolApiResponse.ResponseStatus.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Represents whether the API call was successful or not</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.StatsFetcher.CryptoCurrency.html">StatsFetcher.CryptoCurrency</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.StatsFetcher.CryptoCurrency.yml" sourcestartlinenumber="2" sourceendlinenumber="2">CryptoCurrencies whose exchange rates can be compared by the app</p>
+</section>
+      <h4><a class="xref" href="XVB_GUI.StatsFetcher.Currency.html">StatsFetcher.Currency</a></h4>
+      <section><p sourcefile="obj/api/XVB_GUI.StatsFetcher.Currency.yml" sourcestartlinenumber="2" sourceendlinenumber="2">FIAT currencies whose exchange rates can be compared by the app</p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

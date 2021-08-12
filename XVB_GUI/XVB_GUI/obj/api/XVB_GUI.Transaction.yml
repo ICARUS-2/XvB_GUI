@@ -192,7 +192,7 @@ items:
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
-  summary: "\nThe amount sent through the \n"
+  summary: "\nThe amount sent through the transaction \n"
   example: []
   syntax:
     content: public double Amount { get; }

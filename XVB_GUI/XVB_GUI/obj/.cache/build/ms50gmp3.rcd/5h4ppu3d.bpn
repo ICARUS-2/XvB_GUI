@@ -1,0 +1,80 @@
+
+<div id="sidetoggle">
+  <div>
+    <div class="sidefilter">
+      <form class="toc-filter">
+        <span class="glyphicon glyphicon-filter filter-icon"></span>
+        <span class="glyphicon glyphicon-remove clear-icon" id="toc_filter_clear"></span>
+        <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+      </form>
+    </div>
+    <div class="sidetoc">
+      <div class="toc" id="toc">
+          
+          <ul class="nav level1">
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="XVB_GUI.html" name="" title="XVB_GUI">XVB_GUI</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a href="XVB_GUI.AddressWindow.html" name="" title="AddressWindow">AddressWindow</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.App.html" name="" title="App">App</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.Block.html" name="" title="Block">Block</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.BlockStatus.html" name="" title="BlockStatus">BlockStatus</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.BoostRecord.html" name="" title="BoostRecord">BoostRecord</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.BoostRecord.BoostType.html" name="" title="BoostRecord.BoostType">BoostRecord.BoostType</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.BoostReport.html" name="" title="BoostReport">BoostReport</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.DeveloperInfoWindow.html" name="" title="DeveloperInfoWindow">DeveloperInfoWindow</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.Logger.html" name="" title="Logger">Logger</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.MainWindow.html" name="" title="MainWindow">MainWindow</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.OptionsWindow.html" name="" title="OptionsWindow">OptionsWindow</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.PoolApiResponse.html" name="" title="PoolApiResponse">PoolApiResponse</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.PoolApiResponse.ResponseStatus.html" name="" title="PoolApiResponse.ResponseStatus">PoolApiResponse.ResponseStatus</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.StatsFetcher.html" name="" title="StatsFetcher">StatsFetcher</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.StatsFetcher.CryptoCurrency.html" name="" title="StatsFetcher.CryptoCurrency">StatsFetcher.CryptoCurrency</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.StatsFetcher.Currency.html" name="" title="StatsFetcher.Currency">StatsFetcher.Currency</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.Transaction.html" name="" title="Transaction">Transaction</a>
+                          </li>
+                          <li>
+                              <a href="XVB_GUI.TransactionData.html" name="" title="TransactionData">TransactionData</a>
+                          </li>
+                    </ul>
+                </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

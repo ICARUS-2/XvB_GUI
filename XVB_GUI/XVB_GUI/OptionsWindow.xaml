@@ -24,11 +24,11 @@
         <TextBlock Grid.Row="0" Grid.Column="1" FontSize="50" HorizontalAlignment="Center">Options</TextBlock>
 
         <StackPanel Grid.Row="1" Grid.Column="0">
-            <TextBlock HorizontalAlignment="Center">Log miner data to file</TextBlock>
+            <TextBlock HorizontalAlignment="Center">Log data to AppData file</TextBlock>
             <CheckBox  Margin="0,15,0,0" x:Name="chb_LogData" HorizontalAlignment="Center"></CheckBox>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="1">
+        <StackPanel Grid.Row="1" Grid.Column="1" Visibility="Hidden">
             <TextBlock HorizontalAlignment="Center">Logfile path</TextBlock>
             <TextBox Margin="0,15,0,0" IsReadOnlyCaretVisible="True" IsReadOnly="True" Foreground="White" Background="Black" BorderThickness="2" BorderBrush="DarkBlue" x:Name="tb_PathDisplay"></TextBox>
             <Button Margin="0,15,0,0" Width="60" BorderBrush="DarkBlue" Background="Black" BorderThickness="2"  Foreground="White" x:Name="btn_SelectFilePath" Click="btn_SelectFilePath_Click">Select</Button>

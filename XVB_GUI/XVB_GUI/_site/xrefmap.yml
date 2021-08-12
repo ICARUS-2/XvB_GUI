@@ -323,12 +323,12 @@ references:
   commentId: F:XVB_GUI.Logger.fileName
   fullName: XVB_GUI.Logger.fileName
   nameWithType: Logger.fileName
-- uid: XVB_GUI.Logger.LogData(System.String,XVB_GUI.MainWindow)
-  name: LogData(String, MainWindow)
-  href: api/XVB_GUI.Logger.html#XVB_GUI_Logger_LogData_System_String_XVB_GUI_MainWindow_
-  commentId: M:XVB_GUI.Logger.LogData(System.String,XVB_GUI.MainWindow)
-  fullName: XVB_GUI.Logger.LogData(System.String, XVB_GUI.MainWindow)
-  nameWithType: Logger.LogData(String, MainWindow)
+- uid: XVB_GUI.Logger.LogData(XVB_GUI.MainWindow)
+  name: LogData(MainWindow)
+  href: api/XVB_GUI.Logger.html#XVB_GUI_Logger_LogData_XVB_GUI_MainWindow_
+  commentId: M:XVB_GUI.Logger.LogData(XVB_GUI.MainWindow)
+  fullName: XVB_GUI.Logger.LogData(XVB_GUI.MainWindow)
+  nameWithType: Logger.LogData(MainWindow)
 - uid: XVB_GUI.Logger.LogData*
   name: LogData
   href: api/XVB_GUI.Logger.html#XVB_GUI_Logger_LogData_
@@ -367,6 +367,12 @@ references:
   commentId: F:XVB_GUI.MainWindow.ADDRESS_CONFIG_FILE
   fullName: XVB_GUI.MainWindow.ADDRESS_CONFIG_FILE
   nameWithType: MainWindow.ADDRESS_CONFIG_FILE
+- uid: XVB_GUI.MainWindow.appDataBasePath
+  name: appDataBasePath
+  href: api/XVB_GUI.MainWindow.html#XVB_GUI_MainWindow_appDataBasePath
+  commentId: F:XVB_GUI.MainWindow.appDataBasePath
+  fullName: XVB_GUI.MainWindow.appDataBasePath
+  nameWithType: MainWindow.appDataBasePath
 - uid: XVB_GUI.MainWindow.BAR_SIZE
   name: BAR_SIZE
   href: api/XVB_GUI.MainWindow.html#XVB_GUI_MainWindow_BAR_SIZE

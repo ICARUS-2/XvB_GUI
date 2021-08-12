@@ -42,12 +42,12 @@ namespace XVB_GUI
             cb_SelectCurrency.ItemsSource = null;
             cb_SelectCurrency.ItemsSource = Enum.GetValues(typeof(StatsFetcher.Currency));
             cb_SelectCurrency.SelectedIndex = 0;
-            tb_PathDisplay.Text = "";
+            //tb_PathDisplay.Text = "";
             string[] config = File.ReadAllLines(_configPath);
             if (bool.Parse(config[0]))
             {
                 chb_LogData.IsChecked = true;
-                tb_PathDisplay.Text = config[1];
+                //tb_PathDisplay.Text = config[1];
             }
 
             cb_SelectCurrency.SelectedItem = (StatsFetcher.Currency)Enum.Parse(typeof(StatsFetcher.Currency), File.ReadAllText(_currencyConfigPath));
@@ -60,25 +60,27 @@ namespace XVB_GUI
 
         private void btn_SaveExit_Click(object sender, RoutedEventArgs e)
         {
-            if (tb_PathDisplay.Text != "")
-            {
-                if (!Directory.Exists(tb_PathDisplay.Text))
-                {
-                    System.Windows.MessageBox.Show("Selected folder does not exist", "Nonexistant folder path", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
-            }
+            //if (tb_PathDisplay.Text != "")
+            //{
+            //    if (!Directory.Exists(tb_PathDisplay.Text))
+            //    {
+            //        System.Windows.MessageBox.Show("Selected folder does not exist", "Nonexistant folder path", MessageBoxButton.OK, MessageBoxImage.Error);
+            //        return;
+            //    }
+            //}
 
-            if (tb_PathDisplay.Text == "" && chb_LogData.IsChecked == true)
-            {
-                System.Windows.MessageBox.Show("You must select a file path if you wish to log the data", "File path not selected", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else
-            {
-                if (tb_PathDisplay.Text == "")
-                    File.WriteAllText(_configPath, chb_LogData.IsChecked + "\n" + "_");
-                else
-                    File.WriteAllText(_configPath, chb_LogData.IsChecked + "\n" + tb_PathDisplay.Text);
+            //if (tb_PathDisplay.Text == "" && chb_LogData.IsChecked == true)
+            //{
+            //    System.Windows.MessageBox.Show("You must select a file path if you wish to log the data", "File path not selected", MessageBoxButton.OK, MessageBoxImage.Error);
+            //}
+            //else
+            //{
+            //    if (tb_PathDisplay.Text == "")
+            //        File.WriteAllText(_configPath, chb_LogData.IsChecked + "\n" + "_");
+            //    else
+            //        File.WriteAllText(_configPath, chb_LogData.IsChecked + "\n" + tb_PathDisplay.Text);
+
+                File.WriteAllText(_configPath, chb_LogData.IsChecked + "\n" + "_");
 
                 File.WriteAllText(_currencyConfigPath, cb_SelectCurrency.SelectedItem.ToString());
                 _mainWindow.currency = (StatsFetcher.Currency)cb_SelectCurrency.SelectedItem;
@@ -86,7 +88,7 @@ namespace XVB_GUI
                 _mainWindow.loggerFilePath = tb_PathDisplay.Text;
                 _mainWindow.UpdateExchangeRates();
                 Close();
-            }
+            //}
         }
 
         private void btn_SelectFilePath_Click(object sender, RoutedEventArgs e)
