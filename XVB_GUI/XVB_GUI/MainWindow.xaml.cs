@@ -31,9 +31,14 @@ namespace XVB_GUI
         public const int ACTIVE_WINDOW_REFRESH_RATE = 60000;
 
         /// <summary>
-        /// The refresh rate in MS when the window is off to the side (faster, but slow enough to not bust the currency API's call limit)
+        /// The refresh rate in MS when the window is off to the side
         /// </summary>
-        public const int INACTIVE_WINDOW_REFRESH_RATE = 11500;
+        public const int INACTIVE_WINDOW_REFRESH_RATE = 5000;
+
+        /// <summary>
+        /// The amount of times the main UI would be refreshed before refreshing the exchange rate display (Maximum API calls/day is 7500, 3 calls/refresh = 2500 max/day)
+        /// </summary>
+        public const int EXCHANGE_REFRESH_CYCLE_COUNT = 12;
 
         /// <summary>
         /// The relative path of the config file storing the addresses
@@ -49,6 +54,11 @@ namespace XVB_GUI
         /// The size of the balance bar
         /// </summary>
         public const int BAR_SIZE = 10;
+
+        /// <summary>
+        /// The refresh count for this cycle (see EXCHANGE_REFRESH_CYCLE_COUNT)
+        /// </summary>
+        public int refreshCycle = 0;
 
         /// <summary>
         /// The dynamic refresh rate of the window
@@ -159,6 +169,14 @@ namespace XVB_GUI
                     //MessageBox.Show("File access failed");
                 }
 
+                try
+                {
+                    UpdateExchangeRates();
+                }
+                catch(Exception ex)
+                {
+                    //connection failed lul
+                }
                 RefreshStats(cancellation);
             }
             catch(Exception ex)
@@ -203,7 +221,16 @@ namespace XVB_GUI
             {
                 UpdateTopBar();
                 UpdateAddresses();
-                UpdateExchangeRates();
+
+                if (refreshCycle == EXCHANGE_REFRESH_CYCLE_COUNT || mainRefreshRate == ACTIVE_WINDOW_REFRESH_RATE)
+                {
+                    refreshCycle = 0;
+                    UpdateExchangeRates();
+                }
+                else
+                {
+                    refreshCycle++;
+                }
                 UpdateMinerCountInfo();
                 UpdateTotalBlocksFound();
                 UpdateBlockData();

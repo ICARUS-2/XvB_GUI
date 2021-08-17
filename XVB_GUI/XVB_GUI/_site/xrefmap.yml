@@ -403,6 +403,12 @@ references:
   commentId: F:XVB_GUI.MainWindow.DEFAULT_OPTIONS
   fullName: XVB_GUI.MainWindow.DEFAULT_OPTIONS
   nameWithType: MainWindow.DEFAULT_OPTIONS
+- uid: XVB_GUI.MainWindow.EXCHANGE_REFRESH_CYCLE_COUNT
+  name: EXCHANGE_REFRESH_CYCLE_COUNT
+  href: api/XVB_GUI.MainWindow.html#XVB_GUI_MainWindow_EXCHANGE_REFRESH_CYCLE_COUNT
+  commentId: F:XVB_GUI.MainWindow.EXCHANGE_REFRESH_CYCLE_COUNT
+  fullName: XVB_GUI.MainWindow.EXCHANGE_REFRESH_CYCLE_COUNT
+  nameWithType: MainWindow.EXCHANGE_REFRESH_CYCLE_COUNT
 - uid: XVB_GUI.MainWindow.INACTIVE_WINDOW_REFRESH_RATE
   name: INACTIVE_WINDOW_REFRESH_RATE
   href: api/XVB_GUI.MainWindow.html#XVB_GUI_MainWindow_INACTIVE_WINDOW_REFRESH_RATE
@@ -433,6 +439,12 @@ references:
   commentId: F:XVB_GUI.MainWindow.OPTIONS_CONFIG_FILE
   fullName: XVB_GUI.MainWindow.OPTIONS_CONFIG_FILE
   nameWithType: MainWindow.OPTIONS_CONFIG_FILE
+- uid: XVB_GUI.MainWindow.refreshCycle
+  name: refreshCycle
+  href: api/XVB_GUI.MainWindow.html#XVB_GUI_MainWindow_refreshCycle
+  commentId: F:XVB_GUI.MainWindow.refreshCycle
+  fullName: XVB_GUI.MainWindow.refreshCycle
+  nameWithType: MainWindow.refreshCycle
 - uid: XVB_GUI.MainWindow.RefreshStats(System.Threading.CancellationToken)
   name: RefreshStats(CancellationToken)
   href: api/XVB_GUI.MainWindow.html#XVB_GUI_MainWindow_RefreshStats_System_Threading_CancellationToken_

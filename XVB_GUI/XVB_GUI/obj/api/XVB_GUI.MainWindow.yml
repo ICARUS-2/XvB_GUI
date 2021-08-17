@@ -14,11 +14,13 @@ items:
   - XVB_GUI.MainWindow.CURRENCY_CONFIG_FILE
   - XVB_GUI.MainWindow.currentTemplate
   - XVB_GUI.MainWindow.DEFAULT_OPTIONS
+  - XVB_GUI.MainWindow.EXCHANGE_REFRESH_CYCLE_COUNT
   - XVB_GUI.MainWindow.INACTIVE_WINDOW_REFRESH_RATE
   - XVB_GUI.MainWindow.logData
   - XVB_GUI.MainWindow.loggerFilePath
   - XVB_GUI.MainWindow.mainRefreshRate
   - XVB_GUI.MainWindow.OPTIONS_CONFIG_FILE
+  - XVB_GUI.MainWindow.refreshCycle
   - XVB_GUI.MainWindow.RefreshStats(System.Threading.CancellationToken)
   - XVB_GUI.MainWindow.stopRefresh
   - XVB_GUI.MainWindow.TLUpdateMainStatsAndLogData
@@ -845,13 +847,48 @@ items:
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
-  summary: "\nThe refresh rate in MS when the window is off to the side (faster, but slow enough to not bust the currency API&apos;s call limit)\n"
+  summary: "\nThe refresh rate in MS when the window is off to the side\n"
   example: []
   syntax:
-    content: public const int INACTIVE_WINDOW_REFRESH_RATE = 11500
+    content: public const int INACTIVE_WINDOW_REFRESH_RATE = 5000
     return:
       type: System.Int32
-    content.vb: Public Const INACTIVE_WINDOW_REFRESH_RATE As Integer = 11500
+    content.vb: Public Const INACTIVE_WINDOW_REFRESH_RATE As Integer = 5000
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: XVB_GUI.MainWindow.EXCHANGE_REFRESH_CYCLE_COUNT
+  commentId: F:XVB_GUI.MainWindow.EXCHANGE_REFRESH_CYCLE_COUNT
+  id: EXCHANGE_REFRESH_CYCLE_COUNT
+  parent: XVB_GUI.MainWindow
+  langs:
+  - csharp
+  - vb
+  name: EXCHANGE_REFRESH_CYCLE_COUNT
+  nameWithType: MainWindow.EXCHANGE_REFRESH_CYCLE_COUNT
+  fullName: XVB_GUI.MainWindow.EXCHANGE_REFRESH_CYCLE_COUNT
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/MainWindow.xaml.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: EXCHANGE_REFRESH_CYCLE_COUNT
+    path: MainWindow.xaml.cs
+    startLine: 40
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe amount of times the main UI would be refreshed before refreshing the exchange rate display (Maximum API calls/day is 7500, 3 calls/refresh = 2500 max/day)\n"
+  example: []
+  syntax:
+    content: public const int EXCHANGE_REFRESH_CYCLE_COUNT = 12
+    return:
+      type: System.Int32
+    content.vb: Public Const EXCHANGE_REFRESH_CYCLE_COUNT As Integer = 12
   modifiers.csharp:
   - public
   - const
@@ -876,7 +913,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: ADDRESS_CONFIG_FILE
     path: MainWindow.xaml.cs
-    startLine: 40
+    startLine: 45
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -911,7 +948,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: CURRENCY_CONFIG_FILE
     path: MainWindow.xaml.cs
-    startLine: 45
+    startLine: 50
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -946,7 +983,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: BAR_SIZE
     path: MainWindow.xaml.cs
-    startLine: 50
+    startLine: 55
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -963,6 +1000,39 @@ items:
   modifiers.vb:
   - Public
   - Const
+- uid: XVB_GUI.MainWindow.refreshCycle
+  commentId: F:XVB_GUI.MainWindow.refreshCycle
+  id: refreshCycle
+  parent: XVB_GUI.MainWindow
+  langs:
+  - csharp
+  - vb
+  name: refreshCycle
+  nameWithType: MainWindow.refreshCycle
+  fullName: XVB_GUI.MainWindow.refreshCycle
+  type: Field
+  source:
+    remote:
+      path: XVB_GUI/XVB_GUI/MainWindow.xaml.cs
+      branch: main
+      repo: https://github.com/ICARUS-2/XvB_GUI.git
+    id: refreshCycle
+    path: MainWindow.xaml.cs
+    startLine: 60
+  assemblies:
+  - XVB_GUI
+  namespace: XVB_GUI
+  summary: "\nThe refresh count for this cycle (see EXCHANGE_REFRESH_CYCLE_COUNT)\n"
+  example: []
+  syntax:
+    content: public int refreshCycle
+    return:
+      type: System.Int32
+    content.vb: Public refreshCycle As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: XVB_GUI.MainWindow.mainRefreshRate
   commentId: F:XVB_GUI.MainWindow.mainRefreshRate
   id: mainRefreshRate
@@ -981,7 +1051,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: mainRefreshRate
     path: MainWindow.xaml.cs
-    startLine: 55
+    startLine: 65
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1014,7 +1084,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: currentTemplate
     path: MainWindow.xaml.cs
-    startLine: 60
+    startLine: 70
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1047,7 +1117,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: stopRefresh
     path: MainWindow.xaml.cs
-    startLine: 65
+    startLine: 75
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1080,7 +1150,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: currency
     path: MainWindow.xaml.cs
-    startLine: 70
+    startLine: 80
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1113,7 +1183,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: OPTIONS_CONFIG_FILE
     path: MainWindow.xaml.cs
-    startLine: 75
+    startLine: 85
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1148,7 +1218,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: DEFAULT_OPTIONS
     path: MainWindow.xaml.cs
-    startLine: 80
+    startLine: 90
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1183,7 +1253,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: loggerFilePath
     path: MainWindow.xaml.cs
-    startLine: 85
+    startLine: 95
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1216,7 +1286,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: logData
     path: MainWindow.xaml.cs
-    startLine: 90
+    startLine: 100
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1249,7 +1319,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: .ctor
     path: MainWindow.xaml.cs
-    startLine: 95
+    startLine: 105
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1281,7 +1351,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: RefreshStats
     path: MainWindow.xaml.cs
-    startLine: 174
+    startLine: 192
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1321,7 +1391,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: TLUpdateMainStatsAndLogData
     path: MainWindow.xaml.cs
-    startLine: 196
+    startLine: 214
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1353,7 +1423,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: UpdateAddresses
     path: MainWindow.xaml.cs
-    startLine: 343
+    startLine: 370
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
@@ -1385,7 +1455,7 @@ items:
       repo: https://github.com/ICARUS-2/XvB_GUI.git
     id: UpdateExchangeRates
     path: MainWindow.xaml.cs
-    startLine: 458
+    startLine: 485
   assemblies:
   - XVB_GUI
   namespace: XVB_GUI
